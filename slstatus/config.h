@@ -65,13 +65,13 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ cpu_perc, "CPU: %s%% ", NULL	},
+	{ cpu_perc, "[CPU %s%%] ", NULL	},/*
 	{ cpu_freq, "@ %sHz ", NULL		 }, 
- 	{ temp,   " %s°C ",  "/sys/class/thermal/thermal_zone0/temp" },
-	{ ram_perc, "| RAM: %s%% ", NULL	},
-	{ uptime,  "|  %s ", NULL },
-	{ kernel_release, "| %s ", NULL  },
-	{ keymap, 	"|  %s ", 	NULL  },
-	{ datetime, 	"| %s",    "%b %d %a %T " },
+	{ temp,   " %s°C ",  "/sys/class/thermal/thermal_zone0/temp" },*/
+	{ ram_perc, "[RAM %s%%] ", NULL	},
+	{ uptime,  "[%s] ", NULL },
+/*	{ kernel_release, "[%s] ", NULL  },
+	{ keymap, 	"|  %s]", 	NULL  },*/
+	{ datetime, 	"%s",    "%b %d %a %T" },
 };
 
