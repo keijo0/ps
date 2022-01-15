@@ -27,8 +27,9 @@ static const char *colors[][3]      = {
 
 /* tagging */
 /*static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
-static const char *tags[] = { "", "", "", "", "",  "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "",  "", "", "", "" };
 /*static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };*/
+/*static const char *tags[] = { "", "", "", "", "",  "", "", "", "" };*/
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -40,7 +41,8 @@ static const Rule rules[] = {
         { "discord",    NULL,       NULL,	1 << 7,       0,           -1 },
         { "Steam",    	NULL,       NULL,	1 << 6,       0,           -1 },
         { "KeePassXC",	NULL,       NULL,	1 << 5,       0,           -1 },
-        { "Virt-manager",  NULL,    NULL,	1 << 4,       0,           -1 },
+        { "Virt-Manager",  NULL,    NULL,	1 << 4,       0,           -1 },
+        { "Thunderbird",  NULL,    NULL,	1 << 2,       0,           -1 },
 
 };
 
@@ -73,6 +75,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_gray3, "-sb", col_gen, "-sf", col_black, NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
 static const char *librewolfcmd[]  = { "librewolf", NULL };
+static const char *musicmd[]  = { "spotify", NULL };
+static const char *emailcmd[] = { "thunderbird", NULL };
+static const char *discordcmd[] = { "discord", NULL };
 
 //volume controls
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
@@ -85,6 +90,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
         { MODKEY,                       XK_m,      spawn,          {.v = librewolfcmd } },
+        { MODKEY,                       XK_n,	   spawn,          {.v = discordcmd } },
+       	{ MODKEY,                       XK_F5,      spawn,          {.v = musicmd } },
+        { MODKEY,                       XK_F3,      spawn,          {.v = emailcmd } },
 	{ MODKEY,                       XK_o,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -95,9 +103,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY, 	                XK_q,      killclient,     {0} },
-/*	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, */
+	{ MODKEY,                       XK_F1,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[1]} },
+/*	{ MODKEY,                       XK_F3,      setlayout,      {.v = &layouts[2]} },*/
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
