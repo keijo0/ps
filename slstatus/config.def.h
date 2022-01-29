@@ -9,7 +9,15 @@ static const char unknown_str[] = "n/a";
 /* maximum output string length */
 #define MAXLEN 2048
 
-/* *                                                     NULL on OpenBSD/FreeBSD
+/*
+ * function            description                     argument (example)
+ *
+ * battery_perc        battery percentage              battery name (BAT0)
+ *                                                     NULL on OpenBSD/FreeBSD
+ * battery_state       battery charging state          battery name (BAT0)
+ *                                                     NULL on OpenBSD/FreeBSD
+ * battery_remaining   battery remaining HH:MM         battery name (BAT0)
+ *                                                     NULL on OpenBSD/FreeBSD
  * cpu_perc            cpu usage in percent            NULL
  * cpu_freq            cpu frequency in MHz            NULL
  * datetime            date and time                   format string (%F %T)
@@ -42,20 +50,20 @@ static const char unknown_str[] = "n/a";
  * swap_perc           swap usage in percent           NULL
  * swap_total          total swap size in GB           NULL
  * swap_used           used swap in GB                 NULL
+ * temp                temperature in degree celsius   sensor file
+ *                                                     (/sys/class/thermal/...)
+ *                                                     NULL on OpenBSD
+ *                                                     thermal zone on FreeBSD
+ *                                                     (tz0, tz1, etc.)
  * uid                 UID of current user             NULL
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
+ *                                                     NULL on OpenBSD
+ * wifi_perc           WiFi signal in percent          interface name (wlan0)
+ * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
 	/* function format          argument */
-//    	{ netspeed_rx, ": %sB/s | ",  "eno1" },
-      	{ run_command, ":%4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ cpu_perc, "[CPU %s%%] ", NULL	},
-	{ ram_perc, "[RAM %s%%] ", NULL	},
-//	{ disk_perc, "[: %s%%] ", "/" },
-//	{ uptime,   " %s ", NULL },
-//	{ kernel_release, "%s | ", NULL },
-	{ datetime, 	" %s",    "%d %a %R" },
+	{ datetime, "%s",           "%F %T" },
 };
-
