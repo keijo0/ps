@@ -47,15 +47,28 @@ static const char unknown_str[] = "n/a";
  * username            username of current user        NULL
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  */
+//static const struct arg args[] = {
+	/* function format          argument */
+//    	{ netspeed_rx, ": %sB/s | ",  "eno1" },
+ //     	{ run_command, ":%4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+//	{ cpu_perc, "[CPU %s%%] ", NULL	},
+//	{ ram_perc, "[RAM %s%%] ", NULL	},
+//	{ disk_perc, "[: %s%%] ", "/" },
+//	{ uptime,   " %s ", NULL },
+//	{ kernel_release, "%s | ", NULL },
+//	{ datetime, 	" %s",    "%d %a %R" },
+//};
+
 static const struct arg args[] = {
 	/* function format          argument */
 //    	{ netspeed_rx, ": %sB/s | ",  "eno1" },
       	{ run_command, ":%4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 	{ cpu_perc, "[CPU %s%%] ", NULL	},
 	{ ram_perc, "[RAM %s%%] ", NULL	},
-//	{ disk_perc, "[: %s%%] ", "/" },
-//	{ uptime,   " %s ", NULL },
-//	{ kernel_release, "%s | ", NULL },
+//       	{ swap_used, "[SWAP %s%B] ", NULL  },
+	{ disk_used, "[: %sB] ", "/" },
+	{ uptime,   "[%s] ", NULL },
+	{ kernel_release, "[%s] ", NULL },
+	{ keymap,	"[ %s] ", NULL },
 	{ datetime, 	" %s",    "%d %a %R" },
 };
-
