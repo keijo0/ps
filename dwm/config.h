@@ -1,7 +1,7 @@
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gapppx    = 8; 	/* gaps */
-static const unsigned int snap      = 15;       /* snap pixel */
+static const unsigned int snap      = 25;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 1;   	/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 0;   /* systray spacing */
@@ -9,8 +9,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=12", "fontawesome:size=12" };
-static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "mono:size=12", "fontawesome:size=12" };
+static const char dmenufont[]       = "mono:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#999999";
 static const char col_gray3[]       = "#eeeeee";
@@ -19,7 +19,6 @@ static const char col_cyan[]        = "#005577";
 static const char col_black[]	    = "#000000";
 static const char col_white[]       = "#ffffff";
 static const char col_purple[]	    = "#8987d1";
-//static const char col_orange[]	    = "#ffae00";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray4, col_black, col_black },
@@ -27,22 +26,15 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-//static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+//static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "LibreWolf",  NULL,       NULL,       1 << 8,       0,           -1 },
         { "Firefox",    NULL,       NULL,	1 << 8,       0,           -1 },
-        { "qutebrowser",  NULL,     NULL,	1 << 8,       0,           -1 },
-//        { "discord",    NULL,       NULL,	1 << 7,       0,           -1 },
+        { "discord",    NULL,       NULL,	1 << 7,       0,           -1 },
         { "Steam",    	NULL,       NULL,	1 << 6,       0,           -1 },
-        { "Virt-manager",  NULL,    NULL,	1 << 5,       0,           -1 },
-        { "Spotify",       NULL,    NULL,	1 << 4,       0,           -1 },
+        { "Virt-manager",  NULL,    NULL,	1 << 4,       0,           -1 },
         { "KeePassXC",  NULL,       NULL,	1 << 2,       0,           -1 },
 
 
@@ -76,10 +68,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_gray3, "-sb", col_purple, "-sf", col_black,  NULL };
 static const char *termcmd[]  = { "urxvt", NULL };
-static const char *librewolfcmd[]  = { "librewolf", NULL };
+static const char *browsercmd[]  = { "firefox", NULL };
 static const char *musicmd[]  = { "spotify", NULL };
-static const char *discordcmd[] = { "discord", NULL };
-static const char *passcmd[] = { "keepassxc", NULL };
+static const char *dcmd[]  = { "discord", NULL };
+static const char *filecmd[]  = { "pcmanfm", NULL };
 
 /* volume controls */
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
@@ -91,10 +83,10 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
-        { MODKEY,                       XK_m,      spawn,          {.v = librewolfcmd } },
-        { MODKEY,                       XK_n,	   spawn,          {.v = discordcmd } },
-        { MODKEY,                       XK_F3,      spawn,          {.v = passcmd } },
-       	{ MODKEY,                       XK_F5,      spawn,          {.v = musicmd } },
+        { MODKEY,                       XK_m,      spawn,          {.v = browsercmd } },
+        { MODKEY,                       XK_n,	   spawn,          {.v = dcmd } },
+        { MODKEY,                       XK_b,	   spawn,          {.v = filecmd } },
+        { MODKEY,                       XK_F5,      spawn,          {.v = musicmd } },
 	{ MODKEY,                       XK_o,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
