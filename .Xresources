@@ -36,15 +36,13 @@
 *.color15:      #f5f5f5
 
 URxvt*cursorBlink: true
-URxvt*font:  xft:Jetbrains Mono:size=11:antialias=true
-!URxvt*font:  xft:Source Code Pro:size=11:antialias=true
+URxvt*font:  xft:Liberation Mono:size=11:antialias=true
 urxvt*background: rgba:0000/0000/0100/c900
 URxvt*depth: 32
 URxvt*scrollBar: false
 URxvt.internalBorder: 8
 
 Xcursor.size: 24
-
 
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
