@@ -1,0 +1,17 @@
+#Launch scripts
+sh ~/.config/res.sh &
+#sh ~/.config/nosleep.sh &
+sh ~/.config/bg.sh &
+sh ~/.config/gpufanspeed.sh &
+sh ~/.config/xs.sh &
+
+#Other stuff
+xrdb ~/.Xresources &
+unclutter --idle 3 &
+picom  -f -b --blur-method kernel --experimental-backends &
+#picom -f -b &
+#slstatus &
+dunst &
+#gwe --hide-window &
+#nm-applet &
+#pasystray &
