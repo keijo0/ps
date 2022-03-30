@@ -1,44 +1,66 @@
-# /etc/skel/.bashrc
-#
-# This file is sourced by all *interactive* bash shells on startup,
-# including some apparently interactive shells such as scp and rcp
-# that can't tolerate any output.  So make sure this doesn't display
-# anything or bad things will happen !
-
-
-# Test for an interactive shell.  There is no need to set anything
-# past this point for scp and rcp, and it's important to refrain from
-# outputting anything in those cases.
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
 	return
 fi
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+export PATH="/usr/lib/ccache/bin${PATH:+:}${PATH}"
+export CCACHE_DIR="/var/cache/ccache"
 
 alias b="doas make clean install"
 alias r="ranger"
 alias sp="spotifyd;spt"
 alias brb="doas grub-mkconfig -o /boot/grub/grub.cfg"
 alias tshark="doas tshark -i eno1"
-alias reboot="doas shutdown -r now"
+alias reboot="loginctl reboot"
 alias cal="cal 2022"
 alias ks="killall spotifyd"
-alias btop="bashtop"
 alias fin="setxkbmap fi"
 alias us="setxkbmap us"
-alias gparted="pkttyagent -p $(echo $$) | pkexec gparted"
+#alias gparted="pkttyagent -p $(echo $$) | pkexec gparted"
 alias ll="ls -la"
-alias x="xrdb ~/.Xresources"
+alias xr="xrdb /home/make/.Xresources"
 alias su="doas su"
-alias pol="pkttyagent -p $(echo $$) | pkexec"
+#alias pol="pkttyagent -p $(echo $$) | pkexec"
 alias poweroff="loginctl poweroff"
 alias reboot="loginctl reboot"
 alias ka="killall"
-alias spi="spicetify config current_theme"
-alias spf="ls ~/.config/spicetify/Themes"
-alias spa="spicetify apply"
-alias push="git add . && git commit -m "something" && git push"
-alias update="doas emerge --sync -q && doas emerge -auDN @world --exclude firefox"
+alias update="doas emerge -auDN @world"
 alias s="cd .cargo/bin/; ./ncspot"
-alias compiletime="doas genlop -t"
+alias ct="doas genlop -t"
+alias clean="doas eclean distfiles && doas eclean packages"
+alias sync="doas eix-sync -a"
+alias repoadd="doas eselect repository enable"
+alias repodis="doas eselect repository disable"
+alias list="equery list '*' "
+alias dp="doas emerge --depclean -a"
+alias bt="doas rc-service bluetooth start"
+alias bs="doas rc-service bluetooth stop"
+alias ss="source ~/.bashrc"
+alias etc-update="doas etc-update"
+alias virt="doas rc-service libvirtd start"
+alias predl="export SPOTIPY_CLIENT_ID='3f2923328f784e85853bffe5fbef73a8'"
+alias predll="export SPOTIPY_CLIENT_SECRET='c3f67b10e97c4d6f941555594bc813ae'"
+alias music="cd /mnt/games/music"
+alias mtr="doas mount /dev/sdb1 /mnt/games && doas mount /dev/sda4 /mnt/storage"
+alias cdsteam="cd ~/.local/share/Steam/skins/"
+alias sus="loginctl suspend"
+alias suspend="loginctl suspend"
+alias emerge="doas emerge"
+alias lightdm="doas rc-service display-manager restart"
+alias pcsx2="cd /mnt/games/pcsx2/"
+alias dispatch-conf="doas dispatch-conf"
+alias nord="doas rc-service nordvpn restart"
+alias vpn="nordvpn c finland"
+alias movies="cd /mnt/games/movies"
+alias vl="VLC_PLUGIN_PATH=/tmp/vlc/lib vlc --no-plugins-cache"
+alias tw="doas rc-service teamviewerd stop"
+alias rc-update="doas rc-update"
+alias rc-service="doas rc-service"
+alias useflags="doas nano /etc/portage/package.use/zz-autounmask"
+alias mask="doas nano /etc/portage/package.mask/zz*"
+alias glsa="doas glsa-check -f all"
+alias vp="doas rc-service nordvpn restart && sleep 1 && nordvpn c finland"
+alias desktop="cd ~/Desktop"
+alias Desktop="cd ~/Desktop"
+alias ei="emerge --info"
