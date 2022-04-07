@@ -1,0 +1,213 @@
+dev-qt/qtgui -libinput
+sys-fs/eudev introspection abi_x86_32
+x11-base/xorg-server udev elogind
+media-libs/mesa vulkan vulkan-loader gles2
+net-print/cups -dbus -pam
+x11-misc/lightdm
+dev-python/PyQt5 gui widgets
+net-libs/nghttp2 abi_x86_32
+dev-libs/openssl abi_x86_32
+net-misc/curl abi_x86_32
+x11-libs/libXdamage abi_x86_32
+media-libs/tiff abi_x86_32
+x11-libs/libpciaccess abi_x86_32
+x11-libs/libXinerama abi_x86_32
+x11-libs/libXScrnSaver abi_x86_32
+x11-libs/libdrm abi_x86_32
+net-libs/libndp abi_x86_32
+sys-devel/llvm abi_x86_32
+gnome-base/librsvg abi_x86_32
+net-misc/networkmanager abi_x86_32
+net-libs/libsoup abi_x86_32
+net-print/cups abi_x86_32
+x11-libs/gtk+ abi_x86_32
+
+
+net-libs/libsoup introspection
+x11-misc/picom opengl
+app-crypt/gcr introspection vala gtk
+sys-libs/libcap pam
+net-libs/libnma -introspection -vala -gtk-doc
+x11-drivers/nvidia-drivers abi_x86_32
+games-util/steam-launcher abi_x86_32 -udev
+x11-libs/libfm -udisks
+media-sound/audacity ffmpeg
+kde-plasma/kwin plasma
+kde-plasma/kde-cli-tools kdesu X
+dev-qt/qtwebsockets qml
+media-gfx/gimp doc aalib aqua heif jpeg2k mng openexr postscript udev unwind vector-icons webp wmf xpm
+kde-frameworks/kio debug designer doc kerberos test
+net-vpn/nordvpn ipsymlink
+sys-kernel/gentoo-kernel-bin initramfs
+dev-python/python-twitch-client python_targets_python3_8
+www-client/ungoogled-chromium widevine
+dev-libs/libdazzle gtk introspection vala
+media-sound/volumeicon libnotify
+sys-apps/accountsservice elogind
+gnome-extra/nm-applet appindicator modemmanager
+media-video/pipewire bluetooth pipewire-alsa
+media-sound/pulseaudio bluetooth elogind alsa-plugins
+media-plugins/alsa-plugins pulseaudio
+media-libs/opencv contrib
+app-text/poppler -qt5
+sys-apps/util-linux pam
+x11-terms/rxvt-unicode xft perl -24-bit-color -256-color blink -gdk-pixbuf -iso14755 -startup-notification -unicode3 -fading-colors
+dev-qt/linguist-tools qml
+sys-apps/dbus elogind
+sys-process/procps elogind
+sys-auth/pambase elogind
+media-video/mpv cli libmpv
+media-video/vlc gcrypt
+sys-auth/polkit introspection pam
+# required by net-wireless/blueman-2.2.3-r2::gentoo
+# required by @selected
+# required by @world (argument)
+>=x11-libs/gtk+-3.24.33-r1 introspection
+# required by media-video/obs-studio-27.2.4::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-video/ffmpeg-4.4.1-r5 x264
+# required by net-libs/libnma-1.8.36::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-misc/networkmanager-1.36.4 introspection
+# required by net-libs/libnma-1.8.36::gentoo[vala]
+# required by @selected
+# required by @world (argument)
+>=net-misc/networkmanager-1.36.4 vala
+# required by dev-libs/libappindicator-12.10.1_p20200706::gentoo
+# required by gnome-extra/nm-applet-1.26.0::gentoo[appindicator]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libdbusmenu-16.04.0-r1 gtk3
+
+#STEAM
+app-arch/bzip2 abi_x86_32
+app-arch/zstd abi_x86_32
+dev-db/sqlite abi_x86_32
+dev-libs/atk abi_x86_32
+dev-libs/expat abi_x86_32
+dev-libs/fribidi abi_x86_32
+dev-libs/glib abi_x86_32
+dev-libs/gmp abi_x86_32
+dev-libs/icu abi_x86_32
+dev-libs/libcroco abi_x86_32
+dev-libs/libffi abi_x86_32
+dev-libs/libpcre abi_x86_32
+dev-libs/libpthread-stubs abi_x86_32
+dev-libs/libtasn1 abi_x86_32
+dev-libs/libunistring abi_x86_32
+dev-libs/libxml2 abi_x86_32
+dev-libs/lzo abi_x86_32
+dev-libs/nettle abi_x86_32
+dev-libs/nspr abi_x86_32
+dev-libs/nss abi_x86_32
+dev-libs/openssl abi_x86_32
+dev-libs/wayland abi_x86_32
+dev-util/pkgconfig abi_x86_32
+dev-util/wayland-scanner abi_x86_32
+gnome-base/librsvg -abi_x86_32
+media-gfx/graphite2 abi_x86_32
+media-libs/fontconfig abi_x86_32
+media-libs/freetype abi_x86_32
+media-libs/harfbuzz abi_x86_32
+media-libs/libpng abi_x86_32
+media-libs/mesa abi_x86_32
+media-libs/openal abi_x86_32
+media-libs/tiff abi_x86_32
+net-dns/libidn2 abi_x86_32
+net-libs/gnutls abi_x86_32
+net-misc/curl abi_x86_32
+net-nds/openldap abi_x86_32
+net-print/cups abi_x86_32
+sys-apps/attr abi_x86_32
+sys-apps/dbus abi_x86_32
+sys-apps/util-linux abi_x86_32
+sys-devel/gettext abi_x86_32
+sys-devel/llvm abi_x86_32
+sys-fs/udev abi_x86_32
+sys-libs/binutils-libs abi_x86_32
+sys-libs/gpm abi_x86_32
+sys-libs/ncurses abi_x86_32
+sys-libs/readline abi_x86_32
+sys-libs/zlib abi_x86_32
+virtual/libffi abi_x86_32
+virtual/libiconv abi_x86_32
+virtual/libudev abi_x86_32
+>=virtual/opengl-7.0-r2 abi_x86_32
+virtual/pkgconfig abi_x86_32
+x11-libs/cairo abi_x86_32
+x11-libs/gdk-pixbuf abi_x86_32
+x11-libs/gtk+:2 abi_x86_32
+x11-libs/libX11 abi_x86_32
+x11-libs/libXScrnSaver abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-libs/libXcomposite abi_x86_32
+x11-libs/libXcursor abi_x86_32
+x11-libs/libXdamage abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+x11-libs/libXext abi_x86_32
+x11-libs/libXfixes abi_x86_32
+x11-libs/libXft abi_x86_32
+x11-libs/libXi abi_x86_32
+x11-libs/libXinerama abi_x86_32
+x11-libs/libXrandr abi_x86_32
+x11-libs/libXrender abi_x86_32
+x11-libs/libXxf86vm abi_x86_32
+x11-libs/libdrm abi_x86_32
+x11-libs/libpciaccess abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libxshmfence abi_x86_32
+x11-libs/pango abi_x86_32
+x11-libs/pixman abi_x86_32
+x11-proto/damageproto abi_x86_32
+x11-proto/dri2proto abi_x86_32
+x11-proto/dri3proto abi_x86_32
+x11-proto/fixesproto abi_x86_32
+x11-proto/glproto abi_x86_32
+x11-proto/inputproto abi_x86_32
+x11-proto/kbproto abi_x86_32
+x11-proto/presentproto abi_x86_32
+x11-proto/xcb-proto abi_x86_32
+x11-proto/xextproto abi_x86_32
+x11-proto/xf86bigfontproto abi_x86_32
+x11-proto/xf86driproto abi_x86_32
+x11-proto/xf86vidmodeproto abi_x86_32
+x11-proto/xproto abi_x86_32
+# required by x11-libs/gtk+-3.24.33-r1::gentoo
+# required by net-libs/webkit-gtk-2.36.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/libepoxy-1.5.10 abi_x86_32
+# required by x11-libs/gtk+-3.24.33-r1::gentoo[X]
+# required by net-libs/webkit-gtk-2.36.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=app-accessibility/at-spi2-atk-2.38.0 abi_x86_32
+# required by app-accessibility/at-spi2-atk-2.38.0::gentoo
+# required by x11-libs/gtk+-3.24.33-r1::gentoo[X]
+# required by net-libs/webkit-gtk-2.36.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=app-accessibility/at-spi2-core-2.44.0 abi_x86_32
+# required by app-accessibility/at-spi2-core-2.44.0::gentoo[X]
+# required by net-libs/webkit-gtk-2.36.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libXtst-1.2.3-r2 abi_x86_32
+# required by net-libs/libsoup-2.74.2::gentoo
+# required by net-libs/webkit-gtk-2.36.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/libpsl-0.21.1 abi_x86_32
+# required by net-libs/libsoup-2.74.2::gentoo
+# required by net-libs/webkit-gtk-2.36.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/glib-networking-2.72.0-r1 abi_x86_32
+# required by net-libs/glib-networking-2.72.0-r1::gentoo[libproxy]
+# required by net-libs/libsoup-2.74.2::gentoo
+# required by net-libs/webkit-gtk-2.36.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/libproxy-0.4.17 abi_x86_32
