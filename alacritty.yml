@@ -1,0 +1,27 @@
+window:
+  opacity: 0.8
+  padding:
+   x: 10
+   y: 10
+
+# Colors (Monokai Soda)
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#c4c5b5'
+
+  # Dim colors (Optional)
+  dim:
+    black:   '#1d2021'
+    red:     '#421e1e'
+    green:   '#232b0f'
+    yellow:  '#4d3b27'
+    blue:    '#2b3c44'
+    magenta: '#4e3d45'
+    cyan:    '#205161'
+    white:   '#f4e8ba'
+
+font:
+  normal:
+    family: Space Mono
