@@ -1,0 +1,19 @@
+sh ~/.config/res.sh &
+sh ~/.config/nosleep.sh &
+#sh ~/.config/pipewire.sh &
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/wireplumber &
+
+feh --bg-fill ~/Pictures/sun.jpg &
+#feh --bg-fill ~/Pictures/fluid-grey-abstract-4k-3840x2160_666799-mm-90.jpg &
+#sh ~/.config/gpufanspeed.sh &
+#sh ~/.config/xs.sh &
+
+xrdb ~/.Xresources &
+#unclutter --idle 3 &
+picom -f -b -D 5 --blur-method dual_kawase --backend glx  --experimental-backends --glx-no-stencil --glx-no-rebind-pixmap --blur-strength 10 &
+slstatus &
+dunst &
+#exec dwm
+exec dbus-launch --exit-with-session dwm

@@ -1,7 +1,7 @@
 >=app-emulation/wine-staging-7.5
 >=app-emulation/wine-staging-6.1
-
-#>=x11-drivers/nvidia-drivers-510.60.02
+#>=x11-drivers/nvidia-drivers-470.103.01
+>=x11-drivers/nvidia-drivers-510.60.02
 >=media-libs/mesa-21.3.6
->=sys-kernel/gentoo-sources-5.15.25
+#>=sys-kernel/gentoo-sources-5.15.32-r1
 >=x11-themes/adwaita-icon-theme-41.0
