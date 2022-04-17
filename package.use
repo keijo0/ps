@@ -1,3 +1,5 @@
+dev-qt/qtwebengine -widgets
+media-libs/libsndfile minimal
 sys-auth/elogind -pam -acl -cgroup-hybrid
 dev-lang/python build abi_x86_32
 app-emulation/virt-manager gtk
@@ -9,7 +11,7 @@ dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 app-admin/sudo -pam
 media-sound/pasystray libnotify
 dev-qt/qtgui -libinput
-sys-fs/eudev introspection abi_x86_32
+sys-fs/eudev -introspection abi_x86_32
 x11-base/xorg-server udev -elogind
 media-libs/mesa vulkan vulkan-loader gles2
 media-libs/vulkan-loader abi_x86_32
@@ -37,7 +39,7 @@ x11-misc/picom opengl
 app-crypt/gcr introspection vala gtk
 sys-libs/libcap pam
 net-libs/libnma -introspection -vala -gtk-doc
-x11-drivers/nvidia-drivers abi_x86_32 static-libs dist-kernel
+x11-drivers/nvidia-drivers abi_x86_32 static-libs
 games-util/steam-launcher abi_x86_32 -udev
 x11-libs/libfm -udisks gtk
 media-sound/audacity ffmpeg
@@ -68,7 +70,7 @@ media-video/mpv cli libmpv
 media-video/vlc gcrypt
 sys-auth/polkit -introspection -pam -duktape
 >=x11-libs/gtk+-3.24.33-r1 introspection
-media-video/ffmpeg x264 opengl
+media-video/ffmpeg x264 opengl vulkan
 >=net-misc/networkmanager-1.36.4 introspection
 >=net-misc/networkmanager-1.36.4 vala
 >=dev-libs/libdbusmenu-16.04.0-r1 gtk3
@@ -301,4 +303,55 @@ x11-proto/xproto abi_x86_32
 # required by app-emulation/dxvk-bin-1.10.1::guru
 # required by @selected
 # required by @world (argument)
-app-emulation/wine-staging vulkan -udisks -realtime
+app-emulation/wine-staging vulkan -udisks -realtime vkd3d
+# required by x11-libs/gtk+-3.24.33-r1::gentoo
+# required by x11-themes/adwaita-icon-theme-42.0::gentoo
+>=dev-libs/atk-2.38.0 introspection
+# required by gnome-base/librsvg-2.54.0::gentoo
+# required by x11-themes/adwaita-icon-theme-42.0::gentoo
+# required by x11-libs/gtk+-3.24.33-r1::gentoo
+# required by x11-drivers/nvidia-drivers-470.103.01::gentoo[tools]
+# required by nvidia-drivers (argument)
+>=x11-libs/gdk-pixbuf-2.42.8 introspection
+# required by x11-libs/gtk+-3.24.33-r1::gentoo
+# required by x11-themes/adwaita-icon-theme-42.0::gentoo
+>=x11-libs/pango-1.50.6 introspection
+# required by x11-libs/gtk+-3.24.33-r1::gentoo
+# required by x11-themes/adwaita-icon-theme-42.0::gentoo
+>=gnome-base/librsvg-2.54.0 abi_x86_32
+# required by x11-libs/pango-1.50.6::gentoo
+# required by x11-libs/gtk+-3.24.33-r1::gentoo
+# required by x11-themes/adwaita-icon-theme-42.0::gentoo
+>=media-libs/harfbuzz-4.2.0 introspection
+# required by www-client/ungoogled-chromium-bin-100.0.4896.88::pf4public
+# required by ungoogled-chromium-bin (argument)
+>=dev-libs/libxml2-2.9.13-r1 icu
+# required by www-client/ungoogled-chromium-bin-100.0.4896.88::pf4public
+# required by ungoogled-chromium-bin (argument)
+>=media-libs/harfbuzz-4.2.0 icu
+# required by www-client/ungoogled-chromium-bin-100.0.4896.88::pf4public
+# required by ungoogled-chromium-bin (argument)
+=media-libs/libvpx-1.10.0 postproc
+# required by www-client/ungoogled-chromium-bin-100.0.4896.88::pf4public
+# required by ungoogled-chromium-bin (argument)
+>=sys-libs/zlib-1.2.12-r2 minizip
+# required by net-print/cups-filters-1.28.14::gentoo[postscript]
+# required by net-print/cups-2.3.3_p2-r3::gentoo
+# required by www-client/ungoogled-chromium-bin-100.0.4896.88::pf4public
+# required by ungoogled-chromium-bin (argument)
+>=app-text/ghostscript-gpl-9.55.0-r1 cups
+# required by sys-boot/os-prober-1.79-r2::gentoo
+# required by os-prober (argument)
+>=sys-boot/grub-2.06-r1 mount
+# required by media-gfx/gimp-2.10.30::gentoo
+# required by gimp (argument)
+>=app-text/poppler-22.03.0 cairo
+# required by media-gfx/gimp-2.10.30::gentoo
+# required by gimp (argument)
+>=media-libs/gegl-0.4.36-r1 cairo
+# required by dev-python/PyQtWebEngine-5.15.5::gentoo
+# required by PyQtWebEngine (argument)
+>=dev-python/PyQt5-5.15.6 printsupport webchannel network
+# required by app-shells/fish-3.4.1::gentoo
+# required by fish (argument)
+>=dev-libs/libpcre2-10.39-r1 pcre32
