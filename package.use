@@ -1,4 +1,7 @@
+media-sound/spotifyd -dbus
+sys-apps/systemd-utils tmpfiles -udev
 dev-qt/qtwebengine -widgets
+x11-libs/libva-vdpau-driver opengl
 media-libs/libsndfile minimal
 sys-auth/elogind -pam -acl -cgroup-hybrid
 dev-lang/python build abi_x86_32
@@ -61,7 +64,7 @@ media-plugins/alsa-plugins pulseaudio
 media-libs/opencv contrib
 app-text/poppler -qt5
 sys-apps/util-linux pam
-x11-terms/rxvt-unicode xft perl -24-bit-color -256-color blink -gdk-pixbuf -iso14755 -startup-notification -unicode3 fading-colors
+x11-terms/rxvt-unicode xft perl -24-bit-color -256-color -blink -gdk-pixbuf -iso14755 -startup-notification -unicode3 fading-colors
 dev-qt/linguist-tools qml
 sys-apps/dbus -elogind
 sys-process/procps -elogind
@@ -355,3 +358,12 @@ app-emulation/wine-staging vulkan -udisks -realtime vkd3d
 # required by app-shells/fish-3.4.1::gentoo
 # required by fish (argument)
 >=dev-libs/libpcre2-10.39-r1 pcre32
+# required by x11-libs/libva-vdpau-driver-0.7.4-r5::gentoo
+# required by x11-libs/libva-vdpau-driver (argument)
+>=x11-libs/libva-2.14.0 opengl
+# required by net-wireless/blueman-2.2.3-r2::gentoo
+# required by blueman (argument)
+>=x11-libs/libnotify-0.7.9-r1 introspection
+# required by net-p2p/monero-0.17.3.0::guru
+# required by net-p2p/monero (argument)
+>=net-dns/unbound-1.15.0 threads

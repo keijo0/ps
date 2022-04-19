@@ -2,3 +2,5 @@
 #>=x11-drivers/nvidia-drivers-470.103.01
 >=sys-kernel/gentoo-sources-5.15.32-r1
 >=x11-drivers/nvidia-drivers-510.60.02
+sys-fs/udisks
+sys-auth/polkit
