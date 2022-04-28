@@ -1,3 +1,18 @@
+x11-libs/gtk+ wayland
+dev-libs/wayland-protocols
+media-libs/mesa wayland
+media-libs/clutter-gtk wayland egl
+media-libs/cogl gles2
+media-gfx/feh curl xinerama exif inotify
+x11-themes/adwaita-icon-theme branding
+net-vpn/openvpn -lz4 -pam
+sys-process/htop lm-sensors
+net-misc/modemmanager introspection vala mbim
+net-vpn/nordvpn ipsymlink
+www-client/qutebrowser widevine
+gnome-extra/cinnamon -eds -gstreamer -gtk-doc -networkmanager -nls 
+gnome-base/gnome-light -udev
+xfce-base/thunar -pcre -trash-panel-plugin
 media-sound/spotifyd -dbus
 sys-apps/systemd-utils tmpfiles -udev
 dev-qt/qtwebengine -widgets
@@ -51,7 +66,6 @@ kde-plasma/kde-cli-tools kdesu X
 dev-qt/qtwebsockets qml
 media-gfx/gimp doc aalib aqua heif jpeg2k mng openexr postscript udev unwind vector-icons webp wmf xpm
 kde-frameworks/kio debug designer doc kerberos test
-net-vpn/nordvpn ipsymlink
 sys-kernel/gentoo-kernel-bin initramfs
 dev-python/python-twitch-client python_targets_python3_8
 www-client/ungoogled-chromium widevine -screencast
@@ -59,12 +73,12 @@ dev-libs/libdazzle gtk introspection vala
 media-sound/volumeicon libnotify
 sys-apps/accountsservice -elogind
 gnome-extra/nm-applet appindicator modemmanager
-media-sound/pulseaudio bluetooth -elogind aptx -equalizer
+media-sound/pulseaudio -bluetooth -elogind aptx -equalizer
 media-plugins/alsa-plugins pulseaudio
 media-libs/opencv contrib
 app-text/poppler -qt5
 sys-apps/util-linux pam
-x11-terms/rxvt-unicode xft perl -24-bit-color -256-color -blink -gdk-pixbuf -iso14755 -startup-notification -unicode3 fading-colors
+x11-terms/rxvt-unicode xft perl -24-bit-color -256-color blink -gdk-pixbuf -iso14755 -startup-notification -unicode3 fading-colors
 dev-qt/linguist-tools qml
 sys-apps/dbus -elogind
 sys-process/procps -elogind
@@ -226,7 +240,7 @@ x11-proto/xproto abi_x86_32
 # required by gnome-base/gnome-shell-42.0::gentoo
 # required by gnome-base/gdm-42.0::gentoo
 >=gnome-base/gnome-desktop-42.0-r300:3 introspection
-# required by gnome-base/gnome-shell-42.0::gentoo[bluetooth]
+# required by gnome-base/gnome-shell-42.0::gentoo[-bluetooth]
 # required by gnome-base/gdm-42.0::gentoo
 >=net-wireless/gnome-bluetooth-42.0-r2 introspection
 # required by gnome-base/gnome-shell-42.0::gentoo[networkmanager]
@@ -367,3 +381,13 @@ app-emulation/wine-staging vulkan -udisks -realtime vkd3d
 # required by net-p2p/monero-0.17.3.0::guru
 # required by net-p2p/monero (argument)
 >=net-dns/unbound-1.15.0 threads
+# required by www-client/qutebrowser-2.5.0::gentoo
+# required by qutebrowser (argument)
+>=dev-qt/qtcore-5.15.3 icu
+# required by www-client/qutebrowser-2.5.0::gentoo[python_single_target_python3_9]
+# required by qutebrowser (argument)
+>=dev-python/PyQt5-5.15.6 opengl sql declarative multimedia
+# required by dev-python/PyQt5-5.15.6::gentoo[multimedia]
+# required by www-client/qutebrowser-2.5.0::gentoo[python_single_target_python3_9]
+# required by qutebrowser (argument)
+>=dev-qt/qtmultimedia-5.15.3 widgets

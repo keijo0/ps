@@ -2,25 +2,28 @@
 # required by @selected
 # required by @world (argument)
 # /etc/portage/package.mask:
-=media-libs/mesa-22.0.1
+#=media-libs/mesa-22.0.1
 # required by =x11-drivers/nvidia-drivers-470.62.26 (argument)
 # /var/db/repos/gentoo/profiles/package.mask:
 # Ionen Wolkens <ionen@gentoo.org> (2021-10-09)
 # Vulkan beta driver branch aimed at Vulkan developers for testing
 # new features. Beside vulkan, it is typically behind the main branch
 # and may be buggier or less secure. Only unmask if really wanted.
-=x11-drivers/nvidia-drivers-470.62.26
+#=x11-drivers/nvidia-drivers-470.62.26
 # required by =app-emulation/wine-staging-6.3 (argument)
 # /etc/portage/package.mask:
-=app-emulation/wine-staging-6.3
+#=app-emulation/wine-staging-6.3
 # required by gnome-base/gnome-light-40.0::gentoo
 # required by gnome-light (argument)
 # /etc/portage/package.mask:
 #>=x11-drivers/nvidia-drivers-470.103.01
-=x11-themes/adwaita-icon-theme-42.0
+#=x11-themes/adwaita-icon-theme-42.0
 # required by opentmpfiles (argument)
 # /var/db/repos/gentoo/profiles/base/package.mask:
 # Andreas K. Hüttel <dilfridge@gentoo.org> (2021-07-06)
 # No longer maintained upstream; please see the 2021-07-15-opentmpfiles-deprecation
 # news item.
-=sys-apps/opentmpfiles-0.2
+#=sys-apps/opentmpfiles-0.2
+# required by nordvpn (argument)
+# /etc/portage/package.mask:
+#=net-vpn/nordvpn-3.12.2
