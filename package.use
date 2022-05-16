@@ -1,4 +1,8 @@
-x11-libs/gtk+ wayland
+sys-apps/coreutils -acl -nls -xattr
+net-print/cups-filters -dbus -foomatic -postscript
+app-text/ghostscript-gpl -cups
+sys-apps/exa -git
+x11-libs/gtk+ wayland -introspection
 dev-libs/wayland-protocols
 media-libs/mesa wayland
 media-libs/clutter-gtk wayland egl
@@ -13,7 +17,7 @@ www-client/qutebrowser widevine
 gnome-extra/cinnamon -eds -gstreamer -gtk-doc -networkmanager -nls 
 gnome-base/gnome-light -udev
 xfce-base/thunar -pcre -trash-panel-plugin
-media-sound/spotifyd -dbus
+media-sound/spotifyd -dbus -libnotify
 sys-apps/systemd-utils tmpfiles -udev
 dev-qt/qtwebengine -widgets
 x11-libs/libva-vdpau-driver opengl
@@ -22,7 +26,6 @@ sys-auth/elogind -pam -acl -cgroup-hybrid
 dev-lang/python build abi_x86_32
 app-emulation/virt-manager gtk
 app-emulation/winetricks gtk
-media-sound/spotify libnotify
 app-portage/layman sync-plugin-portage git
 app-emulation/dxvk ABI_X86: 64 32
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
@@ -30,10 +33,10 @@ app-admin/sudo -pam
 media-sound/pasystray libnotify
 dev-qt/qtgui -libinput
 sys-fs/eudev -introspection abi_x86_32
-x11-base/xorg-server udev -elogind
+x11-base/xorg-server udev -elogind -suid 
 media-libs/mesa vulkan vulkan-loader gles2
 media-libs/vulkan-loader abi_x86_32
-net-print/cups -dbus -pam
+net-print/cups -dbus -pam -acl -ssl -threads
 x11-misc/lightdm
 dev-python/PyQt5 gui widgets
 net-libs/nghttp2 abi_x86_32
@@ -57,14 +60,13 @@ x11-misc/picom opengl
 app-crypt/gcr introspection vala gtk
 sys-libs/libcap pam
 net-libs/libnma -introspection -vala -gtk-doc
-x11-drivers/nvidia-drivers abi_x86_32 static-libs
+x11-drivers/nvidia-drivers abi_x86_32 -static-libs
 games-util/steam-launcher abi_x86_32 -udev
 x11-libs/libfm -udisks gtk
 media-sound/audacity ffmpeg
 kde-plasma/kwin plasma
 kde-plasma/kde-cli-tools kdesu X
 dev-qt/qtwebsockets qml
-media-gfx/gimp doc aalib aqua heif jpeg2k mng openexr postscript udev unwind vector-icons webp wmf xpm
 kde-frameworks/kio debug designer doc kerberos test
 sys-kernel/gentoo-kernel-bin initramfs
 dev-python/python-twitch-client python_targets_python3_8
@@ -130,7 +132,6 @@ net-dns/libidn2 abi_x86_32
 net-libs/gnutls abi_x86_32
 net-misc/curl abi_x86_32
 net-nds/openldap abi_x86_32
-net-print/cups abi_x86_32
 sys-apps/attr abi_x86_32
 sys-apps/dbus abi_x86_32
 sys-apps/util-linux abi_x86_32
@@ -352,11 +353,9 @@ app-emulation/wine-staging vulkan -udisks -realtime vkd3d
 # required by www-client/ungoogled-chromium-bin-100.0.4896.88::pf4public
 # required by ungoogled-chromium-bin (argument)
 >=sys-libs/zlib-1.2.12-r2 minizip
-# required by net-print/cups-filters-1.28.14::gentoo[postscript]
-# required by net-print/cups-2.3.3_p2-r3::gentoo
 # required by www-client/ungoogled-chromium-bin-100.0.4896.88::pf4public
 # required by ungoogled-chromium-bin (argument)
->=app-text/ghostscript-gpl-9.55.0-r1 cups
+>=app-text/ghostscript-gpl-9.55.0-r1 -cups
 # required by sys-boot/os-prober-1.79-r2::gentoo
 # required by os-prober (argument)
 >=sys-boot/grub-2.06-r1 mount

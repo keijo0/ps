@@ -1,6 +1,6 @@
 >=x11-terms/alacritty-0.10.1
 >=app-emulation/wine-staging-6.1
->=sys-kernel/gentoo-sources-5.15.32-r1
+#>=sys-kernel/gentoo-sources-5.15.32-r1
 >=x11-drivers/nvidia-drivers-510.60.02
 sys-fs/udisks
 sys-auth/polkit

@@ -1,27 +1,38 @@
+background_opacity: 0.55
+colors:
+  bright:
+    black: '#4a3637'
+    blue: '#535c5c'
+    cyan: '#6d715e'
+    green: '#7b8748'
+    magenta: '#775759'
+    red: '#d17b49'
+    white: '#c0b18b'
+    yellow: '#af865a'
+  indexed_colors:
+    - color: '#ff9e64'
+      index: 16
+    - color: '#db4b4b'
+      index: 17
+  normal:
+    black: '#4a3637'
+    blue: '#535c5c'
+    cyan: '#6d715e'
+    green: '#7b8748'
+    magenta: '#775759'
+    red: '#d17b49'
+    white: '#c0b18b'
+    yellow: '#af865a'
+  primary:
+    background: '#000000'
+    foreground: '#ebdbb2'
+font:
+  normal:
+    family: IBM plex mono
+    size: 10
+
 window:
-  opacity: 0.8
   padding:
    x: 10
    y: 10
 
-# Colors (Monokai Soda)
-colors:
-  # Default colors
-  primary:
-    background: '#000000'
-    foreground: '#c4c5b5'
-
-  # Dim colors (Optional)
-  dim:
-    black:   '#1d2021'
-    red:     '#421e1e'
-    green:   '#232b0f'
-    yellow:  '#4d3b27'
-    blue:    '#2b3c44'
-    magenta: '#4e3d45'
-    cyan:    '#205161'
-    white:   '#f4e8ba'
-
-font:
-  normal:
-    family: Space Mono
