@@ -1,9 +1,8 @@
 sh ~/.config/res.sh &
 sh ~/.config/nosleep.sh &
 sh ~/.config/bg.sh &
-sh ~/.config/novsync.sh &
-sh ~/.config/picom.sh &
-#sh ~/.config/gpufanspeed.sh &
+#sh ~/.config/novsync.sh &
+#sh ~/.config/picom.sh &
 xrdb ~/.Xresources &
 slstatus &
 dunst &
