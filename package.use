@@ -60,7 +60,7 @@ x11-libs/gtk+ abi_x86_32
 net-libs/libsoup introspection
 x11-misc/picom opengl
 app-crypt/gcr introspection vala gtk
-sys-libs/libcap pam
+sys-libs/libcap -pam
 net-libs/libnma -introspection -vala -gtk-doc
 x11-drivers/nvidia-drivers abi_x86_32 -static-libs
 games-util/steam-launcher abi_x86_32 -udev
@@ -81,7 +81,7 @@ media-sound/pulseaudio -bluetooth -elogind aptx -equalizer
 media-plugins/alsa-plugins pulseaudio
 media-libs/opencv contrib
 app-text/poppler -qt5
-sys-apps/util-linux pam
+sys-apps/util-linux -pam -su
 x11-terms/rxvt-unicode xft perl -24-bit-color -256-color blink -gdk-pixbuf -iso14755 -startup-notification -unicode3 fading-colors
 dev-qt/linguist-tools qml
 sys-apps/dbus -elogind
