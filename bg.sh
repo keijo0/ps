@@ -1,2 +1,4 @@
 #/bin/bash
-feh --no-fehbg --bg-fill ~/Pictures/cas.jpg #; picom -f -b 
+feh --bg-fill --no-fehbg ~/Pictures/cas.jpg
+#feh --bg-fill --no-fehbg ~/Pictures/wallhaven-odz3vl.jpg
+#feh --bg-fill --no-fehbg ~/Pictures/4vmhkax2j5481*
