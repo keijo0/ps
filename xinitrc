@@ -1,6 +1,10 @@
+sh ~/.config/res.sh &
+sh ~/.config/nosleep.sh &
+sh ~/.config/bg.sh &
+#sh ~/.config/novsync.sh &
+#sh ~/.config/picom.sh &
 xrdb ~/.Xresources &
 slstatus &
-unclutter -idle 3 &
-sh ~/.config/.res.sh &
-sh ~/.config/.pipewire.sh &
-exec dwm
+dunst &
+rm -r /home/make/.cache/spotify &
+exec dbus-launch --exit-with-session dwm
