@@ -3,8 +3,9 @@ sh ~/.config/nosleep.sh &
 sh ~/.config/bg.sh &
 #sh ~/.config/novsync.sh &
 #sh ~/.config/picom.sh &
+#unclutter -idle 2 & 
 xrdb ~/.Xresources &
-slstatus &
+#slstatus &
 dunst &
 rm -r /home/make/.cache/spotify &
 exec dbus-launch --exit-with-session dwm

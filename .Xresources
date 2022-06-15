@@ -36,8 +36,7 @@
 *.color15:      #c0b18b
 
 URxvt*cursorBlink: true
-URxvt*font:  xft:IBM Plex mono:size=12:antialias=true
-!URxvt*font:  xft:Space Mono:size=9:antialias=true
+URxvt*font:  xft:Cousine:size=12:antialias=true
 urxvt*background: rgba:0000/0000/0100/c900
 URxvt*depth: 32
 URxvt*scrollBar: false

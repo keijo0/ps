@@ -1,3 +1,4 @@
+export HISTFILE=~/.config/.zsh_history
 export MENUCONFIG_COLOR=blackbg
 export ZSH="$HOME/.config/.oh-my-zsh"
 
@@ -59,8 +60,8 @@ alias fm="flameshot gui"
 alias kp="killall picom"
 alias boot="doas mount /dev/nvme0n1p1 /boot"
 alias oldemerge="QUICKPKG_DEFAULT_OPTS="--include-config=y" emerge --ask --usepkgonly --quickpkg-direct=y --quickpkg-direct-root=/mnt/games/oldgentoo"
-alias reboot="killall sx && killalll dwm && doas reboot"
-alias poweroff="killall sx && killall dwm && doas poweroff"
+alias reboot="killall dwm && doas reboot"
+alias poweroff="killall dwm && doas poweroff"
 alias env="doas nano /etc/portage/package.env"
 alias l="ls -lgG"
 alias spotifyd="spotifyd --no-daemon & disown"
@@ -74,3 +75,5 @@ alias c="clear"
 alias pp="sh ~/.config/picom.sh"
 alias v="vim"
 alias n="nano"
+alias bb="doas make clean && doas make -j6 && doas make modules_install install"
+alias d="& disown"
