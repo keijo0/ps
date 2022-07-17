@@ -5,8 +5,6 @@ export MENUCONFIG_COLOR=blackbg
 export HISTFILE=~/.config/.zsh_history
 export ZSH="$HOME/.config/.oh-my-zsh"
 export VIMINIT="source ~/.config/vimrc"
-
-
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export LESSHISTFILE="/dev/null"
