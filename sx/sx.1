@@ -1,0 +1,110 @@
+.TH SX 1 "6 October 2020" 2.1.6
+.SH NAME
+sx \- start an xorg server
+.SH SYNOPSIS
+.B sx
+.RI [ "command " [ "arguments " ...]]
+.SH DESCRIPTION
+.B sx
+can be used to replace both
+.BR xinit (1)
+and
+.BR startx (1)
+for starting an
+.BR Xorg (1)
+server with an initial client.  By default
+.B sx
+will attempt to execute
+.I \%XDG_CONFIG_HOME/sx/sxrc
+unless a
+.I command
+is provided.  The
+.I command
+may have additional
+.IR arguments .
+.SH EXIT STATUS
+.B sx
+will attempt to inherit the exit status from the
+.BR Xorg (1)
+server.  Otherwise it is 0.
+.SH ENVIRONMENT
+.TP
+.B XAUTHORITY
+This environment references a file which stores authorisation entries
+used to secure
+.BR Xorg (1) .
+If this environment is not set then
+.B sx
+will create and use
+.B \%XDG_DATA_HOME/sx/xauthority
+instead while also exporting this value to
+.BR XAUTHORITY .
+.TP
+.B XDG_CONFIG_HOME
+The directory used when searching for
+.IR sxrc .
+.B \%HOME/.config
+will be used if not set.
+.TP
+.B XDG_DATA_HOME
+The directory used for storing the
+.I xauthority
+file.
+.B \%HOME/.local/share
+will be used if not set.
+.SH FILES
+.TP
+.B XDG_CONFIG_HOME/sx/sxrc
+The default command started by
+.BR sx .
+This file must be executable.
+.TP
+.B XDG_DATA_HOME/sx/xauthority
+The default authority used by
+.B sx
+if an alternative file is not provided with
+.BR XAUTHORITY .
+.SH NOTES
+Since the addition of
+.BR Xorg.wrap (1)
+it may be necessary to set
+.I allowed_users
+to
+.I anybody
+in
+.BR \%/etc/X11/Xwrapper.config .
+This is due to
+.B sx
+attempting to run commands from within a subshell and is thusly not considered
+a console user.
+.SH EXAMPLES
+Use an existing
+.I .Xinitrc
+by specifying an appropriate interpreter such as
+.BR sh (1)
+or making it executable with a correct interpreter line:
+.IP
+.EX
+.B sx sh ~/.Xinitrc
+.EE
+.PP
+Pass arguments to the standard
+.I sxrc
+by presenting it to
+.B sx
+as a
+.IR command :
+.IP
+.EX
+.B sx ~/.config/sx/sxrc arg1 arg2
+.EE
+.SH SOURCE
+.UR https://github.com/Earnestly/sx
+.UE
+.SH SEE ALSO
+.BR startx (1),
+.BR X (7),
+.BR xinit (1),
+.BR Xorg (1),
+.BR Xsecurity (7),
+.BR Xwrapper.config (5)
