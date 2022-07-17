@@ -1,3 +1,9 @@
+export LC_ALL="en_US"
+export LANG="en_US"
+export LANGUAGE="en_NZ"
+export C_CTYPE="en_US"
+export LC_NUMERIC=
+export LC_TIME=en"en_US"
 export EDITOR="vim"
 export TERMINAL="alacritty"
 export BROWSER="chromium"
@@ -9,3 +15,5 @@ export GTK2_RC_FILES="$HOME/.config/gtk-2.0/"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export LESSHISTFILE="/dev/null"
 export XAUTHORITY="$home/.config/Xauthority" #probably breaks something
+export PATH="/usr/lib/ccache/bin${PATH:+:}${PATH}"
+export CCACHE_DIR="/var/cache/ccache"
