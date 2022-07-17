@@ -1,0 +1,6 @@
+# required by sys-apps/opentmpfiles (argument)
+# /var/db/repos/gentoo/profiles/base/package.mask:
+# Andreas K. Hüttel <dilfridge@gentoo.org> (2021-07-06)
+# No longer maintained upstream; please see the 2021-07-15-opentmpfiles-deprecation
+# news item.
+=sys-apps/opentmpfiles-0.2
