@@ -11,31 +11,6 @@ static const char unknown_str[] = "n/a";
 
 /* *                                                     NULL on OpenBSD/FreeBSD
  * cpu_perc            cpu usage in percent            NULL
- * cpu_freq            cpu frequency in MHz            NULL
- * datetime            date and time                   format string (%F %T)
- * disk_free           free disk space in GB           mountpoint path (/)
- * disk_perc           disk usage in percent           mountpoint path (/)
- * disk_total          total disk space in GB          mountpoint path (/")
- * disk_used           used disk space in GB           mountpoint path (/)
- * entropy             available entropy               NULL
- * gid                 GID of current user             NULL
- * hostname            hostname                        NULL
- * ipv4                IPv4 address                    interface name (eth0)
- * ipv6                IPv6 address                    interface name (eth0)
- * kernel_release      `uname -r`                      NULL
- * keyboard_indicators caps/num lock indicators        format string (c?n?)
- *                                                     see keyboard_indicators.c
- * keymap              layout (variant) of current     NULL
- *                     keymap
- * load_avg            load average                    NULL
- * netspeed_rx         receive network speed           interface name (wlan0)
- * netspeed_tx         transfer network speed          interface name (wlan0)
- * num_files           number of files in a directory  path
- *                                                     (/home/foo/Inbox/cur)
- * ram_free            free memory in GB               NULL
- * ram_perc            memory usage in percent         NULL
- * ram_total           total memory size in GB         NULL
- * ram_used            used memory in GB               NULL
  * run_command         custom shell command            command (echo foo)
  * separator           string to echo                  NULL
  * swap_free           free swap in GB                 NULL
@@ -61,14 +36,5 @@ static const char unknown_str[] = "n/a";
 
 static const struct arg args[] = {
 	/* function format          argument */
-//    	{ netspeed_rx, ": %sB/s | ",  "eno1" },
-      	{ run_command, ":%4s | ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ cpu_perc, "[CPU %s%%] ", NULL	},
-	{ ram_perc, "[RAM %s%%] ", NULL	},
-//       	{ swap_used, "[SWAP %s%B] ", NULL  },
-	{ disk_used, "[: %sB] ", "/" },
-	{ uptime,   "[%s] ", NULL },
-	{ kernel_release, "[%s] ", NULL },
-	{ keymap,	"[ %s] ", NULL },
-	{ datetime, 	" %s",    "%d %a %R" },
+	{ datetime, 	"%s",    "%b %d %a %T" },
 };
