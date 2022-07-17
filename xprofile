@@ -1,4 +1,0 @@
-xrdb ~/.Xresources &
-slstatus &
-unclutter -idle 3 &
-sh ~/.config/res.sh &
