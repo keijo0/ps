@@ -1,0 +1,38 @@
+background_opacity: 0.55
+colors:
+  bright:
+    black: '#4a3637'
+    blue: '#535c5c'
+    cyan: '#6d715e'
+    green: '#7b8748'
+    magenta: '#775759'
+    red: '#d17b49'
+    white: '#c0b18b'
+    yellow: '#af865a'
+  indexed_colors:
+    - color: '#ff9e64'
+      index: 16
+    - color: '#db4b4b'
+      index: 17
+  normal:
+    black: '#4a3637'
+    blue: '#535c5c'
+    cyan: '#6d715e'
+    green: '#7b8748'
+    magenta: '#775759'
+    red: '#d17b49'
+    white: '#c0b18b'
+    yellow: '#af865a'
+  primary:
+    background: '#000000'
+    foreground: '#ebdbb2'
+font:
+ size: 10
+ normal:
+  family: Space Mono
+
+window:
+ padding:
+   x: 10
+   y: 10
+
