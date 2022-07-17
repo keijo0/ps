@@ -8,7 +8,10 @@ PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
 EMERGE_DEFAULT_OPTS="--verbose --ask --jobs 6 -l 6 --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display"
-FEATURES="parallel-install"
+FEATURES="-*"
+FEATURES="${FEATURES} assume-digests candy config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch parallel-install preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
+
+
 LC_MESSAGES=C
 GENTOO_MIRRORS=" ftp://mirror.netcologne.de/gentoo/ https://mirror.netcologne.de/gentoo/ http://mirror.netcologne.de/gentoo/"
 RUSTFLAGS="-C target-cpu=native"

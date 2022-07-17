@@ -29,9 +29,5 @@ location = /var/db/repos/guru
 sync-type = git
 sync-uri = https://github.com/gentoo-mirror/guru.git
 
-
 [overlay]
 location = /home/make/git/ps/overlay/
-
-[eleutheria]
-location = /home/make/git/eleutheria/

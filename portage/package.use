@@ -1,9 +1,41 @@
-*/* X alsa dbus zstd pulseaudio networkmanager 
+*/* X acl alsa amd64 bzip2 cli crypt dbus dri fortran gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
 */* -wifi -elogind -caps -screencast -qtwebengine -webengine -xfce -systemd -radeon -gnome -plasma -kde -amdgpu -gpm -cdinstall -css -a52 -cjk -clamav -ios -ipod -iee1394 -emacs -xemacs -ibm -cups -smartcard -3dfx -emboss -altivec -aqua -gconf -java -libnotify -ruby -spell -wayland -xwayland -geolocation -geoip -geoloc -gles2 -hal -kerberos -system-mitkrb5 -tracker -vala -gtk-doc -wext -ldap -gcrypt -php5-3 -php5-5 -mysql -espeak -teamd -upower -static-libs -webkit-gtk -dist-kernel -perl -selinux -google -test -llvm -consolekit -xinerama -accessibility -bindist -live -xscreensaver -quicktime -real -nls -gnome-keyring -ieee1394 -kdeprefix -automount -suid -xface -yahoo -legacy-animations -introspection -gphoto2 -udisks -rtkit -examples -browser-extension -mssql -telemetry -kaccounts -emoji -scim -gvfs -sddm -tracker -modemmanager -telepathy -ppp -gdm -policykit -polkit -bluetooth -pam -filecaps
-*/* abi_x86_32
+*/* video_cards: nvidia
+x11-drivers/nvidia-drivers abi_x86_32
+*/* L10N: -*
 
 
 
+
+sys-devel/llvm -binutils-plugin -libffi -ncurses
+x11-libs/libXxf86vm abi_x86_32
+x11-libs/libxshmfence abi_x86_32
+x11-libs/libdrm abi_x86_32
+sys-libs/zlib abi_x86_32
+dev-libs/expat abi_x86_32
+media-libs/mesa abi_x86_32
+media-libs/libglvnd abi_x86_32
+x11-libs/libXext abi_x86_32
+app-crypt/libmd abi_x86_32
+dev-libs/libbsd abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libX11 abi_x86_32
+x11-libs/libXrender abi_x86_32
+x11-libs/libXrandr abi_x86_32
+app-arch/zstd abi_x86_32
+x11-libs/libXfixes abi_x86_32
+sys-auth/pambase -nullok -passwdqc -sha512
+media-sound/spotify local-playback libnotify
+media-libs/libcanberra udev
+sys-apps/util-linux udev
+media-sound/pulseaudio bluetooth
+media-sound/pulseaudio-daemon bluetooth
+app-misc/lf static
+sys-apps/openrc unicode
+app-text/poppler png
+lxde-base/lxappearance -dbus
 media-fonts/liberation-fonts -X
 app-misc/lf -static
 sys-fs/btrfs-progs -convert udev -man
@@ -12,7 +44,6 @@ sys-boot/refind btrfs
 mail-mta/nullmailer -ssl
 net-misc/networkmanager -vala -resolvconf dhcpcd
 sys-apps/openrc -netifrc -ncurses -unicode
-media-sound/pulseaudio-daemon bluetooth
 net-misc/openssh -pam
 sys-apps/coreutils -acl -nls -xattr
 net-print/cups-filters -dbus -foomatic -postscript
@@ -20,7 +51,7 @@ app-text/ghostscript-gpl -cups
 sys-apps/exa -git
 x11-libs/gtk+ -wayland -introspection
 dev-libs/wayland-protocols
-media-libs/mesa -wayland
+media-libs/mesa -wayland llvm
 media-libs/clutter-gtk -wayland egl
 media-libs/cogl gles2
 media-gfx/feh curl xinerama exif inotify
@@ -39,45 +70,29 @@ dev-qt/qtwebengine -widgets -screencast
 x11-libs/libva-vdpau-driver opengl
 media-libs/libsndfile minimal
 sys-auth/elogind -pam -acl -cgroup-hybrid
-dev-lang/python build abi_x86_32
+dev-lang/python build 
 app-emulation/virt-manager gtk
 app-emulation/winetricks gtk
 app-portage/layman sync-plugin-portage git
-app-emulation/dxvk ABI_X86: 64 32
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 app-admin/sudo -pam
 media-sound/pasystray libnotify
 dev-qt/qtgui -libinput
-sys-fs/eudev -introspection abi_x86_32 kmod
+sys-fs/eudev introspection kmod
 x11-base/xorg-server udev -elogind -suid 
 media-libs/mesa vulkan vulkan-loader gles2
-media-libs/vulkan-loader abi_x86_32
+media-libs/vulkan-loader 
 net-print/cups -dbus -pam -acl -ssl -threads
 x11-misc/lightdm
 dev-python/PyQt5 gui widgets
-net-libs/nghttp2 abi_x86_32
-dev-libs/openssl abi_x86_32
-net-misc/curl abi_x86_32
-x11-libs/libXdamage abi_x86_32
-media-libs/tiff abi_x86_32
-x11-libs/libpciaccess abi_x86_32
-x11-libs/libXinerama abi_x86_32
-x11-libs/libXScrnSaver abi_x86_32
-x11-libs/libdrm abi_x86_32
-net-libs/libndp abi_x86_32
-sys-devel/llvm abi_x86_32
-gnome-base/librsvg abi_x86_32
-net-misc/networkmanager abi_x86_32 -modemmanager -bluetooth
-net-libs/libsoup abi_x86_32
-net-print/cups abi_x86_32
-x11-libs/gtk+ abi_x86_32
+net-misc/networkmanager -modemmanager -bluetooth
 net-libs/libsoup introspection
 x11-misc/picom opengl
 app-crypt/gcr introspection vala gtk
 sys-libs/libcap -pam
 net-libs/libnma -introspection -vala -gtk-doc
-x11-drivers/nvidia-drivers abi_x86_32 -static-libs
-games-util/steam-launcher abi_x86_32 -udev
+x11-drivers/nvidia-drivers -static-libs
+games-util/steam-launcher -udev
 x11-libs/libfm -udisks gtk
 media-sound/audacity ffmpeg
 kde-plasma/kwin plasma
@@ -90,8 +105,6 @@ www-client/ungoogled-chromium widevine -screencast
 dev-libs/libdazzle gtk introspection vala
 media-sound/volumeicon libnotify
 sys-apps/accountsservice -elogind
-gnome-extra/nm-applet appindicator modemmanager
-media-sound/pulseaudio bluetooth -elogind aptx -equalizer
 media-plugins/alsa-plugins pulseaudio
 media-libs/opencv contrib
 app-text/poppler -qt5
@@ -108,107 +121,6 @@ sys-auth/polkit -introspection -pam -duktape
 media-video/ffmpeg x264 opengl -vulkan
 >=net-misc/networkmanager-1.36.4 introspection
 >=dev-libs/libdbusmenu-16.04.0-r1 gtk3
-
-app-arch/bzip2 abi_x86_32
-app-arch/zstd abi_x86_32
-dev-db/sqlite abi_x86_32
-dev-libs/atk abi_x86_32
-dev-libs/expat abi_x86_32
-dev-libs/fribidi abi_x86_32
-dev-libs/glib abi_x86_32
-dev-libs/gmp abi_x86_32
-dev-libs/icu abi_x86_32
-dev-libs/libcroco abi_x86_32
-dev-libs/libffi abi_x86_32
-dev-libs/libpcre abi_x86_32
-dev-libs/libpthread-stubs abi_x86_32
-dev-libs/libtasn1 abi_x86_32
-dev-libs/libunistring abi_x86_32
-dev-libs/libxml2 abi_x86_32
-dev-libs/lzo abi_x86_32
-dev-libs/nettle abi_x86_32
-dev-libs/nspr abi_x86_32
-dev-libs/nss abi_x86_32
-dev-libs/openssl abi_x86_32
-dev-libs/wayland abi_x86_32
-dev-util/pkgconfig abi_x86_32
-dev-util/wayland-scanner abi_x86_32
-gnome-base/librsvg -abi_x86_32
-media-gfx/graphite2 abi_x86_32
-media-libs/fontconfig abi_x86_32
-media-libs/freetype abi_x86_32
-media-libs/harfbuzz abi_x86_32
-media-libs/libpng abi_x86_32
-media-libs/mesa abi_x86_32
-media-libs/openal abi_x86_32
-media-libs/tiff abi_x86_32
-net-dns/libidn2 abi_x86_32
-net-libs/gnutls abi_x86_32
-net-misc/curl abi_x86_32
-net-nds/openldap abi_x86_32
-sys-apps/attr abi_x86_32
-sys-apps/dbus abi_x86_32
-sys-apps/util-linux abi_x86_32
-sys-devel/gettext abi_x86_32
-sys-devel/llvm abi_x86_32
-sys-libs/binutils-libs abi_x86_32
-sys-libs/gpm abi_x86_32
-sys-libs/ncurses abi_x86_32
-sys-libs/readline abi_x86_32
-sys-libs/zlib abi_x86_32
-virtual/libffi abi_x86_32
-virtual/libiconv abi_x86_32
-virtual/libudev abi_x86_32
->=virtual/opengl-7.0-r2 abi_x86_32
-virtual/pkgconfig abi_x86_32
-x11-libs/cairo abi_x86_32
-x11-libs/gdk-pixbuf abi_x86_32
-x11-libs/gtk+:2 abi_x86_32
-x11-libs/libX11 abi_x86_32
-x11-libs/libXScrnSaver abi_x86_32
-x11-libs/libXau abi_x86_32
-x11-libs/libXcomposite abi_x86_32
-x11-libs/libXcursor abi_x86_32
-x11-libs/libXdamage abi_x86_32
-x11-libs/libXdmcp abi_x86_32
-x11-libs/libXext abi_x86_32
-x11-libs/libXfixes abi_x86_32
-x11-libs/libXft abi_x86_32
-x11-libs/libXi abi_x86_32
-x11-libs/libXinerama abi_x86_32
-x11-libs/libXrandr abi_x86_32
-x11-libs/libXrender abi_x86_32
-x11-libs/libXxf86vm abi_x86_32
-x11-libs/libdrm abi_x86_32
-x11-libs/libpciaccess abi_x86_32
-x11-libs/libxcb abi_x86_32
-x11-libs/libxshmfence abi_x86_32
-x11-libs/pango abi_x86_32
-x11-libs/pixman abi_x86_32
-x11-proto/damageproto abi_x86_32
-x11-proto/dri2proto abi_x86_32
-x11-proto/dri3proto abi_x86_32
-x11-proto/fixesproto abi_x86_32
-x11-proto/glproto abi_x86_32
-x11-proto/inputproto abi_x86_32
-x11-proto/kbproto abi_x86_32
-x11-proto/presentproto abi_x86_32
-# move x11-proto/xcb-proto x11-base/xcb-proto
-x11-base/xcb-proto abi_x86_32
-x11-proto/xextproto abi_x86_32
-x11-proto/xf86bigfontproto abi_x86_32
-x11-proto/xf86driproto abi_x86_32
-x11-proto/xf86vidmodeproto abi_x86_32
-x11-proto/xproto abi_x86_32
->=media-libs/libepoxy-1.5.10 abi_x86_32
->=app-accessibility/at-spi2-atk-2.38.0 abi_x86_32
->=app-accessibility/at-spi2-core-2.44.0 abi_x86_32
->=x11-libs/libXtst-1.2.3-r2 abi_x86_32
->=net-libs/libpsl-0.21.1 abi_x86_32
->=net-libs/glib-networking-2.72.0-r1 abi_x86_32
->=net-libs/libproxy-0.4.17 abi_x86_32
->=media-plugins/alsa-plugins-1.2.6 abi_x86_32
->=media-sound/pulseaudio-15.0-r3 abi_x86_32
 >=net-libs/nodejs-16.14.1 inspector
 >=net-dns/dnsmasq-2.86 script
 >=app-emulation/libvirt-glib-4.0.0 introspection
@@ -219,9 +131,6 @@ x11-proto/xproto abi_x86_32
 >=x11-libs/vte-0.68.0 introspection
 >=media-libs/gstreamer-1.20.1 introspection
 >=x11-wm/mutter-42.0-r1 introspection
->=gnome-base/gsettings-desktop-schemas-42.0 introspection
->=gnome-base/gnome-desktop-42.0-r300:3 introspection
->=net-wireless/gnome-bluetooth-42.0-r2 introspection
 >=net-libs/libnma-1.8.38 introspection
 >=gui-libs/gtk-4.6.2 introspection
 >=sys-apps/accountsservice-22.08.8 introspection
@@ -243,7 +152,7 @@ app-emulation/wine-staging vulkan -udisks -realtime vkd3d
 >=dev-libs/atk-2.38.0 introspection
 >=x11-libs/gdk-pixbuf-2.42.8 introspection
 >=x11-libs/pango-1.50.6 introspection
->=gnome-base/librsvg-2.54.0 abi_x86_32
+>=gnome-base/librsvg-2.54.0 
 >=media-libs/harfbuzz-4.2.0 introspection
 >=dev-libs/libxml2-2.9.13-r1 icu
 >=media-libs/harfbuzz-4.2.0 icu
@@ -266,7 +175,23 @@ app-emulation/wine-staging vulkan -udisks -realtime vkd3d
 >=sys-apps/coreutils-9.1-r1 xattr
 >=dev-qt/qtwebchannel-5.15.4 qml
 >=net-misc/curl-7.83.1 adns
-
-
-
-
+>=sys-devel/llvm-14.0.6 abi_x86_32
+>=x11-libs/libpciaccess-0.16-r1 abi_x86_32
+>=virtual/libelf-3-r1 abi_x86_32
+>=dev-libs/elfutils-0.187 abi_x86_32
+>=app-arch/bzip2-1.0.8-r1 abi_x86_32
+# required by virtual/libusb-1-r2::gentoo
+# required by www-client/ungoogled-chromium-103.0.5060.114_p2::pf4public[system-libusb]
+# required by ungoogled-chromium (argument)
+>=dev-libs/libusb-1.0.26 abi_x86_32
+# required by dev-libs/libusb-1.0.26::gentoo[udev]
+# required by virtual/libusb-1-r2::gentoo
+# required by www-client/ungoogled-chromium-103.0.5060.114_p2::pf4public[system-libusb]
+# required by ungoogled-chromium (argument)
+>=virtual/libudev-232-r7 abi_x86_32
+# required by virtual/libudev-232-r7::gentoo[-systemd]
+# required by dev-libs/libusb-1.0.26::gentoo[udev]
+# required by virtual/libusb-1-r2::gentoo
+# required by www-client/ungoogled-chromium-103.0.5060.114_p2::pf4public[system-libusb]
+# required by ungoogled-chromium (argument)
+>=sys-fs/eudev-3.2.11-r2 abi_x86_32
