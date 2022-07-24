@@ -7,8 +7,7 @@ x11-drivers/nvidia-drivers abi_x86_32
 */* QEMU_SOFTMMU_TARGETS: arm x86_64 sparc
 */* RUBY_TARGETS: ruby26 ruby27 ruby30 ruby31
 */* RUSTFLAGS: -C target-cpu=native
-
-
+*/* LC_MESSAGES: C
 
 
 app-text/wgetpaste -ssl

@@ -7,10 +7,6 @@ EMERGE_DEFAULT_OPTS="--verbose --ask --jobs 6 -l 6 --complete-graph=y --nospinne
 FEATURES="-*"
 FEATURES="${FEATURES} assume-digests config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch parallel-install preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
 
-LC_MESSAGES=C
-#RUSTFLAGS="-C target-cpu=native"
-#RUBY_TARGETS="ruby26 ruby27 ruby30 ruby31"
+#LC_MESSAGES=C
 GENTOO_MIRRORS=" ftp://mirror.netcologne.de/gentoo/ https://mirror.netcologne.de/gentoo/ http://mirror.netcologne.de/gentoo/"
-#QEMU_SOFTMMU_TARGETS="arm x86_64 sparc"
-#QEMU_USER_TARGETS="x86_64"
 
