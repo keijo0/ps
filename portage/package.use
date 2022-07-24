@@ -1,12 +1,26 @@
 */* X acl alsa amd64 bzip2 cli crypt dbus dri fortran gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
 */* -wifi -elogind -caps -screencast -qtwebengine -webengine -xfce -systemd -radeon -gnome -plasma -kde -amdgpu -gpm -cdinstall -css -a52 -cjk -clamav -ios -ipod -iee1394 -emacs -xemacs -ibm -cups -smartcard -3dfx -emboss -altivec -aqua -gconf -java -libnotify -ruby -spell -wayland -xwayland -geolocation -geoip -geoloc -gles2 -hal -kerberos -system-mitkrb5 -tracker -vala -gtk-doc -wext -ldap -gcrypt -php5-3 -php5-5 -mysql -espeak -teamd -upower -static-libs -webkit-gtk -dist-kernel -perl -selinux -google -test -llvm -consolekit -xinerama -accessibility -bindist -live -xscreensaver -quicktime -real -nls -gnome-keyring -ieee1394 -kdeprefix -automount -suid -xface -yahoo -legacy-animations -introspection -gphoto2 -udisks -rtkit -examples -browser-extension -mssql -telemetry -kaccounts -emoji -scim -gvfs -sddm -tracker -modemmanager -telepathy -ppp -gdm -policykit -polkit -bluetooth -pam -filecaps
-*/* video_cards: nvidia
+*/* video_cards: -* nvidia
 x11-drivers/nvidia-drivers abi_x86_32
-*/* L10N: -*
+*/* L10N: -* en-US 
+*/* QEMU_USER_TARGETS: x86_64
+*/* QEMU_SOFTMMU_TARGETS: arm x86_64 sparc
+*/* RUBY_TARGETS: ruby26 ruby27 ruby30 ruby31
+*/* RUSTFLAGS: -C target-cpu=native
 
 
 
 
+app-text/wgetpaste -ssl
+app-admin/doas persist
+www-client/ungoogled-chromium -* X clang pulseaudio
+virtual/opengl abi_x86_32
+net-firewall/iptables netlink nftables conntrack
+#app-emulation/libvirt -*
+dev-scheme/guile -* regex threads deprecated
+app-emulation/fuse -alsa backend-X -backend-fbcon -backend-gtk3 -backend-sdl -backend-svga
+www-client/chromium -*
+www-client/chromium pulseaudio X
 sys-devel/llvm -binutils-plugin -libffi -ncurses
 x11-libs/libXxf86vm abi_x86_32
 x11-libs/libxshmfence abi_x86_32
@@ -27,7 +41,7 @@ x11-libs/libXrandr abi_x86_32
 app-arch/zstd abi_x86_32
 x11-libs/libXfixes abi_x86_32
 sys-auth/pambase -nullok -passwdqc -sha512
-media-sound/spotify local-playback libnotify
+media-sound/spotify
 media-libs/libcanberra udev
 sys-apps/util-linux udev
 media-sound/pulseaudio bluetooth
@@ -82,7 +96,7 @@ sys-fs/eudev introspection kmod
 x11-base/xorg-server udev -elogind -suid 
 media-libs/mesa vulkan vulkan-loader gles2
 media-libs/vulkan-loader 
-net-print/cups -dbus -pam -acl -ssl -threads
+net-print/cups -X -dbus -pam -acl -ssl -threads
 x11-misc/lightdm
 dev-python/PyQt5 gui widgets
 net-misc/networkmanager -modemmanager -bluetooth
@@ -180,18 +194,83 @@ app-emulation/wine-staging vulkan -udisks -realtime vkd3d
 >=virtual/libelf-3-r1 abi_x86_32
 >=dev-libs/elfutils-0.187 abi_x86_32
 >=app-arch/bzip2-1.0.8-r1 abi_x86_32
-# required by virtual/libusb-1-r2::gentoo
-# required by www-client/ungoogled-chromium-103.0.5060.114_p2::pf4public[system-libusb]
-# required by ungoogled-chromium (argument)
 >=dev-libs/libusb-1.0.26 abi_x86_32
-# required by dev-libs/libusb-1.0.26::gentoo[udev]
-# required by virtual/libusb-1-r2::gentoo
-# required by www-client/ungoogled-chromium-103.0.5060.114_p2::pf4public[system-libusb]
-# required by ungoogled-chromium (argument)
 >=virtual/libudev-232-r7 abi_x86_32
-# required by virtual/libudev-232-r7::gentoo[-systemd]
-# required by dev-libs/libusb-1.0.26::gentoo[udev]
-# required by virtual/libusb-1-r2::gentoo
-# required by www-client/ungoogled-chromium-103.0.5060.114_p2::pf4public[system-libusb]
-# required by ungoogled-chromium (argument)
 >=sys-fs/eudev-3.2.11-r2 abi_x86_32
+>=app-arch/xz-utils-5.2.5-r2 abi_x86_32
+>=dev-libs/libaio-0.3.113 abi_x86_32
+>=dev-libs/libxml2-2.9.14-r1 abi_x86_32
+>=media-libs/alsa-lib-1.2.7.2 abi_x86_32
+>=media-libs/libpng-1.6.37-r2 abi_x86_32
+>=media-libs/libsdl2-2.0.20-r1 haptic abi_x86_32
+>=media-libs/libsoundtouch-2.3.1 abi_x86_32
+>=media-libs/portaudio-19.07.00-r2 abi_x86_32
+>=net-libs/libpcap-1.10.1-r1 abi_x86_32
+>=x11-libs/gtk+-3.24.34 abi_x86_32
+>=x11-libs/libICE-1.0.10-r1 abi_x86_32
+>=x11-libs/wxGTK-3.0.5.1 abi_x86_32
+>=dev-libs/glib-2.72.3 abi_x86_32
+>=x11-libs/cairo-1.16.0-r5 abi_x86_32
+>=x11-libs/gdk-pixbuf-2.42.8 abi_x86_32
+>=x11-libs/libSM-1.2.3-r1 abi_x86_32
+>=x11-libs/pango-1.50.8 abi_x86_32
+>=dev-libs/fribidi-1.0.12 abi_x86_32
+>=media-libs/harfbuzz-4.4.1 abi_x86_32
+>=media-libs/fontconfig-2.14.0-r1 abi_x86_32
+>=media-libs/freetype-2.12.1 abi_x86_32
+>=x11-libs/libXft-2.3.4 abi_x86_32
+>=sys-apps/util-linux-2.38 abi_x86_32
+>=media-gfx/graphite2-1.3.14_p20210810-r1 abi_x86_32
+>=dev-libs/icu-71.1-r1 abi_x86_32
+>=dev-libs/lzo-2.10 abi_x86_32
+>=sys-libs/binutils-libs-2.38-r2 abi_x86_32
+>=x11-libs/pixman-0.40.0 abi_x86_32
+>=dev-libs/libpcre-8.45-r1 abi_x86_32
+>=dev-libs/libffi-3.4.2-r1 abi_x86_32
+>=dev-libs/atk-2.38.0 abi_x86_32
+>=media-libs/libepoxy-1.5.10-r1 abi_x86_32
+>=app-accessibility/at-spi2-atk-2.38.0 abi_x86_32
+>=x11-libs/libXcomposite-0.4.5 abi_x86_32
+>=x11-libs/libXcursor-1.2.1 abi_x86_32
+>=x11-libs/libXdamage-1.1.5 abi_x86_32
+>=x11-libs/libXi-1.8 abi_x86_32
+>=gnome-base/librsvg-2.54.4 abi_x86_32
+>=sys-apps/dbus-1.14.0-r4 abi_x86_32
+>=app-accessibility/at-spi2-core-2.44.1 abi_x86_32
+>=x11-libs/libXtst-1.2.3-r2 abi_x86_32
+>=media-sound/pulseaudio-16.1 abi_x86_32
+>=media-libs/libpulse-16.1 abi_x86_32
+>=media-libs/libsndfile-1.1.0-r1 abi_x86_32
+>=net-libs/libasyncns-0.8-r4 abi_x86_32
+>=virtual/rust-1.62.0 abi_x86_32
+>=dev-lang/rust-1.62.0 abi_x86_32
+>=virtual/libintl-0-r2 abi_x86_32
+>=virtual/libiconv-0-r2 abi_x86_32
+>=virtual/jpeg-100-r1 abi_x86_32
+>=media-libs/libjpeg-turbo-2.1.3 abi_x86_32
+>=net-libs/gnutls-3.7.6 abi_x86_32
+>=sys-apps/attr-2.5.1-r2 abi_x86_32
+>=sys-libs/libunwind-1.6.2 abi_x86_32
+>=media-libs/vulkan-loader-1.3.216 abi_x86_32
+>=app-emulation/wine-gecko-2.47.2 abi_x86_32
+>=dev-libs/libtasn1-4.18.0 abi_x86_32
+>=dev-libs/libunistring-1.0 abi_x86_32
+>=dev-libs/nettle-3.8 abi_x86_32
+>=dev-libs/gmp-6.2.1-r2 abi_x86_32
+>=net-dns/libidn2-2.3.3 abi_x86_32
+# required by app-office/libreoffice-bin-7.3.3.2-r3::gentoo
+# required by libreoffice-bin (argument)
+>=dev-libs/boost-1.79.0 nls
+# required by app-office/libreoffice-bin-7.3.3.2-r3::gentoo
+# required by libreoffice-bin (argument)
+>=dev-libs/xmlsec-1.2.34 nss
+# required by games-util/lutris-0.5.10.1::gentoo
+# required by lutris (argument)
+>=gnome-base/gnome-desktop-42.3-r300:3 introspection
+# required by games-util/lutris-0.5.10.1::gentoo
+# required by lutris (argument)
+>=x11-libs/gdk-pixbuf-2.42.8 jpeg
+# required by gnome-base/gnome-desktop-42.3-r300::gentoo
+# required by games-util/lutris-0.5.10.1::gentoo
+# required by lutris (argument)
+>=gnome-base/gsettings-desktop-schemas-42.0 introspection

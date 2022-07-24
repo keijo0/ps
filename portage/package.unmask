@@ -4,3 +4,9 @@
 # No longer maintained upstream; please see the 2021-07-15-opentmpfiles-deprecation
 # news item.
 =sys-apps/opentmpfiles-0.2
+# required by wine-staging (argument)
+# /etc/portage/package.mask:
+=app-emulation/wine-staging-7.13
+# required by app-misc/spicetify-cli (argument)
+# /etc/portage/package.mask:
+=app-misc/spicetify-cli-2.8.3
