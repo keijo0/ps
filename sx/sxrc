@@ -1,0 +1,8 @@
+slstatus &
+dunst &
+xrdb ~/.Xresources &
+feh --bg-fill --no-fehbg ~/Pictures/Pics/38586.jpg &
+dbus-launch --exit-with-session d
+
+
+
