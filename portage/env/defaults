@@ -2,11 +2,11 @@ CHOST="x86_64-pc-linux-gnu"
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
-MAKEOPTS="-j6 -l6"
-EMERGE_DEFAULT_OPTS="--verbose --ask --jobs 6 -l 6 --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display"
+MAKEOPTS="-j6"
+EMERGE_DEFAULT_OPTS="-av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display"
 FEATURES="-*"
-FEATURES="${FEATURES} assume-digests config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch parallel-install preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
+FEATURES="${FEATURES} assume-digests config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
 
-#LC_MESSAGES=C
+LC_MESSAGES=C
 GENTOO_MIRRORS=" ftp://mirror.netcologne.de/gentoo/ https://mirror.netcologne.de/gentoo/ http://mirror.netcologne.de/gentoo/"
 
