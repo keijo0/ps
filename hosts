@@ -6,11 +6,11 @@
 
 
 
-# IPv4 and IPv6 localhost aliases
-#127.0.0.1	genchu localhost
-#::1             genchu localhost
-127.0.0.1       genchu.gentoo.org genchu localhost.localdomain localhost
-::1             genchu.gentoo.org genchu localhost.localdomain localhost
+# IPv4 and IPv6 genchu aliases
+#127.0.0.1	genchu genchu
+#::1             genchu genchu
+127.0.0.1       genchu.gentoo.org genchu genchu.localdomain genchu
+::1             genchu.gentoo.org genchu genchu.localdomain genchu
 
 0.0.0.0 api.opencandy.com
 0.0.0.0 api.recommendedsw.com
@@ -41409,9 +41409,6 @@
 0.0.0.0 actual-porn.org
 0.0.0.0 ad.blackystars.com
 0.0.0.0 ad.pornfuzepremium.videobox.com
-0.0.0.0 adamandeve.com
-0.0.0.0 adameve.com
-0.0.0.0 adcontrol.lonestarnaughtygirls.com
 0.0.0.0 address.9hz.com
 0.0.0.0 adenofdevils.tumblr.com
 0.0.0.0 adimages.myjizztube.com
@@ -42505,10 +42502,6 @@
 0.0.0.0 commetvidsnow.com
 0.0.0.0 confessionangel.canalblog.com
 0.0.0.0 conquerorofvirgins.com
-0.0.0.0 content.adameve.com
-0.0.0.0 content1.adameve.com
-0.0.0.0 content2.adameve.com
-0.0.0.0 content3.adameve.com
 0.0.0.0 contents.sex-explorer.com
 0.0.0.0 coomgirls.com
 0.0.0.0 coopguy.tumblr.com
@@ -46641,7 +46634,6 @@
 0.0.0.0 www.abrutis.com
 0.0.0.0 www.absolute-live.com
 0.0.0.0 www.adamandeve.com
-0.0.0.0 www.adameve.com
 0.0.0.0 www.adressesx.com
 0.0.0.0 www.adriana-sage.org
 0.0.0.0 www.adsgangsta.com
