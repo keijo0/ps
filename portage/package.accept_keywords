@@ -1,2 +1,4 @@
 */* ~amd64
 media-libs/libsndfile **
+games-util/steam-client-meta **
+games-util/steam-meta **

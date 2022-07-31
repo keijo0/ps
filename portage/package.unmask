@@ -1,12 +1,12 @@
-# required by sys-apps/opentmpfiles (argument)
-# /var/db/repos/gentoo/profiles/base/package.mask:
-# Andreas K. Hüttel <dilfridge@gentoo.org> (2021-07-06)
-# No longer maintained upstream; please see the 2021-07-15-opentmpfiles-deprecation
-# news item.
 =sys-apps/opentmpfiles-0.2
-# required by wine-staging (argument)
-# /etc/portage/package.mask:
 =app-emulation/wine-staging-7.13
-# required by app-misc/spicetify-cli (argument)
-# /etc/portage/package.mask:
 =app-misc/spicetify-cli-2.8.3
+=games-util/steam-meta-0-r20220320
+=games-util/steam-client-meta-0-r20220212
+=www-client/ungoogled-chromium-103.0.5060.134_p1
+=app-misc/lf-27
+=games-util/steam-launcher-1.0.0.74-r1
+=media-sound/spotifyd-0.3.3
+=media-sound/spotify-tui-0.25.0
+=net-im/discord-canary-bin-0.0.135
+=sys-devel/automake-1.13.4-r2

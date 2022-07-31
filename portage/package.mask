@@ -8,9 +8,6 @@
 */*::gentoobr
 
 
-
-
-
 >=x11-terms/alacritty-0.10.1
 >=app-emulation/wine-staging-6.3
 >=x11-themes/adwaita-icon-theme-42.0
