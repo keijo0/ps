@@ -27,9 +27,5 @@ su1:S:wait:/sbin/sulogin
 # TERMINALS
 c1:12345:respawn:/sbin/agetty --noclear --autologin make 38400 tty1 linux
 
-# SERIAL CONSOLES
-#s0:12345:respawn:/sbin/agetty -L 115200 ttyS0 vt100
-#s1:12345:respawn:/sbin/agetty -L 115200 ttyS1 vt100
-
 # What to do at the "Three Finger Salute".
 ca:12345:ctrlaltdel:/sbin/shutdown -r now
