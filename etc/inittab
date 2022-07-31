@@ -18,7 +18,6 @@ l5:5:wait:/sbin/openrc default
 l6u:6:wait:/sbin/telinit u
 l6:6:wait:/sbin/openrc reboot
 l6r:6:wait:/sbin/reboot -dkn
-#z6:6:respawn:/sbin/sulogin
 
 # new-style single-user
 su0:S:wait:/sbin/openrc single
