@@ -14,7 +14,6 @@ dev-lang/spidermonkey
 >=x11-terms/alacritty-0.10.1
 >=app-emulation/wine-staging-6.3
 >=x11-themes/adwaita-icon-theme-42.0
->=app-emulation/wine-staging-6.3
 >=virtual/tmpfiles-0-r3
 kde-plasma/*
 kde-misc/*
