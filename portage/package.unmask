@@ -10,3 +10,9 @@
 =media-sound/spotify-tui-0.25.0
 =net-im/discord-canary-bin-0.0.135
 =sys-devel/automake-1.13.4-r2
+=x11-themes/adwaita-icon-theme-42.0_p2
+# required by games-util/steam-meta-0-r20220320::steam-overlay[-steamruntime]
+# required by @selected
+# required by @world (argument)
+# /etc/portage/package.mask:
+=games-util/esteam-0.20220716

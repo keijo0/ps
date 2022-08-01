@@ -1,28 +1,28 @@
 */* -*
-
 */* clang X acl alsa bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
 
 */* gif png openssl kmod asm jpeg2 jpeg threads
 
+#fucknvidia
 */* video_cards: -* nvidia
 x11-drivers/nvidia-drivers abi_x86_32 driver tools
 
+#lang
 */* L10N: -* 
+#qemu bs
 */* QEMU_USER_TARGETS: -* x86_64
 */* QEMU_SOFTMMU_TARGETS: -* x86_64
+
 */* RUBY_TARGETS: -* ruby26 ruby27 ruby30 ruby31
 */* RUSTFLAGS: -* -C target-cpu=native
 */* APACHE2_MODULES: -*
 */* XTABLES_ADDONS: -* 
-*/* LLVM_TARGETS: -* X86
-#*/* python_single_target_python3_10
 */* PYTHON_TARGETS: python3_10
 */* LUA_TARGETS: lua5-1
 */* PYTHON_SINGLE_TARGET: -* python3_10
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* lua_single_target: -* luajit
 */* input_devices: -* libinput
-
 
 www-client/ungoogled-chromium X clang official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
 
@@ -84,6 +84,7 @@ virtual/opengl abi_x86_32
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml X
 media-libs/libheif x265
 
+#wine stuff
 app-emulation/* shared
 
 net-misc/iputils arping
@@ -95,6 +96,8 @@ app-eselect/eselect-repository python_single_target_python3_10
 app-emulation/wine-staging X abi_x86_32 abi_x86_64 alsa fontconfig gecko mono opengl pulseaudio run-exes ssl (staging) threads truetype unwind vulkan xcomposite
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
 sys-devel/gcc sanitize ssp
+
+#profile shit
 dev-libs/libffi abi_x86_32 abi_x86_64
 dev-libs/libxml2 abi_x86_32 abi_x86_64
 sys-devel/clang abi_x86_64 static-analyzer
@@ -107,6 +110,7 @@ sys-libs/libunwind abi_x86_32 abi_x86_64
 sys-libs/llvm-libunwind abi_x86_32 abi_x86_64
 sys-libs/ncurses abi_x86_32 abi_x86_64 stack-realign cxx
 sys-libs/zlib abi_x86_32 abi_x86_64
+
 dev-lang/spidermonkey clang
 app-misc/mime-types nginx
 net-analyzer/rrdtool lua
@@ -117,9 +121,11 @@ net-misc/aria2 bittorrent
 virtual/opengl abi_x86_32
 net-firewall/iptables netlink nftables conntrack
 dev-scheme/guile regex threads deprecated
-app-emulation/fuse -alsa backend-X -backend-fbcon -backend-gtk3 -backend-sdl -backend-svga
+app-emulation/fuse -alsa backend-X
 www-client/chromium pulseaudio X
 sys-devel/llvm binutils-plugin
+
+#multilib stuff
 x11-libs/libXxf86vm abi_x86_32
 x11-libs/libxshmfence abi_x86_32
 x11-libs/libdrm abi_x86_32
@@ -144,31 +150,25 @@ media-sound/pulseaudio bluetooth
 app-misc/lf static
 sys-apps/openrc unicode
 app-text/poppler png
-sys-fs/btrfs-progs -convert udev -man
+sys-fs/btrfs-progs udev
 sys-boot/refind btrfs
 dev-libs/wayland-protocols
 media-libs/mesa llvm
-media-libs/clutter-gtk -wayland egl
+media-libs/clutter-gtk egl
 media-libs/cogl gles2
 media-gfx/feh curl xinerama exif inotify
-x11-themes/adwaita-icon-theme -branding
 sys-process/htop lm-sensors
-net-misc/modemmanager introspection vala mbim
-net-vpn/nordvpn ipsymlink
-www-client/qutebrowser widevine
 x11-libs/libva-vdpau-driver opengl
 media-libs/libsndfile minimal
 dev-lang/python build 
 app-emulation/virt-manager gtk
 app-emulation/winetricks gtk
-app-portage/layman sync-plugin-portage git
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 media-sound/pasystray libnotify
 sys-fs/eudev introspection kmod
-x11-base/xorg-server udev -elogind -suid 
+x11-base/xorg-server udev 
 media-libs/mesa vulkan vulkan-loader gles2
 media-libs/vulkan-loader 
-x11-misc/lightdm
 dev-python/PyQt5 gui widgets
 net-libs/libsoup introspection
 x11-misc/picom opengl
@@ -209,7 +209,6 @@ media-video/vlc gcrypt
 >=net-libs/webkit-gtk-2.36.0-r1 introspection
 >=virtual/libusb-1-r2 udev
 >=dev-libs/libusb-1.0.26 udev
->=dev-qt/qtwebengine-5.15.3_p20220406 widgets
 >=dev-libs/atk-2.38.0 introspection
 >=x11-libs/gdk-pixbuf-2.42.8 introspection
 >=x11-libs/pango-1.50.6 introspection
@@ -279,7 +278,6 @@ sys-devel/llvm abi_x86_32
 >=x11-libs/libXcursor-1.2.1 abi_x86_32
 >=x11-libs/libXdamage-1.1.5 abi_x86_32
 >=x11-libs/libXi-1.8 abi_x86_32
->=gnome-base/librsvg-2.54.4 abi_x86_32
 >=sys-apps/dbus-1.14.0-r4 abi_x86_32
 >=app-accessibility/at-spi2-core-2.44.1 abi_x86_32
 >=x11-libs/libXtst-1.2.3-r2 abi_x86_32

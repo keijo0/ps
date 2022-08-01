@@ -1,4 +1,5 @@
 */* ~amd64
+net-im/teams **
 media-libs/libsndfile **
 games-util/steam-client-meta **
 games-util/steam-meta **
