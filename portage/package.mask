@@ -1,12 +1,9 @@
 */*::nest
 */*::pf4public
-*/*::overlay
 */*::src_prepare-overlay
 */*::steam-overlay
 */*::guru
-*/*::eleutheria
 */*::gentoobr
-
 
 gnome-base/*
 gnome-extra/*
