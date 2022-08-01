@@ -1,10 +1,12 @@
 */* -*
-*/* clang X acl alsa amd64 bzip2 cli crypt dbus dri fortran gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
+
+*/* clang X acl alsa bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
 
 */* gif png openssl kmod asm jpeg2 jpeg threads
 
 */* video_cards: -* nvidia
 x11-drivers/nvidia-drivers abi_x86_32 driver tools
+
 */* L10N: -* 
 */* QEMU_USER_TARGETS: -* x86_64
 */* QEMU_SOFTMMU_TARGETS: -* x86_64
@@ -12,20 +14,22 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 */* RUSTFLAGS: -* -C target-cpu=native
 */* APACHE2_MODULES: -*
 */* XTABLES_ADDONS: -* 
-*/* python_single_target_python3_10
+*/* LLVM_TARGETS: -* X86
+#*/* python_single_target_python3_10
 */* PYTHON_TARGETS: python3_10
 */* LUA_TARGETS: lua5-1
 */* PYTHON_SINGLE_TARGET: -* python3_10
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* lua_single_target: -* luajit
 */* input_devices: -* libinput
-www-client/ungoogled-chromium X clang official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
 
+
+www-client/ungoogled-chromium X clang official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
 
 net-libs/nodejs icu inspector npm snapshot ssl system-icu system-ssl 
 net-analyzer/rrdtool graph lua
 dev-qt/qtgui udev
-net-misc/dhcpcd udev embvedded
+net-misc/dhcpcd udev embedded
 media-libs/openh264 plugin
 net-misc/netifrc dhcp
 media-libs/sdl2-image gif jpeg png webp abi_x86_32
@@ -36,9 +40,12 @@ media-libs/sdl2-ttf X abi_x86_32
 media-libs/libsdl2 libsamplerate opengl sound threads video X abi_x86_32
 >=dev-lang/python-3.10.5 xml
 
+media-plugins/alsa-plugins pulseaudio usb-stream mix
+sys-apps/kmod lzma
+sys-fs/e2fsprogs tools
 sys-libs/gdbm berkdb
-
-net-misc/networkmanager tools concheck introspection nss dhcpcd lto resolvconf
+*/net-tools arp hostname
+net-misc/networkmanager tools concheck introspection nss dhcpcd
 app-text/poppler cairo cxx jpeg jpeg2k lcms png utils
 games-util/* steamruntime joystick
 x11-libs/gtk+ -cups
@@ -90,7 +97,7 @@ sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
 sys-devel/gcc sanitize ssp
 dev-libs/libffi abi_x86_32 abi_x86_64
 dev-libs/libxml2 abi_x86_32 abi_x86_64
-sys-devel/clang abi_x86_32 abi_x86_64
+sys-devel/clang abi_x86_64 static-analyzer
 sys-devel/clang-runtime abi_x86_32 abi_x86_64
 sys-devel/llvm abi_x86_32 abi_x86_64
 sys-libs/compiler-rt abi_x86_32 abi_x86_64
@@ -144,7 +151,7 @@ media-libs/mesa llvm
 media-libs/clutter-gtk -wayland egl
 media-libs/cogl gles2
 media-gfx/feh curl xinerama exif inotify
-x11-themes/adwaita-icon-theme branding
+x11-themes/adwaita-icon-theme -branding
 sys-process/htop lm-sensors
 net-misc/modemmanager introspection vala mbim
 net-vpn/nordvpn ipsymlink
@@ -168,15 +175,9 @@ x11-misc/picom opengl
 app-crypt/gcr introspection vala gtk
 x11-libs/libfm gtk
 media-sound/audacity ffmpeg
-kde-plasma/kwin plasma
-kde-plasma/kde-cli-tools kdesu X
 dev-qt/qtwebsockets qml
-kde-frameworks/kio debug designer doc kerberos test
-sys-kernel/gentoo-kernel-bin initramfs
 dev-python/python-twitch-client python_targets_python3_8
 dev-libs/libdazzle gtk introspection vala
-media-sound/volumeicon libnotify
-media-plugins/alsa-plugins pulseaudio usb-stream mix
 media-libs/opencv contrib
 dev-qt/linguist-tools qml
 media-video/mpv cli libmpv
