@@ -12,7 +12,6 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 */* RUSTFLAGS: -* -C target-cpu=native
 */* APACHE2_MODULES: -*
 */* XTABLES_ADDONS: -* 
-*/* LLVM_TARGETS: -* X86
 */* python_single_target_python3_10
 */* PYTHON_TARGETS: python3_10
 */* LUA_TARGETS: lua5-1
