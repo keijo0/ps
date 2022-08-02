@@ -1,9 +1,12 @@
 */* -*
 
 */* clang
-*/* X acl alsa bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline split-usr ssl unicode xattr zlib zstd
+*/* pulseaudio alsa
+*/* X acl bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses 
+*/* networkmanager nptl openmp pcre readline split-usr ssl unicode xattr zlib
 
 */* openssl kmod threads
+*/* zstd
 
 */* video_cards: -* nvidia
 x11-drivers/nvidia-drivers abi_x86_32 driver tools
