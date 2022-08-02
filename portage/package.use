@@ -1,24 +1,24 @@
 */* -*
 
 */* clang
-*/* X acl alsa bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
+*/* X acl alsa bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline split-usr ssl unicode xattr zlib zstd
 
 */* openssl kmod threads
 
 */* video_cards: -* nvidia
 x11-drivers/nvidia-drivers abi_x86_32 driver tools
 
-*/* L10N: -* 
-*/* QEMU_USER_TARGETS: -* x86_64
-*/* QEMU_SOFTMMU_TARGETS: -* x86_64
+*/* l10n: -* 
+*/* qemu_user_targets: -* x86_64
+*/* qemu_softmmu_targets: -* x86_64
 
-*/* RUBY_TARGETS: -* ruby26 ruby27 ruby30 ruby31
-*/* RUSTFLAGS: -* -C target-cpu=native
-*/* APACHE2_MODULES: -*
-*/* XTABLES_ADDONS: -* 
-*/* PYTHON_TARGETS: python3_10
-*/* LUA_TARGETS: lua5-1
-*/* PYTHON_SINGLE_TARGET: -* python3_10
+*/* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
+*/* rustflags: -* -c target-cpu=native
+*/* apache2_modules: -*
+*/* xtables_addons: -* 
+*/* python_targets: python3_10
+*/* lua_targets: lua5-1
+*/* python_single_target: -* python3_10
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* lua_single_target: -* luajit
 */* input_devices: -* libinput
@@ -26,6 +26,12 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 www-client/ungoogled-chromium X Official clang proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
 
 sys-apps/makedev build
+
+sys-apps/file seccomp
+sys-apps/man-db seccomp
+net-libs/gnutls seccomp
+app-misc/pax-utils seccomp
+
 
 #asm
 #dev-libs/gmp asm
@@ -138,7 +144,6 @@ dev-lang/spidermonkey clang
 app-misc/mime-types nginx
 net-analyzer/rrdtool lua
 dev-lang/rust nightly
-app-portage/pfl -network-cron
 media-fonts/fontawesome oft
 net-misc/aria2 bittorrent
 virtual/opengl abi_x86_32
