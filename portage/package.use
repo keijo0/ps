@@ -1,12 +1,14 @@
+# asm libtirpc
 */* -*
 
-*/* clang
-*/* pulseaudio alsa
-*/* X acl bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses 
-*/* networkmanager nptl openmp pcre readline split-usr ssl unicode xattr zlib
+*/* clang lto graphite
 
+*/* alsa pulseaudio
+
+*/* X acl fortran dbus dri gdbm multilib openmp pcre readline split-us unicode xattr nptl ncurses
+*/* networkmanager ipv6 ssl
 */* openssl kmod threads
-*/* zstd
+*/* zstd -zlib -bzip2
 
 */* video_cards: -* nvidia
 x11-drivers/nvidia-drivers abi_x86_32 driver tools
@@ -14,7 +16,6 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 */* l10n: -* 
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* x86_64
-
 */* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
 */* rustflags: -* -c target-cpu=native
 */* apache2_modules: -*
@@ -29,19 +30,18 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 www-client/ungoogled-chromium X Official clang proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
 
 sys-apps/makedev build
-
+app-arch/libarchive iconv
+net-misc/rsync iconv
 sys-apps/file seccomp
 sys-apps/man-db seccomp
 net-libs/gnutls seccomp
 app-misc/pax-utils seccomp
-
 
 #asm
 #dev-libs/gmp asm
 #dev-libs/nettle asm
 #dev-libs/libgcrypt asm
 #media-libs/dav1d asm
-
 
 #image stuff
 dev-qt/qtgui X udev png jpeg gif
@@ -58,7 +58,6 @@ dev-python/pillow jpeg
 x11-libs/gdk-pixbuf jpeg abi_x86_32 introspection
 
 x11-misc/picom config-file
-
 net-libs/nodejs icu inspector npm snapshot ssl system-icu system-ssl 
 net-analyzer/rrdtool graph lua
 net-misc/dhcpcd udev embedded
@@ -127,7 +126,10 @@ media-fonts/fontawesome otf
 app-eselect/eselect-repository python_single_target_python3_10
 app-emulation/wine-staging X abi_x86_32 abi_x86_64 alsa fontconfig gecko mono opengl pulseaudio run-exes ssl (staging) threads truetype unwind vulkan xcomposite
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
-sys-devel/gcc sanitize ssp
+sys-devel/gcc vanilla sanitize ssp
+
+app-crypt/p11-kit asn1
+app-emulation/libspectrum zlib
 
 #profile shit
 dev-libs/libffi abi_x86_32 abi_x86_64
@@ -143,7 +145,7 @@ sys-libs/llvm-libunwind abi_x86_32 abi_x86_64
 sys-libs/ncurses abi_x86_32 abi_x86_64 stack-realign cxx
 sys-libs/zlib abi_x86_32 abi_x86_64
 
-dev-lang/spidermonkey clang
+dev-lang/spidermonkey clang cpu_flags_arm_neon
 app-misc/mime-types nginx
 net-analyzer/rrdtool lua
 dev-lang/rust nightly
@@ -162,7 +164,7 @@ x11-libs/libxshmfence abi_x86_32
 x11-libs/libdrm abi_x86_32
 sys-libs/zlib abi_x86_32
 dev-libs/expat abi_x86_32
-media-libs/mesa abi_x86_32
+media-libs/mesa abi_x86_32 llvm vulkan vulkan-loader gles2
 media-libs/libglvnd abi_x86_32
 x11-libs/libXext abi_x86_32
 app-crypt/libmd abi_x86_32
@@ -184,7 +186,6 @@ app-text/poppler png
 sys-fs/btrfs-progs udev
 sys-boot/refind btrfs
 dev-libs/wayland-protocols
-media-libs/mesa llvm
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
 media-gfx/feh curl xinerama exif inotify
@@ -198,7 +199,6 @@ dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 media-sound/pasystray libnotify
 sys-fs/eudev introspection kmod
 x11-base/xorg-server udev 
-media-libs/mesa vulkan vulkan-loader gles2
 media-libs/vulkan-loader 
 dev-python/PyQt5 gui widgets
 net-libs/libsoup introspection
@@ -368,3 +368,16 @@ dev-python/gpep517 python_targets_python3_9
 dev-python/flit_core python_targets_python3_9
 dev-python/tomli python_targets_python3_9
 dev-python/installer python_targets_python3_9
+# required by dev-util/android-sdk-update-manager-24.4.1-r1::gentoo
+# required by dev-util/android-sdk-update-manager (argument)
+>=dev-java/swt-3.7.2-r3:3.7 cairo
+# required by dev-util/android-sdk-update-manager-24.4.1-r1::gentoo
+# required by dev-util/android-sdk-update-manager (argument)
+>=sys-libs/ncurses-compat-6.2 abi_x86_32
+# required by sys-apps/baselayout-java-0.1.0-r1::gentoo
+# required by dev-java/openjdk-bin-8.332_p09::gentoo
+# required by virtual/jdk-1.8.0-r6::gentoo
+# required by dev-java/swt-3.7.2-r3::gentoo
+# required by dev-util/android-sdk-update-manager-24.4.1-r1::gentoo
+# required by dev-util/android-sdk-update-manager (argument)
+>=app-crypt/p11-kit-0.24.1 trust
