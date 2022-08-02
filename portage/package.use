@@ -1,15 +1,14 @@
 */* -*
-*/* clang X acl alsa bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
 
-*/* gif png openssl kmod asm jpeg2 jpeg threads
+*/* clang
+*/* X acl alsa bzip2 cli fortran dbus dri gdbm iconv ipv6 libglvnd libtirpc multilib ncurses networkmanager nptl openmp pcre pulseaudio readline seccomp split-usr ssl unicode xattr zlib zstd
 
-#fucknvidia
+*/* openssl kmod threads
+
 */* video_cards: -* nvidia
 x11-drivers/nvidia-drivers abi_x86_32 driver tools
 
-#lang
 */* L10N: -* 
-#qemu bs
 */* QEMU_USER_TARGETS: -* x86_64
 */* QEMU_SOFTMMU_TARGETS: -* x86_64
 
@@ -24,11 +23,35 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 */* lua_single_target: -* luajit
 */* input_devices: -* libinput
 
-www-client/ungoogled-chromium X clang official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
+www-client/ungoogled-chromium X Official clang proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
+
+sys-apps/makedev build
+
+#asm
+#dev-libs/gmp asm
+#dev-libs/nettle asm
+#dev-libs/libgcrypt asm
+#media-libs/dav1d asm
+
+
+#image stuff
+dev-qt/qtgui X udev png jpeg gif
+media-gfx/fontforge png jpeg gif
+media-libs/* png jpeg gif
+net-print/cups-filters jpeg png
+dev-qt/qtwidgets png
+media-gfx/exiv2 png
+sys-libs/slang png
+media-gfx/qrencode png
+media-video/ffmpegthumbnailer jpeg png
+app-emulation/fuse png
+dev-python/pillow jpeg
+x11-libs/gdk-pixbuf jpeg abi_x86_32 introspection
+
+x11-misc/picom config-file
 
 net-libs/nodejs icu inspector npm snapshot ssl system-icu system-ssl 
 net-analyzer/rrdtool graph lua
-dev-qt/qtgui udev
 net-misc/dhcpcd udev embedded
 media-libs/openh264 plugin
 net-misc/netifrc dhcp
@@ -60,7 +83,7 @@ app-portage/portage-utils qmanifest qtegrity
 media-sound/alsa-utils libsamplerate
 media-sound/pulseaudio-daemon X alsa alsa-plugin asyncns bluetooth dbus gdbm glib orc ssl udev webrtc-aec
 media-video/ffmpeg X alsa bzip2 dav1d encode gnutls gpl iconv network opengl postproc pulseaudio threads x264 zlib
-media-video/mpv alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
+media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
 media-libs/libcanberra alsa gtk3 pulseaudio sound udev
 media-sound/pulseaudio glib bluetooth
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
@@ -70,7 +93,7 @@ x11-libs/cairo X glib svg
 x11-libs/libxcb xkb
 net-misc/youtube-dl yt-dlp
 
-dev-libs/openssl abi_x86_32
+dev-libs/openssl asm abi_x86_32
 media-video/wireplumber lua_single_target_lua5-4
 dev-libs/libtomcrypt libtommath
 app-shells/zsh gdbm pcre unicode
@@ -304,7 +327,6 @@ sys-devel/llvm abi_x86_32
 >=dev-libs/xmlsec-1.2.34 nss
 
 
-dev-qt/qtgui X
 dev-qt/qtsql sqlite
 dev-qt/qtnetwork ssl
 dev-util/google-perftools minimal
