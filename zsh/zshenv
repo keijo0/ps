@@ -1,0 +1,26 @@
+export EDITOR=vim
+export VISUAL=vim
+export LC_ALL="en_US"
+export LANG="en_US"
+export LANGUAGE="en_NZ"
+export C_CTYPE="en_US"
+export LC_NUMERIC=
+export LC_TIME=en"en_US"
+export EDITOR="vim"
+export HISTFILE=$HOME/.config/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export TERMINAL="alacritty"
+export BROWSER="chromium"
+export MENUCONFIG_COLOR=blackbg
+export ZSH="$HOME/.config/.oh-my-zsh"
+export VIMINIT="source ~/.config/vimrc"
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/"
+export WGETRC="$HOME/.config/wget/wgetrc"
+export LESSHISTFILE="/dev/null"
+export XAUTHORITY="$home/.config/Xauthority" #probably breaks something
+export CONFIG_PROTECT_MASK="/etc/sandbox.d /etc/fonts/fonts.conf /etc/terminfo /etc/dconf /etc/ca-certificates.conf /etc/revdep-rebuild"
+export __GL_SYNC_TO_VBLANK=0 
+export __GL_ALLOW_FLIPPING=0
+export EIX_LIMIT=0
+
