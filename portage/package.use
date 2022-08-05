@@ -365,16 +365,6 @@ dev-python/gpep517 python_targets_python3_9
 dev-python/flit_core python_targets_python3_9
 dev-python/tomli python_targets_python3_9
 dev-python/installer python_targets_python3_9
-# required by dev-util/android-sdk-update-manager-24.4.1-r1::gentoo
-# required by dev-util/android-sdk-update-manager (argument)
 >=dev-java/swt-3.7.2-r3:3.7 cairo
-# required by dev-util/android-sdk-update-manager-24.4.1-r1::gentoo
-# required by dev-util/android-sdk-update-manager (argument)
 >=sys-libs/ncurses-compat-6.2 abi_x86_32
-# required by sys-apps/baselayout-java-0.1.0-r1::gentoo
-# required by dev-java/openjdk-bin-8.332_p09::gentoo
-# required by virtual/jdk-1.8.0-r6::gentoo
-# required by dev-java/swt-3.7.2-r3::gentoo
-# required by dev-util/android-sdk-update-manager-24.4.1-r1::gentoo
-# required by dev-util/android-sdk-update-manager (argument)
 >=app-crypt/p11-kit-0.24.1 trust
