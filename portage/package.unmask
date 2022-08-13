@@ -1,18 +1,11 @@
 =sys-apps/opentmpfiles-0.2
-=app-emulation/wine-staging-7.13
-=app-misc/spicetify-cli-2.8.3
-=games-util/steam-meta-0-r20220320
-=games-util/steam-client-meta-0-r20220212
-=www-client/ungoogled-chromium-103.0.5060.134_p1
+games-util/steam-meta
+games-util/steam-client-meta
+www-client/ungoogled-chromium
 =app-misc/lf-27
-=games-util/steam-launcher-1.0.0.74-r1
-=media-sound/spotifyd-0.3.3
-=media-sound/spotify-tui-0.25.0
-=net-im/discord-canary-bin-0.0.135
+games-util/steam-launcher
 =sys-devel/automake-1.13.4-r2
-=x11-themes/adwaita-icon-theme-42.0_p2
-# required by games-util/steam-meta-0-r20220320::steam-overlay[-steamruntime]
-# required by @selected
-# required by @world (argument)
-# /etc/portage/package.mask:
 =games-util/esteam-0.20220716
+=dev-lang/spidermonkey-91.12.0
+# /etc/portage/package.mask:
+#>=x11-terms/alacritty-0.10.1

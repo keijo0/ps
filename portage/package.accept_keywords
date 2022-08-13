@@ -1,5 +1,25 @@
 */* ~amd64
+
+www-client/ungoogled-chromium **
 net-im/teams **
 media-libs/libsndfile **
 games-util/steam-client-meta **
+games-util/steam-launcher **
 games-util/steam-meta **
+x11-misc/dunst **
+#media-libs/x264 **
+#media-libs/x265 **
+media-gfx/flameshot **
+media-gfx/feh **
+app-text/wgetpaste **
+app-shells/zsh **
+app-portage/portage-utils **
+app-portage/gentoolkit **
+app-office/libreoffice-bin **
+app-editors/neovim **
+# required by app-editors/vim-9999::gentoo
+# required by @selected
+# required by @world (argument)
+=app-editors/vim-core-9999 **
+
+*/nvidia-drivers amd64

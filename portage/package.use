@@ -1,7 +1,7 @@
-# asm libtirpc
 */* -*
 */* zstd
-*/* clang lto
+*/* lto 
+*/* opengl opencl vulkan
 */* alsa pulseaudio
 */* X acl fortran dbus dri gdbm multilib openmp pcre readline split-us unicode xattr nptl ncurses
 */* networkmanager ipv6 ssl
@@ -17,14 +17,16 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 */* rustflags: -* -c target-cpu=native
 */* apache2_modules: -*
 */* xtables_addons: -* 
-*/* python_targets: python3_10
-*/* lua_targets: lua5-1
+*/* python_targets: -* python3_10
+*/* lua_targets: -* lua5-1
 */* python_single_target: -* python3_10
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
 */* lua_single_target: -* luajit
 */* input_devices: -* libinput
 
-www-client/ungoogled-chromium X official clang proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
+
+sys-apps/shadow su
+www-client/ungoogled-chromium X official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
 sys-apps/makedev build
 app-arch/libarchive iconv
 net-misc/rsync iconv
@@ -33,13 +35,13 @@ sys-apps/man-db seccomp
 net-libs/gnutls seccomp
 app-misc/pax-utils seccomp
 
-#asm
-#dev-libs/gmp asm
-#dev-libs/nettle asm
-#dev-libs/libgcrypt asm
-#media-libs/dav1d asm
+sys-apps/busybox static mdev
+app-crypt/gpgme cxx
+dev-libs/libpcre2 pcre16
 
-#image stuff
+
+media-libs/libplacebo glslang
+
 dev-qt/qtgui X udev png jpeg gif
 media-gfx/fontforge png jpeg gif
 media-libs/* png jpeg gif
@@ -65,7 +67,7 @@ media-libs/sdl2-mixer opus mp3 abi_x86_32
 media-libs/sdl2-net abi_x86_32
 media-libs/sdl2-gfx abi_x86_32
 media-libs/sdl2-ttf X abi_x86_32
-media-libs/libsdl2 libsamplerate opengl sound threads video X abi_x86_32
+media-libs/libsdl2 opengl sound threads video X abi_x86_32
 >=dev-lang/python-3.10.5 xml
 
 media-plugins/alsa-plugins pulseaudio usb-stream mix
@@ -80,14 +82,16 @@ x11-libs/gtk+ -cups
 media-libs/harfbuzz truetype glib graphite
 net-misc/curl -threads curl_ssl_openssl adns ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp zstd 
 
+media-video/obs-studio browser
+
 media-libs/dav1d 8bit 10bit
 app-arch/libarchive e2fsprogs lzma
 app-editors/neovim nvimpager lto tui
 dev-qt/qtdeclarative widgets jit
 app-portage/portage-utils qmanifest qtegrity
 media-sound/alsa-utils libsamplerate
-media-sound/pulseaudio-daemon X alsa alsa-plugin asyncns bluetooth dbus gdbm glib orc ssl udev webrtc-aec
-media-video/ffmpeg X alsa bzip2 dav1d encode gnutls gpl iconv network opengl postproc pulseaudio threads x264 zlib
+media-sound/pulseaudio-daemon bluetooth X alsa alsa-plugin asyncns dbus gdbm glib orc ssl udev webrtc-aec
+media-video/ffmpeg x265 gmp openh264 chromium libdrm X alsa bzip2 dav1d encode gnutls gpl iconv network opengl postproc pulseaudio threads x264 zlib
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
 media-libs/libcanberra alsa gtk3 pulseaudio sound udev
 media-sound/pulseaudio glib bluetooth
@@ -112,23 +116,21 @@ virtual/opengl abi_x86_32
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml X
 media-libs/libheif x265
 
-#wine stuff
 app-emulation/* shared
 
 net-misc/iputils arping
-sys-apps/shadow su
 sys-devel/binutils plugins
 net-p2p/qbittorrent gui
 media-fonts/fontawesome otf
 app-eselect/eselect-repository python_single_target_python3_10
-app-emulation/wine-staging X abi_x86_32 abi_x86_64 alsa fontconfig gecko mono opengl pulseaudio run-exes ssl (staging) threads truetype unwind vulkan xcomposite
+virtual/wine abi_x86_32 staging
+app-emulation/wine-staging themes udev png X abi_x86_32 abi_x86_64 alsa fontconfig gecko mono opengl pulseaudio run-exes ssl (staging) threads truetype unwind vulkan xcomposite
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
 sys-devel/gcc vanilla sanitize ssp
 
 app-crypt/p11-kit asn1
 app-emulation/libspectrum zlib
 
-#profile shit
 dev-libs/libffi abi_x86_32 abi_x86_64
 dev-libs/libxml2 abi_x86_32 abi_x86_64
 sys-devel/clang abi_x86_64 static-analyzer
@@ -141,6 +143,7 @@ sys-libs/libunwind abi_x86_32 abi_x86_64
 sys-libs/llvm-libunwind abi_x86_32 abi_x86_64
 sys-libs/ncurses abi_x86_32 abi_x86_64 stack-realign cxx
 sys-libs/zlib abi_x86_32 abi_x86_64
+
 
 dev-lang/spidermonkey clang cpu_flags_arm_neon
 app-misc/mime-types nginx
@@ -155,7 +158,7 @@ app-emulation/fuse -alsa backend-X
 www-client/chromium pulseaudio X
 sys-devel/llvm binutils-plugin
 
-#multilib stuff
+app-text/libwpd tools
 x11-libs/libXxf86vm abi_x86_32
 x11-libs/libxshmfence abi_x86_32
 x11-libs/libdrm abi_x86_32
@@ -177,7 +180,6 @@ x11-libs/libXfixes abi_x86_32
 media-libs/libcanberra udev
 sys-apps/util-linux udev
 media-sound/pulseaudio bluetooth
-app-misc/lf static
 sys-apps/openrc unicode
 app-text/poppler png
 sys-fs/btrfs-progs udev
@@ -190,8 +192,6 @@ sys-process/htop lm-sensors
 x11-libs/libva-vdpau-driver opengl
 media-libs/libsndfile minimal
 dev-lang/python build 
-app-emulation/virt-manager gtk
-app-emulation/winetricks gtk
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 media-sound/pasystray libnotify
 sys-fs/eudev introspection kmod
@@ -204,7 +204,6 @@ app-crypt/gcr introspection vala gtk
 x11-libs/libfm gtk
 media-sound/audacity ffmpeg
 dev-qt/qtwebsockets qml
-dev-python/python-twitch-client python_targets_python3_8
 dev-libs/libdazzle gtk introspection vala
 media-libs/opencv contrib
 dev-qt/linguist-tools qml
@@ -348,7 +347,7 @@ media-libs/openal abi_x86_32
 media-video/pipewire abi_x86_32
 net-misc/networkmanager abi_x86_32
 net-print/cups abi_x86_32
-sys-libs/libudev-compat abi_x86_32
+sys-libs/libdev-compat abi_x86_32
 x11-libs/gtk+ cups abi_x86_32
 x11-libs/libva abi_x86_32
 x11-libs/libvdpau abi_x86_32
@@ -365,6 +364,33 @@ dev-python/gpep517 python_targets_python3_9
 dev-python/flit_core python_targets_python3_9
 dev-python/tomli python_targets_python3_9
 dev-python/installer python_targets_python3_9
->=dev-java/swt-3.7.2-r3:3.7 cairo
->=sys-libs/ncurses-compat-6.2 abi_x86_32
->=app-crypt/p11-kit-0.24.1 trust
+>=x11-libs/libXvMC-1.0.13 abi_x86_32
+>=dev-util/glslang-1.3.216 abi_x86_32
+>=sys-devel/clang-14.0.6-r1 abi_x86_32
+>=x11-libs/libXv-1.0.11-r2 abi_x86_32
+>=virtual/glu-9.0-r2 abi_x86_32
+>=media-libs/glu-9.0.2 abi_x86_32
+>=virtual/opencl-3-r2 abi_x86_32
+>=dev-libs/opencl-icd-loader-2022.05.18 abi_x86_32
+>=app-emulation/wine-gecko-2.47.2 abi_x86_32
+>=app-emulation/wine-staging-6.2 -abi_x86_64
+app-emulation/wine-mono -abi_x86_64 abi_x86_32
+# required by games-emulation/pcsx2-1.6.0-r3::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/libsdl2-2.0.22 haptic joystick
+# required by media-libs/libsdl2-2.0.22::gentoo[libsamplerate]
+# required by dev-python/PySDL2-0.9.13::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/libsamplerate-0.2.2 abi_x86_32
+# required by sys-apps/busybox-1.34.1-r1::gentoo[static]
+# required by busybox (argument)
+>=virtual/libcrypt-2 static-libs
+# required by virtual/libcrypt-2::gentoo
+# required by sys-apps/busybox-1.34.1-r1::gentoo[static]
+# required by busybox (argument)
+>=sys-libs/libxcrypt-4.4.28-r1 static-libs
+# required by www-client/firefox-103.0.1::gentoo[system-png]
+# required by firefox (argument)
+>=media-libs/libpng-1.6.37-r2 apng
