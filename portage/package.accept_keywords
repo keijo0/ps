@@ -17,9 +17,5 @@ app-portage/portage-utils **
 app-portage/gentoolkit **
 app-office/libreoffice-bin **
 app-editors/neovim **
-# required by app-editors/vim-9999::gentoo
-# required by @selected
-# required by @world (argument)
-=app-editors/vim-core-9999 **
-
+app-editors/vim-core **
 */nvidia-drivers amd64
