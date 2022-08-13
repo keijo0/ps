@@ -1,10 +1,9 @@
 */*::nest
 */*::pf4public
-*/*::overlay
 */*::src_prepare-overlay
 */*::steam-overlay
 */*::guru
-*/*::eleutheria
+*/*::wine
 */*::gentoobr
 
 
