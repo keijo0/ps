@@ -1,0 +1,18 @@
+*/* ~amd64
+
+www-client/ungoogled-chromium **
+net-im/teams **
+media-libs/libsndfile **
+games-util/steam-client-meta **
+games-util/steam-launcher **
+games-util/steam-meta **
+x11-misc/dunst **
+media-gfx/flameshot **
+media-gfx/feh **
+app-text/wgetpaste **
+app-shells/zsh **
+app-portage/portage-utils **
+app-portage/gentoolkit **
+app-office/libreoffice-bin **
+app-editors/neovim **
+app-editors/vim-core **
