@@ -12,7 +12,7 @@ CFLAGS="${CFLAGS} ${_HARDENING_FLAGS}"
 CXXFLAGS="${CXXFLAGS} ${_HARDENING_FLAGS}"
 LDFLAGS="${LDFLAGS} -Wl,-z,relro,-z,now"
 
-COMMON_FLAGS="-march=native -O3 -pipe -flto=thin -fomit-frame-pointer"
+COMMON_FLAGS="-march=native -Ofast -pipe -fomit-frame-pointer"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"

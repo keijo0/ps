@@ -6,8 +6,12 @@ EMERGE_DEFAULT_OPTS="-j6 -l6 -av --fail-clean=y --complete-graph=y --nospinner -
 FEATURES="-*"
 FEATURES="${FEATURES} assume-digests config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
 
+xtables_addons="-*"
 LC_MESSAGES=C
 CLEAN_DELAY=0
-USE_EXPAND="-CAMERAS -GRUB_PLATFORMS -APACHE2_MODULES -APACHE2_MPMS -CPU_FLAGS_ARM -CPU_FLAGS_PPC -L10N -NGINX_MODULES_HTTP -NGINX_MODULES_MAIL -VOICEMAIL_STORAGE -XTABLES_ADDONS"
-GENTOO_MIRRORS=" ftp://mirror.netcologne.de/gentoo/ https://mirror.netcologne.de/gentoo/ http://mirror.netcologne.de/gentoo/"
+EMERGE_WARNING_DELAY="10"
+APACHE2_MODULES="-*"
+USE_EXPAND="-MONKEYD_PLUGINS -NGINX_MODULES_STREAM -OFFICE_IMPLEMENTATION -LCD_DEVICES -LIBREOFFICE_EXTENSIONS -ADA_TARGET -CALLIGRA_FEATURES -ABI_MIPS -ABI_S390 -CAMERAS -GRUB_PLATFORMS -APACHE2_MODULES -APACHE2_MPMS -CPU_FLAGS_ARM -CPU_FLAGS_PPC -L10N -NGINX_MODULES_HTTP -NGINX_MODULES_MAIL -VOICEMAIL_STORAGE -XTABLES_ADDONS"
 
+
+GENTOO_MIRRORS=" ftp://mirror.netcologne.de/gentoo/ https://mirror.netcologne.de/gentoo/ http://mirror.netcologne.de/gentoo/"

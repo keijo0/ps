@@ -5,8 +5,7 @@
 */*::guru
 */*::wine
 */*::gentoobr
-
-
+dev-lang/rust
 gnome-base/*
 gnome-extra/*
 dev-lang/spidermonkey

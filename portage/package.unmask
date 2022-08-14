@@ -1,11 +1,8 @@
-=sys-apps/opentmpfiles-0.2
+sys-apps/opentmpfiles
 games-util/steam-meta
 games-util/steam-client-meta
 www-client/ungoogled-chromium
-=app-misc/lf-27
+app-misc/lf
 games-util/steam-launcher
-=sys-devel/automake-1.13.4-r2
-=games-util/esteam-0.20220716
-=dev-lang/spidermonkey-91.12.0
-# /etc/portage/package.mask:
-#>=x11-terms/alacritty-0.10.1
+sys-devel/automake
+games-util/esteam
