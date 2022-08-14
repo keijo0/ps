@@ -1,5 +1,6 @@
 */* ~amd64
 
+media-sound/spotify **
 www-client/ungoogled-chromium **
 net-im/teams **
 media-libs/libsndfile **

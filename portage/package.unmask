@@ -6,3 +6,10 @@ app-misc/lf
 games-util/steam-launcher
 sys-devel/automake
 games-util/esteam
+
+
+>=virtual/udev-217-r5::gentoo
+>=gnome-base/librsvg-2.54.4::gentoo
+>=gnome-extra/zenity-3.42.1::gentoo
+>=gnome-base/dconf-0.40.0::gentoo
+>=gnome-base/gsettings-desktop-schemas-42.0::gentoo

@@ -8,7 +8,7 @@
 */* openssl kmod threads
 
 */* video_cards: -* nvidia
-x11-drivers/nvidia-drivers abi_x86_32 driver tools
+x11-drivers/nvidia-drivers abi_x86_32 driver
 
 */* l10n: -* 
 */* qemu_user_targets: -* x86_64
@@ -26,7 +26,7 @@ x11-drivers/nvidia-drivers abi_x86_32 driver tools
 
 
 sys-apps/shadow su
-www-client/ungoogled-chromium X clang thinlto official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
+www-client/ungoogled-chromium X clang official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
 sys-apps/makedev build
 app-arch/libarchive iconv
 net-misc/rsync iconv
@@ -379,3 +379,6 @@ sys-devel/llvm abi_x86_32
 >=dev-libs/boost-1.79.0 nls
 >=dev-libs/xmlsec-1.2.34 nss
 dev-lang/rust-bin abi_x86_32
+# required by www-client/firefox-103.0.2::gentoo[system-libvpx]
+# required by firefox (argument)
+>=media-libs/libvpx-1.12.0 postproc
