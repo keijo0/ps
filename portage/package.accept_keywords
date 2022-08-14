@@ -7,8 +7,6 @@ games-util/steam-client-meta **
 games-util/steam-launcher **
 games-util/steam-meta **
 x11-misc/dunst **
-#media-libs/x264 **
-#media-libs/x265 **
 media-gfx/flameshot **
 media-gfx/feh **
 app-text/wgetpaste **
