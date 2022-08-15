@@ -15,8 +15,6 @@ x11-drivers/nvidia-drivers abi_x86_32 driver
 */* qemu_softmmu_targets: -* arm x86_64 sparc
 */* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
 */* rustflags: -* -c target-cpu=native
-*/* apache2_modules: -*
-*/* xtables_addons: -* 
 */* python_targets: -* python3_10
 */* lua_targets: -* lua5-1
 */* python_single_target: -* python3_10
