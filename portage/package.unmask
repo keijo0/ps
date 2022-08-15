@@ -13,3 +13,6 @@ games-util/esteam
 >=gnome-extra/zenity-3.42.1::gentoo
 >=gnome-base/dconf-0.40.0::gentoo
 >=gnome-base/gsettings-desktop-schemas-42.0::gentoo
+# required by ungoogled-chromium-bin (argument)
+# /etc/portage/package.mask:
+=www-client/ungoogled-chromium-bin-104.0.5112.79

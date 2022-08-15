@@ -24,9 +24,9 @@ x11-drivers/nvidia-drivers abi_x86_32 driver
 */* lua_single_target: -* luajit
 */* input_devices: -* libinput
 
-
 sys-apps/shadow su
 www-client/ungoogled-chromium X clang official proprietary-codecs pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libusb system-openh264 system-png system-re2 system-snappy widevine
+www-client/ungoogled-chromium-bin generic
 sys-apps/makedev build
 app-arch/libarchive iconv
 net-misc/rsync iconv
@@ -34,14 +34,10 @@ sys-apps/file seccomp
 sys-apps/man-db seccomp
 net-libs/gnutls seccomp
 app-misc/pax-utils seccomp
-
 app-crypt/gpgme cxx
 dev-libs/libpcre2 pcre16
-
-
 dev-lua/lgi lua_targets_luajit
 media-libs/libplacebo glslang
-
 dev-qt/qtgui X udev png jpeg gif
 media-gfx/fontforge png jpeg gif
 media-libs/* png jpeg gif
@@ -55,7 +51,6 @@ app-emulation/fuse lto zlib png
 dev-libs/boost zlib
 dev-python/pillow jpeg
 x11-libs/gdk-pixbuf jpeg abi_x86_32 introspection
-
 x11-misc/picom config-file
 net-libs/nodejs icu inspector npm snapshot ssl system-icu system-ssl 
 net-analyzer/rrdtool graph lua
@@ -69,7 +64,6 @@ media-libs/sdl2-gfx abi_x86_32
 media-libs/sdl2-ttf X abi_x86_32
 media-libs/libsdl2 opengl sound threads video X abi_x86_32
 >=dev-lang/python-3.10.5 xml
-
 media-plugins/alsa-plugins pulseaudio usb-stream mix
 sys-apps/kmod lzma
 sys-fs/e2fsprogs tools
@@ -81,9 +75,7 @@ games-util/* steamruntime joystick
 x11-libs/gtk+ -cups
 media-libs/harfbuzz truetype glib graphite
 net-misc/curl -threads curl_ssl_openssl adns ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp zstd 
-
 media-video/obs-studio browser
-
 media-libs/dav1d 8bit 10bit
 app-arch/libarchive e2fsprogs lzma
 app-editors/neovim nvimpager lto tui
@@ -91,7 +83,7 @@ dev-qt/qtdeclarative widgets jit
 app-portage/portage-utils qmanifest qtegrity
 media-sound/alsa-utils libsamplerate
 media-sound/pulseaudio-daemon bluetooth X alsa alsa-plugin asyncns dbus gdbm glib orc ssl udev webrtc-aec
-media-video/ffmpeg x265 gmp openh264 chromium libdrm X alsa bzip2 dav1d encode gnutls gpl iconv network opengl postproc pulseaudio threads x264 zlib
+media-video/ffmpeg gmp openh264 X alsa bzip2 encode gnutls gpl iconv network opengl postproc pulseaudio threads x264 zlib
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
 media-libs/libcanberra alsa gtk3 pulseaudio sound udev
 media-sound/pulseaudio glib bluetooth
@@ -101,7 +93,6 @@ media-libs/libepoxy X egl
 x11-libs/cairo X glib svg
 x11-libs/libxcb xkb
 net-misc/youtube-dl yt-dlp
-
 dev-libs/openssl asm abi_x86_32
 media-video/wireplumber lua_single_target_lua5-4
 dev-libs/libtomcrypt libtommath
@@ -109,15 +100,12 @@ app-shells/zsh gdbm pcre unicode
 net-misc/networkmanager nss
 net-libs/nodejs icu
 x11-base/xorg-server xorg
-
 dev-libs/nettle gmp
 media-libs/alsa-lib abi_x86_32
 virtual/opengl abi_x86_32
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml X
 media-libs/libheif x265
-
 app-emulation/* shared
-
 net-misc/iputils arping
 sys-devel/binutils plugins
 net-p2p/qbittorrent gui
@@ -127,7 +115,6 @@ virtual/wine abi_x86_32 staging
 app-emulation/wine-staging themes udev png X abi_x86_32 abi_x86_64 alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype unwind vulkan xcomposite
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
 sys-devel/gcc vanilla sanitize ssp
-
 app-crypt/p11-kit asn1
 app-emulation/libspectrum zlib
 
@@ -379,6 +366,4 @@ sys-devel/llvm abi_x86_32
 >=dev-libs/boost-1.79.0 nls
 >=dev-libs/xmlsec-1.2.34 nss
 dev-lang/rust-bin abi_x86_32
-# required by www-client/firefox-103.0.2::gentoo[system-libvpx]
-# required by firefox (argument)
 >=media-libs/libvpx-1.12.0 postproc

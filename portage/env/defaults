@@ -3,8 +3,8 @@ PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
 EMERGE_DEFAULT_OPTS="-j6 -l6 -av --fail-clean=y --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display"
-#FEATURES="-*"
-#FEATURES="${FEATURES} assume-digests config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
+FEATURES="-*"
+FEATURES="${FEATURES} assume-digests config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
 
 xtables_addons="-*"
 LC_MESSAGES=C
