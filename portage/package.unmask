@@ -1,18 +1,23 @@
 sys-apps/opentmpfiles
 games-util/steam-meta
 games-util/steam-client-meta
-www-client/ungoogled-chromium
 app-misc/lf
 games-util/steam-launcher
 sys-devel/automake
 games-util/esteam
-
-
->=virtual/udev-217-r5::gentoo
->=gnome-base/librsvg-2.54.4::gentoo
->=gnome-extra/zenity-3.42.1::gentoo
->=gnome-base/dconf-0.40.0::gentoo
->=gnome-base/gsettings-desktop-schemas-42.0::gentoo
-# required by ungoogled-chromium-bin (argument)
-# /etc/portage/package.mask:
-=www-client/ungoogled-chromium-bin-104.0.5112.79
+x11-base/xorg-server::makeoverlay
+net-im/discord-bin::makeoverlay
+media-sound/spotify::makeoverlay
+media-sound/spotifyd::makeoverlay
+www-client/ungoogled-chromium-bin
+media-sound/spotify-tui::makeoverlay
+net-im/teams::makeoverlay
+net-im/signal-desktop-bin::makeoverlay
+www-client/chromium-bin::makeoverlay
+app-office/libreoffice-bin::makeoverlay
+gnome-extra/nm-applet
+gnome-extra/zenity
+gnome-base/dconf
+gnome-base/librsvg
+gnome-base/gsettings-desktop-schemas
+www-client/ungoogled-chromium-bin
