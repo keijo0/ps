@@ -3,7 +3,7 @@
 */* lto
 */* opengl opencl vulkan
 */* alsa pulseaudio
-*/* X acl fortran dbus dri gdbm multilib openmp pcre readline split-us unicode nptl ncurses
+*/* X acl fortran dbus dri gdbm -multilib openmp pcre readline split-us unicode nptl ncurses
 */* ipv6 ssl
 */* openssl kmod threads
 
@@ -11,24 +11,23 @@
 x11-drivers/nvidia-drivers abi_x86_32 driver
 
 */* l10n: -* 
+*/* apache2_modules: -*
+*/* xtables_addons: -*
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* arm x86_64 sparc 
 */* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
 */* rustflags: -* -c target-cpu=native
-*/* apache2_modules: -*
-*/* xtables_addons: -* 
 */* python_targets: -* python3_10
-*/* lua_targets: -* lua5-1
+*/* lua_targets: -* luajit
+*/* lua_single_target: -* luajit
 */* python_single_target: -* python3_10
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
-*/* lua_single_target: -* luajit
-*/* input_devices: -* libinput joystick
+*/* input_devices: -* libinput
 
 
-
-
+media-fonts/* otf
 media-sound/spotifyd -pulseaudio
-dev-libs/glib -dbus
+dev-libs/glib dbus
 sys-apps/shadow su
 sys-apps/makedev build
 app-crypt/gpgme cxx
@@ -39,9 +38,8 @@ sys-apps/man-db seccomp
 net-libs/gnutls seccomp
 app-misc/pax-utils seccomp
 dev-libs/libpcre2 pcre16
-dev-lua/lgi lua_targets_luajit
 media-libs/libplacebo glslang
-dev-qt/qtgui X udev png jpeg gif
+dev-qt/qtgui -vulkan X udev png jpeg gif
 media-gfx/fontforge png jpeg gif
 media-libs/* png jpeg gif
 net-print/cups-filters jpeg png
@@ -67,6 +65,7 @@ media-libs/sdl2-gfx abi_x86_32
 media-libs/sdl2-ttf X abi_x86_32
 media-libs/libsdl2 opengl sound threads video X abi_x86_32
 >=dev-lang/python-3.10.5 xml
+dev-lang/rust-bin abi_x86_32
 media-plugins/alsa-plugins pulseaudio usb-stream mix
 sys-apps/kmod lzma
 sys-fs/e2fsprogs tools
@@ -76,7 +75,7 @@ net-misc/networkmanager tools concheck introspection nss dhcpcd
 app-text/poppler cairo cxx jpeg jpeg2k lcms png utils
 games-util/* steamruntime joystick
 media-libs/harfbuzz truetype glib graphite
-net-misc/curl -threads curl_ssl_openssl adns ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp zstd 
+net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp zstd 
 media-video/obs-studio browser
 media-libs/dav1d 8bit 10bit
 app-arch/libarchive e2fsprogs lzma
@@ -86,7 +85,7 @@ app-portage/portage-utils qmanifest qtegrity
 media-sound/alsa-utils libsamplerate
 media-sound/pulseaudio-daemon bluetooth X alsa alsa-plugin asyncns dbus gdbm glib orc ssl udev webrtc-aec
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
-media-video/ffmpeg X alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/ffmpeg X x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 media-libs/libcanberra alsa gtk3 pulseaudio sound udev
 media-sound/pulseaudio glib bluetooth
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
@@ -111,7 +110,6 @@ app-emulation/* shared
 net-misc/iputils arping
 sys-devel/binutils plugins
 net-p2p/qbittorrent gui
-media-fonts/fontawesome otf
 app-eselect/eselect-repository python_single_target_python3_10
 virtual/wine abi_x86_32 staging
 app-emulation/wine-staging themes udev png X abi_x86_32 abi_x86_64 alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype unwind vulkan xcomposite
@@ -133,21 +131,15 @@ sys-libs/libunwind abi_x86_32 abi_x86_64
 sys-libs/llvm-libunwind abi_x86_32 abi_x86_64
 sys-libs/ncurses abi_x86_32 abi_x86_64 
 sys-libs/zlib abi_x86_32 abi_x86_64
-
-
 dev-lang/spidermonkey cpu_flags_arm_neon
 app-misc/mime-types nginx
-net-analyzer/rrdtool lua
-dev-lang/rust nightly
-media-fonts/fontawesome oft
+net-analyzer/rrdtool lua lua_targets: -* lua5-1
 net-misc/aria2 bittorrent
 virtual/opengl abi_x86_32
 net-firewall/iptables netlink nftables conntrack
 dev-scheme/guile regex threads deprecated
 app-emulation/fuse -alsa backend-X
-www-client/chromium pulseaudio X
 sys-devel/llvm binutils-plugin
-
 www-client/firefox clang X dbus openh264 pulseaudio system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp hwaccel
 app-text/libwpd tools
 x11-libs/libXxf86vm abi_x86_32
@@ -174,8 +166,6 @@ media-sound/pulseaudio bluetooth
 sys-apps/openrc unicode
 app-text/poppler png
 sys-fs/btrfs-progs udev
-sys-boot/refind btrfs
-dev-libs/wayland-protocols
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
 media-gfx/feh curl xinerama exif inotify
@@ -187,24 +177,19 @@ dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 media-sound/pasystray libnotify
 sys-fs/eudev introspection kmod
 x11-base/xorg-server udev 
-media-libs/vulkan-loader 
 dev-python/PyQt5 gui widgets
 net-libs/libsoup introspection
 x11-misc/picom opengl
 app-crypt/gcr introspection vala gtk
 x11-libs/libfm gtk
-media-sound/audacity ffmpeg
 dev-qt/qtwebsockets qml
 dev-libs/libdazzle gtk introspection vala
 media-libs/opencv contrib
 dev-qt/linguist-tools qml
 media-video/mpv cli libmpv
-media-video/vlc gcrypt
-
 dev-qt/qtdeclarative -widgets -vulkan -jit 
 dev-qt/qtsql sqlite
 dev-qt/qtnetwork ssl
-dev-util/google-perftools minimal
 dev-lang/python sqlite
 >=dev-python/importlib_metadata-4.12.0 python_targets_python3_9
 >=dev-lang/python-3.9.13:3.9 xml
@@ -215,9 +200,6 @@ dev-libs/nspr abi_x86_32
 dev-libs/nss abi_x86_32
 media-libs/libpng-compat abi_x86_32
 media-libs/openal abi_x86_32
-media-video/pipewire abi_x86_32
-net-misc/networkmanager abi_x86_32
-net-print/cups abi_x86_32
 sys-libs/libdev-compat abi_x86_32
 x11-libs/gtk+ -cups abi_x86_32
 x11-libs/libva abi_x86_32
@@ -370,17 +352,4 @@ sys-devel/llvm abi_x86_32
 >=net-dns/libidn2-2.3.3 abi_x86_32
 >=dev-libs/boost-1.79.0 nls
 >=dev-libs/xmlsec-1.2.34 nss
-dev-lang/rust-bin abi_x86_32
 >=media-libs/libvpx-1.12.0 postproc
-# required by gnome-extra/cinnamon-5.2.7-r3::makeoverlay
-# required by cinnamon::makeoverlay (argument)
->=sys-auth/polkit-121 introspection
-# required by app-editors/neovim-0.7.2::gentoo[lua_single_target_luajit]
-# required by neovim (argument)
->=dev-lua/lpeg-1.0.2-r101 lua_targets_luajit
-# required by app-editors/neovim-0.7.2::gentoo[lua_single_target_luajit]
-# required by neovim (argument)
->=dev-lua/mpack-1.0.9-r1 lua_targets_luajit
-# required by dev-qt/qtdeclarative-5.15.5::gentoo
-# required by dev-qt/qtdeclarative (argument)
->=dev-qt/qtgui-5.15.5-r2 -vulkan
