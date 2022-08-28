@@ -7,3 +7,6 @@
 */*::gentoobr
 >=virtual/tmpfiles-0-r3
 dev-lang/rust
+x11-libs/gtk+::gentoo
+>=sys-kernel/gentoo-sources-5.11 
+

@@ -11,3 +11,6 @@ gnome-base/dconf
 gnome-base/librsvg
 gnome-base/gsettings-desktop-schemas
 games-util/mangohud
+# required by ungoogled-chromium-bin (argument)
+# /etc/portage/package.mask:
+=www-client/ungoogled-chromium-bin-104.0.5112.101

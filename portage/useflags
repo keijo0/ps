@@ -23,10 +23,7 @@ x11-drivers/nvidia-drivers abi_x86_32 driver
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
 */* input_devices: -* libinput
 
-*/ungoogled-chromium-bin generic
 
-media-video/wireplumber lua_single_target: lua5-4
-media-video/pipewire sound-server udev bluetooth
 media-fonts/* otf
 media-sound/spotifyd -pulseaudio
 dev-libs/glib -dbus
@@ -34,12 +31,12 @@ sys-apps/shadow su
 sys-apps/makedev build
 app-crypt/gpgme cxx
 app-arch/libarchive iconv
-net-misc/rsync iconv stunnel
+net-misc/rsync iconv
 sys-apps/file seccomp
 sys-apps/man-db seccomp
 net-libs/gnutls seccomp
 app-misc/pax-utils seccomp
-dev-libs/libpcre2 pcre16 pcre32
+dev-libs/libpcre2 pcre16
 media-libs/libplacebo glslang
 dev-qt/qtgui -vulkan X udev png jpeg gif
 media-gfx/fontforge png jpeg gif
@@ -51,6 +48,7 @@ sys-libs/slang png
 media-gfx/qrencode png
 media-video/ffmpegthumbnailer jpeg png
 app-emulation/fuse lto zlib png
+dev-libs/boost zlib
 dev-python/pillow jpeg
 x11-libs/gdk-pixbuf jpeg abi_x86_32 introspection
 x11-misc/picom config-file
@@ -67,36 +65,6 @@ media-libs/sdl2-ttf X abi_x86_32
 media-libs/libsdl2 opengl sound threads video X abi_x86_32
 >=dev-lang/python-3.10.5 xml
 dev-lang/rust-bin abi_x86_32
-virtual/rust abi_x86_32
-virtual/libiconv abi_x86_32
-virtual/libintl abi_x86_32
-dev-libs/nettle abi_x86_32
-dev-libs/libunistring abi_x86_32
-dev-libs/libtasn1 abi_x86_32
-media-libs/vulkan-loader abi_x86_32
-net-libs/gnutls abi_x86_32
-dev-libs/libpcre abi_x86_32
-dev-libs/boost zlib nls
-sys-fs/eudev abi_x86_32
-virtual/libudev abi_x86_32
-dev-libs/gmp abi_x86_32
-net-libs/libasyncns abi_x86_32
-media-libs/libsndfile abi_x86_32
-sys-libs/zlib abi_x86_32 minizip
-11-libs/pixman abi_x86_32
-sys-apps/dbus abi_x86_32
-x11-libs/libXi abi_x86_32
-x11-libs/libXcursor abi_x86_32
-dev-libs/atk abi_x86_32 introspection
-app-text/xmlto abi_x86_32
-sys-libs/binutils-libs abi_x86_32
-sys-apps/util-linux abi_x86_32
-media-libs/harfbuzz abi_x86_32 introspection icu
-media-gfx/graphite2 abi_x86_32
-x11-libs/pixman abi_x86_32
-dev-libs/glib abi_x86_32
-media-libs/freetype abi_x86_32
-x11-libs/cairo abi_x86_32
 media-plugins/alsa-plugins pulseaudio usb-stream mix
 sys-apps/kmod lzma
 sys-fs/e2fsprogs tools
@@ -114,10 +82,10 @@ dev-qt/qtdeclarative widgets jit
 app-portage/portage-utils qmanifest qtegrity
 media-sound/alsa-utils libsamplerate
 media-sound/pulseaudio-daemon bluetooth X alsa alsa-plugin asyncns dbus gdbm glib orc ssl udev webrtc-aec abi_x86_32
-media-sound/pulseaudio bluetooth glib abi_x86_32
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
 media-video/ffmpeg X x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 media-libs/libcanberra alsa gtk3 pulseaudio sound udev
+media-sound/pulseaudio glib bluetooth
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
 dev-libs/libxml2 icu python readline\
 media-libs/libepoxy X egl
@@ -183,11 +151,10 @@ x11-libs/libX11 abi_x86_32
 x11-libs/libXrender abi_x86_32
 x11-libs/libXrandr abi_x86_32
 app-arch/zstd abi_x86_32
-app-arch/bzip2 abi_x86_32
-app-arch/xz-utils abi_x86_32
 x11-libs/libXfixes abi_x86_32
 media-libs/libcanberra udev
 sys-apps/util-linux udev
+media-sound/pulseaudio bluetooth
 sys-apps/openrc unicode
 app-text/poppler png
 sys-fs/btrfs-progs udev
@@ -226,7 +193,7 @@ dev-libs/nss abi_x86_32
 media-libs/libpng-compat abi_x86_32
 media-libs/openal abi_x86_32
 sys-libs/libdev-compat abi_x86_32
-x11-libs/gtk+ abi_x86_32 inspector introspection
+x11-libs/gtk+ abi_x86_32 inspector
 x11-libs/libva abi_x86_32
 x11-libs/libvdpau abi_x86_32
 x11-libs/libXScrnSaver abi_x86_32
@@ -236,7 +203,6 @@ dev-db/sqlite abi_x86_32
 sys-libs/readline abi_x86_32
 net-libs/libndp abi_x86_32
 virtual/libusb abi_x86_32
-dev-libs/libusb abi_x86_32
 net-libs/nghttp2 abi_x86_32
 
 dev-python/gpep517 python_targets_python3_9
@@ -259,4 +225,112 @@ sys-libs/libxcrypt static-libs
 media-libs/libpng apng
 net-dns/dnsmasq script
 dev-libs/libdbusmenu gtk3
-x11-libs/libnotify introspection
+
+#Shitfest starts here
+>=app-emulation/libvirt-glib-4.0.0 introspection
+>=sys-libs/libosinfo-1.10.0 introspection
+>=net-libs/gtk-vnc-1.3.0 introspection
+>=net-misc/spice-gtk-0.39-r2 usbredir introspection
+>=x11-libs/gtksourceview-4.8.2 introspection
+>=x11-libs/vte-0.68.0 introspection
+>=media-libs/gstreamer-1.20.1 introspection
+>=net-libs/libnma-1.8.38 introspection
+>=gui-libs/gtk-4.6.2 introspection
+>=app-accessibility/at-spi2-core-2.44.0 introspection
+>=app-misc/geoclue-2.5.7 introspection
+>=media-libs/graphene-1.10.8 introspection
+>=dev-libs/libgweather-4.0.0:4 introspection
+>=app-i18n/ibus-1.5.25-r1 introspection
+>=dev-libs/json-glib-1.6.6-r1 introspection
+>=app-text/evince-42.1 introspection
+>=media-libs/gst-plugins-base-1.20.1 introspection
+>=virtual/libusb-1-r2 udev
+>=dev-libs/libusb-1.0.26 udev
+>=dev-libs/atk-2.38.0 introspection
+>=x11-libs/gdk-pixbuf-2.42.8 introspection
+>=x11-libs/pango-1.50.6 introspection
+>=gnome-base/librsvg-2.54.0 
+>=media-libs/harfbuzz-4.2.0 introspection
+>=dev-libs/libxml2-2.9.13-r1 icu
+>=media-libs/harfbuzz-4.2.0 icu
+=media-libs/libvpx-1.10.0 postproc
+>=sys-libs/zlib-1.2.12-r2 minizip
+>=app-text/ghostscript-gpl-9.55.0-r1 -cups
+>=sys-boot/grub-2.06-r1 mount
+>=app-text/poppler-22.03.0 cairo
+>=media-libs/gegl-0.4.36-r1 cairo
+>=dev-python/PyQt5-5.15.6 printsupport webchannel network
+>=dev-libs/libpcre2-10.39-r1 pcre32
+>=x11-libs/libva-2.14.0 opengl
+>=x11-libs/libnotify-0.7.9-r1 introspection
+>=dev-qt/qtcore-5.15.3 icu
+>=dev-python/PyQt5-5.15.6 opengl sql declarative multimedia
+>=dev-qt/qtmultimedia-5.15.3 widgets
+>=net-print/cups-2.3.3_p2-r3 ssl
+>=app-text/xmlto-0.0.28-r8 text
+>=dev-qt/qtwebchannel-5.15.4 qml
+>=x11-libs/libpciaccess-0.16-r1 abi_x86_32
+>=virtual/libelf-3-r1 abi_x86_32
+>=dev-libs/elfutils-0.187 abi_x86_32
+>=app-arch/bzip2-1.0.8-r1 abi_x86_32
+>=dev-libs/libusb-1.0.26 abi_x86_32
+>=virtual/libudev-232-r7 abi_x86_32
+>=sys-fs/eudev-3.2.11-r2 abi_x86_32
+>=app-arch/xz-utils-5.2.5-r2 abi_x86_32
+>=dev-libs/libaio-0.3.113 abi_x86_32
+>=dev-libs/libxml2-2.9.14-r1 abi_x86_32
+>=media-libs/alsa-lib-1.2.7.2 abi_x86_32
+>=media-libs/libpng-1.6.37-r2 abi_x86_32
+>=media-libs/libsoundtouch-2.3.1 abi_x86_32
+>=media-libs/portaudio-19.07.00-r2 abi_x86_32
+>=net-libs/libpcap-1.10.1-r1 abi_x86_32
+>=x11-libs/libICE-1.0.10-r1 abi_x86_32
+>=x11-libs/wxGTK-3.0.5.1 abi_x86_32
+>=dev-libs/glib-2.72.3 abi_x86_32
+>=x11-libs/cairo-1.16.0-r5 abi_x86_32
+>=x11-libs/gdk-pixbuf-2.42.8 abi_x86_32
+>=x11-libs/libSM-1.2.3-r1 abi_x86_32
+>=x11-libs/pango-1.50.8 abi_x86_32
+>=dev-libs/fribidi-1.0.12 abi_x86_32
+>=media-libs/harfbuzz-4.4.1 abi_x86_32
+>=media-libs/fontconfig-2.14.0-r1 abi_x86_32
+>=media-libs/freetype-2.12.1 abi_x86_32
+>=x11-libs/libXft-2.3.4 abi_x86_32
+>=sys-apps/util-linux-2.38 abi_x86_32
+>=media-gfx/graphite2-1.3.14_p20210810-r1 abi_x86_32
+>=dev-libs/icu-71.1-r1 abi_x86_32
+>=dev-libs/lzo-2.10 abi_x86_32
+>=sys-libs/binutils-libs-2.38-r2 abi_x86_32
+>=x11-libs/pixman-0.40.0 abi_x86_32
+>=dev-libs/libpcre-8.45-r1 abi_x86_32
+>=dev-libs/libffi-3.4.2-r1 abi_x86_32
+>=dev-libs/atk-2.38.0 abi_x86_32
+>=media-libs/libepoxy-1.5.10-r1 abi_x86_32
+>=app-accessibility/at-spi2-atk-2.38.0 abi_x86_32
+>=x11-libs/libXcomposite-0.4.5 abi_x86_32
+>=x11-libs/libXcursor-1.2.1 abi_x86_32
+>=x11-libs/libXdamage-1.1.5 abi_x86_32
+>=x11-libs/libXi-1.8 abi_x86_32
+>=sys-apps/dbus-1.14.0-r4 abi_x86_32
+>=app-accessibility/at-spi2-core-2.44.1 abi_x86_32
+>=x11-libs/libXtst-1.2.3-r2 abi_x86_32
+>=media-libs/libpulse-16.1 abi_x86_32
+>=media-libs/libsndfile-1.1.0-r1 abi_x86_32
+>=net-libs/libasyncns-0.8-r4 abi_x86_32
+>=virtual/rust-1.62.0 abi_x86_32
+>=virtual/libintl-0-r2 abi_x86_32
+>=virtual/libiconv-0-r2 abi_x86_32
+>=virtual/jpeg-100-r1 abi_x86_32
+>=media-libs/libjpeg-turbo-2.1.3 abi_x86_32
+>=net-libs/gnutls-3.7.6 abi_x86_32
+>=sys-apps/attr-2.5.1-r2 abi_x86_32
+>=sys-libs/libunwind-1.6.2 abi_x86_32
+>=media-libs/vulkan-loader-1.3.216 abi_x86_32
+>=dev-libs/libtasn1-4.18.0 abi_x86_32
+>=dev-libs/libunistring-1.0 abi_x86_32
+>=dev-libs/nettle-3.8 abi_x86_32
+>=dev-libs/gmp-6.2.1-r2 abi_x86_32
+>=net-dns/libidn2-2.3.3 abi_x86_32
+>=dev-libs/boost-1.79.0 nls
+>=dev-libs/xmlsec-1.2.34 nss
+>=media-libs/libvpx-1.12.0 postproc
