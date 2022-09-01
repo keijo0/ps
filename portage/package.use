@@ -1,19 +1,20 @@
 */* -*
 */* zstd
 */* lto
-*/* opengl opencl vulkan
+*/* opengl opencl vdpau vulkan
 */* alsa pulseaudio
 */* X acl fortran dbus dri gdbm openmp pcre readline split-us unicode nptl threads ncurses ipv6 ssl openssl 
 */* kmod
 
 */* video_cards: -* nvidia
-x11-drivers/nvidia-drivers abi_x86_32 driver
+x11-drivers/nvidia-drivers driver
 
 */* l10n: -* 
 */* apache2_modules: -*
 */* xtables_addons: -*
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* arm x86_64 sparc 
+app-emulation/* fdt
 */* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
 */* rustflags: -* -c target-cpu=native
 */* python_targets: -* python3_10
@@ -22,11 +23,19 @@ x11-drivers/nvidia-drivers abi_x86_32 driver
 */* python_single_target: -* python3_10
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
 */* input_devices: -* libinput
+*/* abi_x86_32
 
-*/ungoogled-chromium-bin generic
+app-emulation/libvirt qemu udev virt-network libvirtd caps
+*/spice-gtk usbdir
+app-emulation/qemu aio alsa bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls opengl oss pin-upstream-blobs png pulseaudio seccomp slirp vhost-net vnc xattr zstd
+app-emulation/virt-manager gui
 
-media-video/wireplumber lua_single_target: lua5-4
-media-video/pipewire sound-server udev bluetooth
+sys-kernel/gentoo-kernel-bin initramfs
+
+media-sound/spotify_dl python_targets: -* python3_8
+sys-apps/coreutils xattr
+www-client/ungoogled-chromium-bin generic
+x11-libs/pango introspection
 media-fonts/* otf
 media-sound/spotifyd -pulseaudio
 dev-libs/glib -dbus
@@ -41,7 +50,7 @@ net-libs/gnutls seccomp
 app-misc/pax-utils seccomp
 dev-libs/libpcre2 pcre16 pcre32
 media-libs/libplacebo glslang
-dev-qt/qtgui -vulkan X udev png jpeg gif
+dev-qt/qtgui -vulkan udev png jpeg gif
 media-gfx/fontforge png jpeg gif
 media-libs/* png jpeg gif
 net-print/cups-filters jpeg png
@@ -50,53 +59,24 @@ media-gfx/exiv2 png
 sys-libs/slang png
 media-gfx/qrencode png
 media-video/ffmpegthumbnailer jpeg png
-app-emulation/fuse lto zlib png
+app-emulation/fuse zlib png
 dev-python/pillow jpeg
-x11-libs/gdk-pixbuf jpeg abi_x86_32 introspection
+x11-libs/gdk-pixbuf jpeg introspection
 x11-misc/picom config-file
 net-libs/nodejs icu inspector npm snapshot ssl system-icu system-ssl 
 net-analyzer/rrdtool graph lua
 net-misc/dhcpcd udev embedded
+net-wireless/bluez udev
 media-libs/openh264 plugin
 net-misc/netifrc dhcp
-media-libs/sdl2-image gif jpeg png webp abi_x86_32
-media-libs/sdl2-mixer opus mp3 abi_x86_32
-media-libs/sdl2-net abi_x86_32
-media-libs/sdl2-gfx abi_x86_32
-media-libs/sdl2-ttf X abi_x86_32
-media-libs/libsdl2 opengl sound threads video X abi_x86_32
+media-libs/sdl2-image gif jpeg png webp 
+media-libs/sdl2-mixer opus mp3
+media-libs/libsdl2 opengl sound threads video 
 >=dev-lang/python-3.10.5 xml
-dev-lang/rust-bin abi_x86_32
-virtual/rust abi_x86_32
-virtual/libiconv abi_x86_32
-virtual/libintl abi_x86_32
-dev-libs/nettle abi_x86_32
-dev-libs/libunistring abi_x86_32
-dev-libs/libtasn1 abi_x86_32
-media-libs/vulkan-loader abi_x86_32
-net-libs/gnutls abi_x86_32
-dev-libs/libpcre abi_x86_32
 dev-libs/boost zlib nls
-sys-fs/eudev abi_x86_32
-virtual/libudev abi_x86_32
-dev-libs/gmp abi_x86_32
-net-libs/libasyncns abi_x86_32
-media-libs/libsndfile abi_x86_32
-sys-libs/zlib abi_x86_32 minizip
-11-libs/pixman abi_x86_32
-sys-apps/dbus abi_x86_32
-x11-libs/libXi abi_x86_32
-x11-libs/libXcursor abi_x86_32
-dev-libs/atk abi_x86_32 introspection
-app-text/xmlto abi_x86_32
-sys-libs/binutils-libs abi_x86_32
-sys-apps/util-linux abi_x86_32
-media-libs/harfbuzz abi_x86_32 introspection icu
-media-gfx/graphite2 abi_x86_32
-x11-libs/pixman abi_x86_32
-dev-libs/glib abi_x86_32
-media-libs/freetype abi_x86_32
-x11-libs/cairo abi_x86_32
+sys-libs/zlib minizip
+dev-libs/atk introspection
+media-libs/harfbuzz introspection icu
 media-plugins/alsa-plugins pulseaudio usb-stream mix
 sys-apps/kmod lzma
 sys-fs/e2fsprogs tools
@@ -105,87 +85,59 @@ sys-libs/gdbm berkdb
 app-text/poppler cairo cxx jpeg jpeg2k lcms png utils
 games-util/* steamruntime joystick
 media-libs/harfbuzz truetype glib graphite
-net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp zstd 
+net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp
 media-video/obs-studio browser
 media-libs/dav1d 8bit 10bit
 app-arch/libarchive e2fsprogs lzma
-app-editors/neovim nvimpager lto tui
+app-editors/neovim nvimpager tui
 dev-qt/qtdeclarative widgets jit
 app-portage/portage-utils qmanifest qtegrity
 media-sound/alsa-utils libsamplerate
-media-sound/pulseaudio-daemon bluetooth X alsa alsa-plugin asyncns dbus gdbm glib orc ssl udev webrtc-aec abi_x86_32
-media-sound/pulseaudio bluetooth glib abi_x86_32
+media-sound/pulseaudio-daemon bluetooth alsa alsa-plugin asyncns gdbm glib orc ssl udev webrtc-aec 
+media-sound/pulseaudio bluetooth glib 
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
-media-video/ffmpeg X x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/ffmpeg x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 media-libs/libcanberra alsa gtk3 pulseaudio sound udev
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
-dev-libs/libxml2 icu python readline\
-media-libs/libepoxy X egl
-x11-libs/cairo X glib svg
+dev-libs/libxml2 ftp icu python readline
+media-libs/libepoxy egl
+x11-libs/cairo glib svg
 x11-libs/libxcb xkb
-dev-libs/openssl asm abi_x86_32
+dev-libs/openssl asm 
 dev-libs/libtomcrypt libtommath
 app-shells/zsh gdbm pcre unicode
 x11-base/xorg-server xorg
 dev-libs/nettle gmp
-media-libs/alsa-lib abi_x86_32
-virtual/opengl abi_x86_32
-media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml X
+media-libs/alsa-lib 
+virtual/opengl 
+media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
 media-libs/libheif x265
 app-emulation/* shared
 net-misc/iputils arping
 sys-devel/binutils plugins
 app-eselect/eselect-repository python_single_target_python3_10
-virtual/wine abi_x86_32 staging
-app-emulation/wine-staging themes udev png X abi_x86_32 abi_x86_64 alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype unwind vulkan xcomposite
-app-emulation/wine-gecko abi_x86_32
+virtual/wine staging
+app-emulation/wine-staging themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype unwind vulkan xcomposite
+app-emulation/wine-gecko 
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
 sys-devel/gcc vanilla sanitize ssp
 app-crypt/p11-kit asn1
 app-emulation/libspectrum zlib
-
-dev-libs/libffi abi_x86_32 abi_x86_64
-dev-libs/libxml2 abi_x86_32 abi_x86_64
-sys-devel/clang abi_x86_32 abi_x86_64 static-analyzer
-sys-devel/clang-runtime abi_x86_32 abi_x86_64
-sys-devel/llvm abi_x86_32 abi_x86_64 binutils-plugin
-sys-libs/compiler-rt abi_x86_32 abi_x86_64
-sys-libs/libcxxabi abi_x86_32 abi_x86_64 libunwind
-sys-libs/libcxx abi_x86_32 abi_x86_64 libunwind
-sys-libs/libunwind abi_x86_32 abi_x86_64
-sys-libs/llvm-libunwind abi_x86_32 abi_x86_64
-sys-libs/ncurses abi_x86_32 abi_x86_64 
-sys-libs/zlib abi_x86_32 abi_x86_64
+sys-devel/clang static-analyzer
+sys-devel/llvm binutils-plugin
+sys-libs/libcxxabi libunwind
+sys-libs/libcxx libunwind
 dev-lang/spidermonkey cpu_flags_arm_neon
 app-misc/mime-types nginx
 net-analyzer/rrdtool lua lua_targets: -* lua5-1
 net-misc/aria2 bittorrent
-virtual/opengl abi_x86_32
+virtual/opengl 
 net-firewall/iptables netlink nftables conntrack
 dev-scheme/guile regex threads deprecated
 app-emulation/fuse -alsa backend-X
-www-client/firefox clang X dbus openh264 pulseaudio system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp hwaccel
+www-client/firefox clang openh264 pulseaudio system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp hwaccel
 app-text/libwpd tools
-x11-libs/libXxf86vm abi_x86_32
-x11-libs/libxshmfence abi_x86_32
-x11-libs/libdrm abi_x86_32
-sys-libs/zlib abi_x86_32
-dev-libs/expat abi_x86_32
-media-libs/mesa abi_x86_32 llvm vulkan vulkan-loader
-media-libs/libglvnd abi_x86_32
-x11-libs/libXext abi_x86_32
-app-crypt/libmd abi_x86_32
-dev-libs/libbsd abi_x86_32
-x11-libs/libXdmcp abi_x86_32
-x11-libs/libXau abi_x86_32
-x11-libs/libxcb abi_x86_32
-x11-libs/libX11 abi_x86_32
-x11-libs/libXrender abi_x86_32
-x11-libs/libXrandr abi_x86_32
-app-arch/zstd abi_x86_32
-app-arch/bzip2 abi_x86_32
-app-arch/xz-utils abi_x86_32
-x11-libs/libXfixes abi_x86_32
+media-libs/mesa llvm vulkan vulkan-loader
 media-libs/libcanberra udev
 sys-apps/util-linux udev
 sys-apps/openrc unicode
@@ -220,43 +172,30 @@ dev-lang/python sqlite
 >=dev-lang/python-3.9.13:3.9 xml
 dev-python/typing-extensions python_targets_python3_9
 dev-python/zipp python_targets_python3_9
-dev-libs/dbus-glib abi_x86_32
-dev-libs/nspr abi_x86_32
-dev-libs/nss abi_x86_32
-media-libs/libpng-compat abi_x86_32
-media-libs/openal abi_x86_32
-sys-libs/libdev-compat abi_x86_32
-x11-libs/gtk+ abi_x86_32 inspector introspection
-x11-libs/libva abi_x86_32
-x11-libs/libvdpau abi_x86_32
-x11-libs/libXScrnSaver abi_x86_32
-x11-libs/libXinerama abi_x86_32
-net-dns/c-ares abi_x86_32
-dev-db/sqlite abi_x86_32
-sys-libs/readline abi_x86_32
-net-libs/libndp abi_x86_32
-virtual/libusb abi_x86_32
-dev-libs/libusb abi_x86_32
-net-libs/nghttp2 abi_x86_32
-
+x11-libs/gtk+ inspector introspection
 dev-python/gpep517 python_targets_python3_9
 dev-python/flit_core python_targets_python3_9
 dev-python/tomli python_targets_python3_9
 dev-python/installer python_targets_python3_9
-x11-libs/libXvMC abi_x86_32
-dev-util/glslang abi_x86_32
-x11-libs/libXv abi_x86_32
-gnome-base/librsvg abi_x86_32
-virtual/glu abi_x86_32
-media-libs/glu abi_x86_32
-virtual/opencl abi_x86_32
-dev-libs/opencl-icd-loader abi_x86_32
-app-emulation/wine-mono -abi_x86_64 abi_x86_32
 media-libs/libsdl2 haptic joystick
-media-libs/libsamplerate abi_x86_32
+media-libs/libsamplerate 
 virtual/libcrypt static-libs
 sys-libs/libxcrypt static-libs
 media-libs/libpng apng
 net-dns/dnsmasq script
 dev-libs/libdbusmenu gtk3
 x11-libs/libnotify introspection
+dev-libs/xmlsec nss
+media-libs/gegl cairo
+>=sys-firmware/edk2-ovmf-202105-r2 binary
+>=sys-firmware/ipxe-1.21.1 binary qemu
+>=sys-firmware/seabios-1.14.0-r2 seavgabios binary
+>=sys-firmware/sgabios-0.1_pre10 binary
+>=app-emulation/libvirt-glib-4.0.0 introspection
+>=sys-libs/libosinfo-1.10.0 introspection
+>=net-libs/gtk-vnc-1.3.1 introspection
+>=net-misc/spice-gtk-0.41 introspection usbredir gtk3
+>=x11-libs/gtksourceview-4.8.2 introspection
+>=x11-libs/vte-0.68.0 introspection
+>=media-libs/gstreamer-1.20.3 introspection
+>=net-dns/dnsmasq-2.86-r1 dhcp
