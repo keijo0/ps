@@ -1,0 +1,3 @@
+FEATURES="ccache"
+FEATURES="${FEATURES} assume-digests config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync multilib-strict parallel-fetch preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-orphans userfetch userpriv usersync xattr"
+CCACHE_DIR="/games/cache/ccache"
