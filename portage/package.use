@@ -1,6 +1,6 @@
 */* -*
 */* zstd
-*/* lto
+*/* lto clang
 */* opengl opencl vdpau vulkan
 */* alsa pulseaudio
 */* X acl fortran dbus dri gdbm openmp pcre readline split-us unicode nptl threads ncurses ipv6 ssl openssl 
@@ -30,9 +30,9 @@ app-emulation/libvirt qemu udev virt-network libvirtd caps
 app-emulation/qemu aio alsa bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls opengl oss pin-upstream-blobs png pulseaudio seccomp slirp vhost-net vnc xattr zstd
 app-emulation/virt-manager gui
 
-sys-kernel/gentoo-kernel-bin initramfs
+media-sound/mpd ffmpeg
 
-media-sound/spotify_dl python_targets: -* python3_8
+sys-kernel/gentoo-kernel-bin initramfs
 sys-apps/coreutils xattr
 www-client/ungoogled-chromium-bin generic
 x11-libs/pango introspection
@@ -96,7 +96,7 @@ media-sound/alsa-utils libsamplerate
 media-sound/pulseaudio-daemon bluetooth alsa alsa-plugin asyncns gdbm glib orc ssl udev webrtc-aec 
 media-sound/pulseaudio bluetooth glib 
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
-media-video/ffmpeg x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/ffmpeg libaom libdrm mp3 x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 media-libs/libcanberra alsa gtk3 pulseaudio sound udev
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
 dev-libs/libxml2 ftp icu python readline
@@ -117,13 +117,13 @@ net-misc/iputils arping
 sys-devel/binutils plugins
 app-eselect/eselect-repository python_single_target_python3_10
 virtual/wine staging
-app-emulation/wine-staging themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype unwind vulkan xcomposite
+app-emulation/wine-staging themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype vulkan xcomposite
 app-emulation/wine-gecko 
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
 sys-devel/gcc vanilla sanitize ssp
 app-crypt/p11-kit asn1
 app-emulation/libspectrum zlib
-sys-devel/clang static-analyzer
+sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx 
 sys-devel/llvm binutils-plugin
 sys-libs/libcxxabi libunwind
 sys-libs/libcxx libunwind
@@ -135,7 +135,7 @@ virtual/opengl
 net-firewall/iptables netlink nftables conntrack
 dev-scheme/guile regex threads deprecated
 app-emulation/fuse -alsa backend-X
-www-client/firefox clang openh264 pulseaudio system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp hwaccel
+www-client/firefox openh264 pulseaudio system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp hwaccel
 app-text/libwpd tools
 media-libs/mesa llvm vulkan vulkan-loader
 media-libs/libcanberra udev
@@ -199,3 +199,6 @@ media-libs/gegl cairo
 >=x11-libs/vte-0.68.0 introspection
 >=media-libs/gstreamer-1.20.3 introspection
 >=net-dns/dnsmasq-2.86-r1 dhcp
+app-crypt/p11-kit trust
+>=app-crypt/libsecret-0.20.5-r3 crypt
+dev-java/openjdk-bin gentoo-vm headless-awt source
