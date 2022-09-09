@@ -11,8 +11,5 @@ gnome-base/dconf
 gnome-base/librsvg
 gnome-base/gsettings-desktop-schemas
 games-util/mangohud
-=www-client/ungoogled-chromium-bin-104.0.5112.101
-=media-sound/spotify_dl-8.3.0
-# required by nvtop (argument)
-# /etc/portage/package.mask:
-=sys-process/nvtop-2.0.2
+www-client/ungoogled-chromium-bin
+media-libs/imgui

@@ -120,7 +120,7 @@ virtual/wine staging
 app-emulation/wine-staging themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype vulkan xcomposite
 app-emulation/wine-gecko 
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
-sys-devel/gcc vanilla sanitize ssp
+sys-devel/gcc vanilla sanitize ssp pgo
 app-crypt/p11-kit asn1
 app-emulation/libspectrum zlib
 sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx 
@@ -187,18 +187,23 @@ dev-libs/libdbusmenu gtk3
 x11-libs/libnotify introspection
 dev-libs/xmlsec nss
 media-libs/gegl cairo
->=sys-firmware/edk2-ovmf-202105-r2 binary
->=sys-firmware/ipxe-1.21.1 binary qemu
->=sys-firmware/seabios-1.14.0-r2 seavgabios binary
->=sys-firmware/sgabios-0.1_pre10 binary
->=app-emulation/libvirt-glib-4.0.0 introspection
->=sys-libs/libosinfo-1.10.0 introspection
->=net-libs/gtk-vnc-1.3.1 introspection
->=net-misc/spice-gtk-0.41 introspection usbredir gtk3
->=x11-libs/gtksourceview-4.8.2 introspection
->=x11-libs/vte-0.68.0 introspection
->=media-libs/gstreamer-1.20.3 introspection
->=net-dns/dnsmasq-2.86-r1 dhcp
+sys-firmware/edk2-ovmf binary
+sys-firmware/ipxe binary qemu
+sys-firmware/seabios seavgabios binary
+sys-firmware/sgabios binary
+app-emulation/libvirt-glib introspection
+sys-libs/libosinfo introspection
+net-libs/gtk-vnc introspection
+net-misc/spice-gtk introspection usbredir gtk3
+x11-libs/gtksourceview introspection
+x11-libs/vte introspection
+media-libs/gstreamer introspection
+net-dns/dnsmasq dhcp
 app-crypt/p11-kit trust
->=app-crypt/libsecret-0.20.5-r3 crypt
-dev-java/openjdk-bin gentoo-vm headless-awt source
+app-crypt/libsecret crypt
+gnome-base/gnome-desktop introspection
+net-libs/webkit-gtk introspection
+gnome-base/gsettings-desktop-schemas introspection
+app-arch/libarchive bzip2
+dev-java/openjdk-bin source gentoo-vm
+app-emulation/dxvk d3d11

@@ -9,12 +9,10 @@ LDFLAGS="${LDFLAGS} -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,--a
 
 # Hardening which isn't (yet?) done by default for Clang, unlike GCC.
 _HARDENING_FLAGS="-fstack-protector-strong -D_FORTIFY_SOURCE=2"
-CFLAGS="${CFLAGS} ${_HARDENING_FLAGS}"
-CXXFLAGS="${CXXFLAGS} ${_HARDENING_FLAGS}"
 LDFLAGS="${LDFLAGS} -Wl,-z,relro,-z,now"
 
-COMMON_FLAGS="-march=native -O3 -pipe -flto=thin -fomit-frame-pointer"
-CFLAGS="${COMMON_FLAGS}"
-CXXFLAGS="${COMMON_FLAGS}"
+COMMON_FLAGS="-march=native -O3 -pipe -flto=thin -fpic -fomit-frame-pointer"
+CFLAGS="${COMMON_FLAGS} ${_HARDENING_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS} ${_HARDENING_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"
 FFLAGS="${COMMON_FLAGS}"
