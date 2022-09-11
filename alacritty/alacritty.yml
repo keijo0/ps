@@ -4,8 +4,8 @@ cursor:
 colors:
   # Default colors
   primary:
-    background: '0xbeaa9b'
-    foreground: '0x161616'
+    background: '0x161616'
+    foreground: '0xbeaa9b'
 
   # Normal colors
   normal:
