@@ -27,7 +27,7 @@ sys-libs/libcxxabi libunwind
 sys-libs/libcxx libunwind
 
 media-sound/alsa-utils libsamplerate
-media-sound/pulseaudio-dddaemon bluetooth alsa alsa-plugin asyncns gdbm glib orc ssl udev webrtc-aec
+media-sound/pulseaudio-daemon bluetooth alsa alsa-plugin asyncns gdbm glib orc ssl udev webrtc-aec
 media-sound/pulseaudio bluetooth glib
 media-plugins/alsa-plugins pulseaudio usb-stream mix
 
@@ -40,7 +40,7 @@ app-emulation/* fdt shared
 app-emulation/qemu aio alsa bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls opengl oss pin-upstream-blobs png pulseaudio seccomp slirp vhost-net vnc xattr zstd
 app-emulation/virt-manager gui
 app-emulation/fuse zlib png -alsa backend-X
-app-emulation/wine-staging gstreamer themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype vulkan xcomposite
+app-emulation/wine-staging xinerama gstreamer themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype vulkan xcomposite
 app-emulation/wine-gecko
 app-emulation/winetricks gtk
 app-emulation/libspectrum zlib
@@ -108,7 +108,7 @@ net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter s
 media-libs/dav1d 8bit 10bit
 app-arch/libarchive e2fsprogs lzma
 app-editors/neovim nvimpager tui
-dev-qt/qtdeclarative widgets jit
+dev-qt/qtdeclarative -*
 app-portage/portage-utils qmanifest qtegrity
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl uchardet xv zlib
 media-video/ffmpeg libaom libdrm mp3 x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
@@ -125,7 +125,6 @@ app-shells/zsh gdbm pcre unicode
 x11-base/xorg-server xorg
 dev-libs/nettle gmp
 media-libs/alsa-lib 
-virtual/opengl 
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
 media-libs/libheif x265
 net-misc/iputils arping
@@ -152,7 +151,7 @@ media-libs/libsndfile minimal
 dev-lang/python build 
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 media-sound/pasystray libnotify
-sys-fs/eudev introspection kmod
+sys-fs/eudev introspection
 x11-base/xorg-server udev 
 dev-python/PyQt5 gui widgets
 net-libs/libsoup introspection
@@ -164,7 +163,7 @@ dev-libs/libdazzle gtk introspection vala
 media-libs/opencv contrib
 dev-qt/linguist-tools qml
 media-video/mpv cli libmpv
-dev-qt/qtdeclarative -widgets -vulkan -jit 
+dev-qt/qtdeclarative -vulkan
 dev-qt/qtsql sqlite
 dev-qt/qtnetwork ssl
 dev-lang/python sqlite
