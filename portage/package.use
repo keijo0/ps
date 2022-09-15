@@ -1,20 +1,13 @@
 */* -*
 */* zstd
 */* lto clang
-*/* opengl opencl vdpau vulkan
+*/* opengl opencl vdpau nvenc vulkan vaapi vdpau
 */* alsa pulseaudio
-*/* X acl fortran dbus dri gdbm openmp pcre readline split-us unicode nptl threads ncurses ipv6 ssl openssl 
-*/* kmod
-
+*/* X acl dbus gdbm openmp pcre readline threads ncurses ipv6 ssl kmod
 */* video_cards: -* nvidia
-x11-drivers/nvidia-drivers driver
-
-*/* l10n: -* 
-*/* apache2_modules: -*
-*/* xtables_addons: -*
+x11-drivers/nvidia-drivers driver tools
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* arm x86_64 sparc 
-app-emulation/* fdt
 */* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
 */* rustflags: -* -c target-cpu=native
 */* python_targets: -* python3_10
@@ -25,14 +18,43 @@ app-emulation/* fdt
 */* input_devices: -* libinput
 */* abi_x86_32
 
+sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
+sys-devel/gcc vanilla sanitize ssp nptl
+app-crypt/p11-kit asn1
+sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
+sys-devel/llvm binutils-plugin
+sys-libs/libcxxabi libunwind
+sys-libs/libcxx libunwind
+
+media-sound/alsa-utils libsamplerate
+media-sound/pulseaudio-dddaemon bluetooth alsa alsa-plugin asyncns gdbm glib orc ssl udev webrtc-aec
+media-sound/pulseaudio bluetooth glib
+media-plugins/alsa-plugins pulseaudio usb-stream mix
+
+x11-libs/libvdpau dri
+media-libs/gstreamer orc 
 app-emulation/libvirt qemu udev virt-network libvirtd caps
-*/spice-gtk usbdir
+app-emulation/libvirt-glib introspection
+app-emulation/dxvk d3d11
+app-emulation/* fdt shared
 app-emulation/qemu aio alsa bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls opengl oss pin-upstream-blobs png pulseaudio seccomp slirp vhost-net vnc xattr zstd
 app-emulation/virt-manager gui
+app-emulation/fuse zlib png -alsa backend-X
+app-emulation/wine-staging gstreamer themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype vulkan xcomposite
+app-emulation/wine-gecko
+app-emulation/winetricks gtk
+app-emulation/libspectrum zlib
 
+sys-firmware/edk2-ovmf binary
+sys-firmware/ipxe binary qemu
+sys-firmware/seabios seavgabios binary
+sys-firmware/sgabios binary
+
+*/spice-gtk usbdir
 media-sound/mpd ffmpeg
-
 sys-kernel/gentoo-kernel-bin initramfs
+sys-kernel/gentoo-sources experimental
+sys-apps/kmod lzma
 sys-apps/coreutils xattr
 www-client/ungoogled-chromium-bin generic
 x11-libs/pango introspection
@@ -46,9 +68,9 @@ app-arch/libarchive iconv
 net-misc/rsync iconv stunnel
 sys-apps/file seccomp
 sys-apps/man-db seccomp
-net-libs/gnutls seccomp
+net-libs/gnutls seccomp openssl
 app-misc/pax-utils seccomp
-dev-libs/libpcre2 pcre16 pcre32
+dev-libs/libpcre2 pcre16 pcre32 unicode
 media-libs/libplacebo glslang
 dev-qt/qtgui -vulkan udev png jpeg gif
 media-gfx/fontforge png jpeg gif
@@ -59,7 +81,6 @@ media-gfx/exiv2 png
 sys-libs/slang png
 media-gfx/qrencode png
 media-video/ffmpegthumbnailer jpeg png
-app-emulation/fuse zlib png
 dev-python/pillow jpeg
 x11-libs/gdk-pixbuf jpeg introspection
 x11-misc/picom config-file
@@ -77,8 +98,6 @@ dev-libs/boost zlib nls
 sys-libs/zlib minizip
 dev-libs/atk introspection
 media-libs/harfbuzz introspection icu
-media-plugins/alsa-plugins pulseaudio usb-stream mix
-sys-apps/kmod lzma
 sys-fs/e2fsprogs tools
 sys-libs/gdbm berkdb
 */net-tools arp hostname
@@ -86,18 +105,15 @@ app-text/poppler cairo cxx jpeg jpeg2k lcms png utils
 games-util/* steamruntime joystick
 media-libs/harfbuzz truetype glib graphite
 net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp
-media-video/obs-studio browser
 media-libs/dav1d 8bit 10bit
 app-arch/libarchive e2fsprogs lzma
 app-editors/neovim nvimpager tui
 dev-qt/qtdeclarative widgets jit
 app-portage/portage-utils qmanifest qtegrity
-media-sound/alsa-utils libsamplerate
-media-sound/pulseaudio-daemon bluetooth alsa alsa-plugin asyncns gdbm glib orc ssl udev webrtc-aec 
-media-sound/pulseaudio bluetooth glib 
-media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl pulseaudio uchardet xv zlib
-media-video/ffmpeg libaom libdrm mp3 x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc pulseaudio threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
-media-libs/libcanberra alsa gtk3 pulseaudio sound udev
+media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl uchardet xv zlib
+media-video/ffmpeg libaom libdrm mp3 x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+x11-libs/libdrm video_cards_radeon
+media-libs/libcanberra alsa gtk3 sound udev
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
 dev-libs/libxml2 ftp icu python readline
 media-libs/libepoxy egl
@@ -112,35 +128,19 @@ media-libs/alsa-lib
 virtual/opengl 
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
 media-libs/libheif x265
-app-emulation/* shared
 net-misc/iputils arping
 sys-devel/binutils plugins
 app-eselect/eselect-repository python_single_target_python3_10
 virtual/wine staging
-app-emulation/wine-staging themes udev png alsa fontconfig gecko mono opengl pulseaudio run-exes ssl threads truetype vulkan xcomposite
-app-emulation/wine-gecko 
-sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
-sys-devel/gcc vanilla sanitize ssp pgo
-app-crypt/p11-kit asn1
-app-emulation/libspectrum zlib
-sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx 
-sys-devel/llvm binutils-plugin
-sys-libs/libcxxabi libunwind
-sys-libs/libcxx libunwind
 dev-lang/spidermonkey cpu_flags_arm_neon
 app-misc/mime-types nginx
 net-analyzer/rrdtool lua lua_targets: -* lua5-1
 net-misc/aria2 bittorrent
-virtual/opengl 
-net-firewall/iptables netlink nftables conntrack
 dev-scheme/guile regex threads deprecated
-app-emulation/fuse -alsa backend-X
-www-client/firefox openh264 pulseaudio system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-webp hwaccel
 app-text/libwpd tools
 media-libs/mesa llvm vulkan vulkan-loader
 media-libs/libcanberra udev
 sys-apps/util-linux udev
-sys-apps/openrc unicode
 app-text/poppler png
 sys-fs/btrfs-progs udev
 media-libs/clutter-gtk egl
@@ -172,13 +172,12 @@ dev-lang/python sqlite
 >=dev-lang/python-3.9.13:3.9 xml
 dev-python/typing-extensions python_targets_python3_9
 dev-python/zipp python_targets_python3_9
-x11-libs/gtk+ inspector introspection
+x11-libs/gtk+ inspector xinerama introspection
 dev-python/gpep517 python_targets_python3_9
 dev-python/flit_core python_targets_python3_9
 dev-python/tomli python_targets_python3_9
 dev-python/installer python_targets_python3_9
 media-libs/libsdl2 haptic joystick
-media-libs/libsamplerate 
 virtual/libcrypt static-libs
 sys-libs/libxcrypt static-libs
 media-libs/libpng apng
@@ -187,11 +186,6 @@ dev-libs/libdbusmenu gtk3
 x11-libs/libnotify introspection
 dev-libs/xmlsec nss
 media-libs/gegl cairo
-sys-firmware/edk2-ovmf binary
-sys-firmware/ipxe binary qemu
-sys-firmware/seabios seavgabios binary
-sys-firmware/sgabios binary
-app-emulation/libvirt-glib introspection
 sys-libs/libosinfo introspection
 net-libs/gtk-vnc introspection
 net-misc/spice-gtk introspection usbredir gtk3
