@@ -7,4 +7,3 @@
 */*::gentoobr
 >=virtual/tmpfiles-0-r3
 dev-lang/rust
-net-im/signal-desktop-bin::gentoo

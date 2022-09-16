@@ -5,7 +5,6 @@
 */* alsa pulseaudio
 */* X acl dbus gdbm openmp pcre readline threads ncurses ipv6 ssl kmod
 */* video_cards: -* nvidia
-x11-drivers/nvidia-drivers driver tools
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* arm x86_64 sparc 
 */* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
@@ -17,6 +16,24 @@ x11-drivers/nvidia-drivers driver tools
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
 */* input_devices: -* libinput
 */* abi_x86_32
+
+x11-drivers/nvidia-drivers driver tools
+x11-libs/libvdpau dri
+x11-libs/pango introspection
+x11-libs/gdk-pixbuf jpeg introspection
+x11-misc/picom config-file
+x11-libs/libdrm video_cards_radeon
+x11-libs/cairo glib svg
+x11-libs/libxcb xkb
+x11-base/xorg-server xorg
+x11-libs/libva-vdpau-driver opengl
+x11-base/xorg-server udev
+x11-misc/picom opengl
+x11-libs/libfm gtk
+x11-libs/gtk+ inspector introspection xinerama
+x11-libs/libnotify introspection
+x11-libs/gtksourceview introspection
+x11-libs/vte introspection
 
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
 sys-devel/gcc vanilla sanitize ssp nptl
@@ -31,8 +48,6 @@ media-sound/pulseaudio-daemon bluetooth alsa alsa-plugin asyncns gdbm glib orc s
 media-sound/pulseaudio bluetooth glib
 media-plugins/alsa-plugins pulseaudio usb-stream mix
 
-x11-libs/libvdpau dri
-media-libs/gstreamer orc 
 app-emulation/libvirt qemu udev virt-network libvirtd caps
 app-emulation/libvirt-glib introspection
 app-emulation/dxvk d3d11
@@ -57,7 +72,6 @@ sys-kernel/gentoo-sources experimental
 sys-apps/kmod lzma
 sys-apps/coreutils xattr
 www-client/ungoogled-chromium-bin generic
-x11-libs/pango introspection
 media-fonts/* otf
 media-sound/spotifyd -pulseaudio
 dev-libs/glib -dbus
@@ -82,8 +96,6 @@ sys-libs/slang png
 media-gfx/qrencode png
 media-video/ffmpegthumbnailer jpeg png
 dev-python/pillow jpeg
-x11-libs/gdk-pixbuf jpeg introspection
-x11-misc/picom config-file
 net-libs/nodejs icu inspector npm snapshot ssl system-icu system-ssl 
 net-analyzer/rrdtool graph lua
 net-misc/dhcpcd udev embedded
@@ -112,17 +124,13 @@ dev-qt/qtdeclarative -*
 app-portage/portage-utils qmanifest qtegrity
 media-video/mpv jpeg alsa cli egl iconv libmpv lua opengl uchardet xv zlib
 media-video/ffmpeg libaom libdrm mp3 x264 openh264 alsa bzip2 dav1d encode gnutls gpl iconv network opencl opengl openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
-x11-libs/libdrm video_cards_radeon
 media-libs/libcanberra alsa gtk3 sound udev
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
 dev-libs/libxml2 ftp icu python readline
 media-libs/libepoxy egl
-x11-libs/cairo glib svg
-x11-libs/libxcb xkb
 dev-libs/openssl asm 
 dev-libs/libtomcrypt libtommath
 app-shells/zsh gdbm pcre unicode
-x11-base/xorg-server xorg
 dev-libs/nettle gmp
 media-libs/alsa-lib 
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
@@ -137,7 +145,7 @@ net-analyzer/rrdtool lua lua_targets: -* lua5-1
 net-misc/aria2 bittorrent
 dev-scheme/guile regex threads deprecated
 app-text/libwpd tools
-media-libs/mesa llvm vulkan vulkan-loader
+media-libs/mesa llvm vulkan vulkan-loader lm-sensors
 media-libs/libcanberra udev
 sys-apps/util-linux udev
 app-text/poppler png
@@ -146,18 +154,13 @@ media-libs/clutter-gtk egl
 media-libs/cogl gles2
 media-gfx/feh curl xinerama exif inotify
 sys-process/htop lm-sensors
-x11-libs/libva-vdpau-driver opengl
 media-libs/libsndfile minimal
 dev-lang/python build 
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 media-sound/pasystray libnotify
-sys-fs/eudev introspection
-x11-base/xorg-server udev 
 dev-python/PyQt5 gui widgets
 net-libs/libsoup introspection
-x11-misc/picom opengl
 app-crypt/gcr introspection vala gtk
-x11-libs/libfm gtk
 dev-qt/qtwebsockets qml
 dev-libs/libdazzle gtk introspection vala
 media-libs/opencv contrib
@@ -171,7 +174,6 @@ dev-lang/python sqlite
 >=dev-lang/python-3.9.13:3.9 xml
 dev-python/typing-extensions python_targets_python3_9
 dev-python/zipp python_targets_python3_9
-x11-libs/gtk+ inspector xinerama introspection
 dev-python/gpep517 python_targets_python3_9
 dev-python/flit_core python_targets_python3_9
 dev-python/tomli python_targets_python3_9
@@ -182,15 +184,12 @@ sys-libs/libxcrypt static-libs
 media-libs/libpng apng
 net-dns/dnsmasq script
 dev-libs/libdbusmenu gtk3
-x11-libs/libnotify introspection
 dev-libs/xmlsec nss
 media-libs/gegl cairo
 sys-libs/libosinfo introspection
 net-libs/gtk-vnc introspection
 net-misc/spice-gtk introspection usbredir gtk3
-x11-libs/gtksourceview introspection
-x11-libs/vte introspection
-media-libs/gstreamer introspection
+media-libs/gstreamer introspection orc 
 net-dns/dnsmasq dhcp
 app-crypt/p11-kit trust
 app-crypt/libsecret crypt
