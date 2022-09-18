@@ -19,4 +19,5 @@ LDFLAGS  = -L$(X11LIB) -s
 LDLIBS   = -lX11
 
 # compiler and linker
-CC = cc
+CC = /usr/lib/llvm/14/bin/clang
+ld = mold

@@ -28,4 +28,5 @@ CFLAGS   = -std=c99 -pedantic -Wall -Os $(INCS) $(CPPFLAGS)
 LDFLAGS  = $(LIBS)
 
 # compiler and linker
-CC = cc
+CC = /usr/lib/llvm/14/bin/clang
+ld = mold
