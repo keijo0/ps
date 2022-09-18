@@ -36,7 +36,7 @@ x11-libs/gtksourceview introspection
 x11-libs/vte introspection
 
 sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
-sys-devel/gcc vanilla sanitize ssp nptl
+sys-devel/gcc fortran vanilla sanitize ssp nptl
 app-crypt/p11-kit asn1
 sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
 sys-devel/llvm binutils-plugin
@@ -77,6 +77,7 @@ media-sound/spotifyd -pulseaudio
 dev-libs/glib -dbus
 sys-apps/shadow su
 sys-apps/makedev build
+dev-libs/quazip qt5
 app-crypt/gpgme cxx
 app-arch/libarchive iconv
 net-misc/rsync iconv stunnel
@@ -199,3 +200,6 @@ gnome-base/gsettings-desktop-schemas introspection
 app-arch/libarchive bzip2
 dev-java/openjdk-bin source gentoo-vm
 app-emulation/dxvk d3d11
+sys-fs/eudev introspection
+x11-libs/gtksourceview introspection
+x11-libs/vte introspection
