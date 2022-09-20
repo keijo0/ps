@@ -1,15 +1,12 @@
 [global]
-    font = Quicksand 10
-
+    font = Quicksand 11
+    offset = 10x30
+    scale = 1.2
     allow_markup = yes
-
     format = "<small><b>%a - </b>%s</small>\n%b"
     icon_position = left
-    corner_radius = 7
-    class= Dunst
-    title= Dunst
-
-    origin = top-left
+    corner_radius = 10
+    origin = bottom-right
     sort = yes
     progress_bar = true
     progress_bar_height = 10
@@ -23,13 +20,13 @@
     ignore_newline = no
     transparency = 0
     idle_threshold = -1
-    monitor = 0
-    follow = keyboard
+    monitor = 1
+    follow = none
     sticky_history = yes
     line_height = 2
-    separator_height = 2
-    padding = 10
-    horizontal_padding = 10
+    separator_height = 1
+    padding = 8
+    horizontal_padding = 8
     separator_color = frame
     startup_notification = true
     show_indicators = yes
