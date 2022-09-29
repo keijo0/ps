@@ -13,3 +13,5 @@ gnome-base/gsettings-desktop-schemas
 games-util/mangohud
 www-client/ungoogled-chromium-bin
 media-libs/imgui
+www-client/chromium-bin
+media-sound/spotify_dl

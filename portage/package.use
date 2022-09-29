@@ -32,6 +32,7 @@ x11-libs/libnotify introspection
 x11-libs/gtksourceview introspection
 x11-libs/vte introspection
 
+media-libs/vulkan-loader layers
 media-libs/libsdl2 sound threads video
 media-libs/libcanberra gtk3 sound udev
 media-libs/libplacebo glslang
@@ -44,7 +45,7 @@ media-libs/harfbuzz truetype glib graphite
 media-libs/dav1d 8bit 10bit
 media-libs/libepoxy egl
 media-libs/libheif x265
-media-libs/mesa llvm lm-sensors
+media-libs/mesa llvm lm-sensors vulkan vulkan-overlay
 media-libs/libcanberra udev
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
@@ -73,7 +74,7 @@ sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld d
 sys-devel/llvm binutils-plugin
 sys-devel/binutils plugins
 
-net-libs/nodejs icu inspector npm snapshot ssl system-icu system-ssl
+net-libs/nodejs icu npm snapshot ssl system-icu system-ssl
 net-libs/libsoup introspection
 net-libs/gtk-vnc introspection
 net-libs/webkit-gtk introspection
@@ -97,7 +98,7 @@ app-emulation/* fdt shared
 app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
 app-emulation/virt-manager gui
 app-emulation/fuse zlib png -alsa backend-X
-app-emulation/wine-staging xinerama gstreamer themes udev png fontconfig gecko mono run-exes ssl threads truetype vulkan xcomposite
+app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono run-exes ssl threads truetype vulkan llvm-libunwind
 app-emulation/wine-gecko
 app-emulation/winetricks gtk
 app-emulation/libspectrum zlib
@@ -121,7 +122,7 @@ sys-apps/shadow su
 sys-apps/makedev build
 sys-apps/util-linux udev
 
-dev-qt/qtgui -vulkan udev png jpeg gif
+dev-qt/qtgui -vulkan -udev png jpeg gif
 dev-qt/qtwidgets png
 dev-qt/qtdeclarative -*
 dev-qt/qtwebsockets qml
@@ -142,9 +143,7 @@ dev-libs/libdazzle gtk introspection vala
 dev-libs/libdbusmenu gtk3
 dev-libs/xmlsec nss
 
-net-analyzer/rrdtool graph lua
-net-analyzer/rrdtool lua lua_targets: -* lua5-1
-
+net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
 www-client/ungoogled-chromium-bin generic
 media-fonts/* otf
 app-arch/libarchive iconv
@@ -156,7 +155,7 @@ media-gfx/qrencode png
 
 media-video/mpv jpeg cli egl iconv libmpv lua uchardet xv zlib
 media-video/ffmpegthumbnailer jpeg png
-media-video/ffmpeg chromium fontconfig ieee1394 openal webp opencl vdpau vaapi libaom libdrm mp3 x264 openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/ffmpeg chromium fontconfig ieee1394 openal webp opencl vdpau  libaom libdrm mp3 x264 openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 
 net-misc/rsync iconv stunnel
 net-misc/dhcpcd udev embedded
@@ -175,7 +174,7 @@ app-arch/libarchive e2fsprogs lzma
 app-editors/neovim nvimpager tui
 app-portage/portage-utils qmanifest qtegrity
 dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
-app-shells/zsh pcre unicode gdbm
+app-shells/zsh pcre gdbm
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
 app-eselect/eselect-repository python_single_target_python3_10
 virtual/wine staging
@@ -203,7 +202,6 @@ app-arch/libarchive bzip2
 dev-java/openjdk-bin source gentoo-vm
 app-emulation/dxvk d3d11
 app-i18n/ibus gtk3
-media-plugins/gst-plugins-meta vaapi
 
 gnome-base/gnome-desktop introspection
 gnome-base/gsettings-desktop-schemas introspection
