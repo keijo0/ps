@@ -1,3 +1,4 @@
+
 ! special
 *.foreground:   #c0b18b
 *.background:   #1f1f1f
@@ -36,7 +37,7 @@
 *.color15:      #c0b18b
 
 URxvt*cursorBlink: true
-URxvt*font:  xft:Cousine:size=12:antialias=true
+URxvt*font:  xft:Space Mono:size=10:antialias=true
 urxvt*background: rgba:0000/0000/0100/c900
 URxvt*depth: 32
 URxvt*scrollBar: false
@@ -48,4 +49,8 @@ URxvt.keysym.C-minus:     resize-font:smaller
 URxvt.keysym.C-plus:      resize-font:bigger
 URxvt.keysym.C-equal:     resize-font:reset
 URxvt.keysym.C-question:  resize-font:show
+
+
+Xcursor.theme: Adwaita
 Xcursor.size: 24
+
