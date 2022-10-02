@@ -33,6 +33,7 @@ x11-libs/gtksourceview introspection
 x11-libs/vte introspection
 
 media-libs/vulkan-loader layers
+media-libs/libpulse glib
 media-libs/libsdl2 sound threads video
 media-libs/libcanberra gtk3 sound udev
 media-libs/libplacebo glslang
@@ -60,7 +61,7 @@ sys-fs/e2fsprogs tools
 sys-fs/btrfs-progs udev
 sys-fs/eudev introspection
 
-sys-libs/glibc vanilla clone3 multiarch ssp stack-realign
+sys-libs/glibc clone3
 sys-libs/libcxxabi libunwind
 sys-libs/libcxx libunwind
 sys-libs/slang png
@@ -147,7 +148,6 @@ net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
 www-client/ungoogled-chromium-bin generic
 media-fonts/* otf
 app-arch/libarchive iconv
-net-misc/rsync iconv stunnel
 media-gfx/fontforge png jpeg gif
 net-print/cups-filters jpeg png
 media-gfx/exiv2 png
@@ -157,7 +157,7 @@ media-video/mpv jpeg cli egl iconv libmpv lua uchardet xv zlib
 media-video/ffmpegthumbnailer jpeg png
 media-video/ffmpeg chromium fontconfig ieee1394 openal webp opencl vdpau  libaom libdrm mp3 x264 openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 
-net-misc/rsync iconv stunnel
+net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
 net-misc/netifrc dhcp
 net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp
@@ -205,3 +205,6 @@ app-i18n/ibus gtk3
 
 gnome-base/gnome-desktop introspection
 gnome-base/gsettings-desktop-schemas introspection
+
+www-client/firefox hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
+media-libs/libvpx postproc
