@@ -61,7 +61,7 @@ sys-fs/e2fsprogs tools
 sys-fs/btrfs-progs udev
 sys-fs/eudev introspection
 
-sys-libs/glibc clone3
+sys-libs/glibc clone3 vanilla multiarch ssp stack-realign
 sys-libs/libcxxabi libunwind
 sys-libs/libcxx libunwind
 sys-libs/slang png
@@ -114,9 +114,7 @@ app-text/libwpd tools
 app-text/poppler png
 app-text/xmlto text
 
-sys-kernel/gentoo-kernel-bin initramfs
 sys-kernel/gentoo-sources experimental
-
 sys-apps/kmod lzma
 sys-apps/coreutils xattr
 sys-apps/shadow su
@@ -145,7 +143,6 @@ dev-libs/libdbusmenu gtk3
 dev-libs/xmlsec nss
 
 net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
-www-client/ungoogled-chromium-bin generic
 media-fonts/* otf
 app-arch/libarchive iconv
 media-gfx/fontforge png jpeg gif
@@ -206,5 +203,6 @@ app-i18n/ibus gtk3
 gnome-base/gnome-desktop introspection
 gnome-base/gsettings-desktop-schemas introspection
 
-www-client/firefox hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
+www-client/* generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
 media-libs/libvpx postproc
+app-accessibility/at-spi2-core introspection
