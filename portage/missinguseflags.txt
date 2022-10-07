@@ -1,0 +1,23 @@
+pp-emulation/libvirt qemu udev virt-network libvirtd caps
+app-emulation/libvirt-glib introspection
+app-emulation/dxvk d3d11
+app-emulation/* fdt shared
+app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls
+oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
+app-emulation/virt-manager gui
+app-emulation/fuse zlib png -alsa backend-X
+app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono
+run-exes ssl threads truetype vulkan llvm-libunwind
+app-emulation/wine-gecko
+app-emulation/winetricks gtk
+app-emulation/libspectrum zlib
+virtual/wine staging
+
+
+sys-firmware/edk2-ovmf binary
+sys-firmware/ipxe binary qemu
+sys-firmware/seabios seavgabios binary
+sys-firmware/sgabios binary
+
+dev-java/openjdk-bin source gentoo-vm
+app-emulation/dxvk d3d11
