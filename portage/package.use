@@ -18,7 +18,7 @@
 */* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
 */* input_devices: -* libinput
 
-x11-drivers/nvidia-drivers driver tools
+x11-drivers/nvidia-drivers driver
 x11-libs/libvdpau dri
 x11-libs/pango introspection
 x11-libs/gdk-pixbuf jpeg introspection
@@ -41,12 +41,11 @@ media-libs/* png jpeg gif
 media-libs/openh264 plugin
 media-libs/sdl2-image gif jpeg png webp
 media-libs/sdl2-mixer opus mp3
-media-libs/harfbuzz introspection icu
-media-libs/harfbuzz truetype glib graphite
+media-libs/harfbuzz introspection icu truetype glib graphite
 media-libs/dav1d 8bit 10bit
 media-libs/libepoxy egl
 media-libs/libheif x265
-media-libs/mesa llvm lm-sensors vulkan vulkan-overlay
+media-libs/mesa llvm lm-sensors vulkan vulkan-overlay vaapi xvmc video_cards: d3d12
 media-libs/libcanberra udev
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
@@ -78,8 +77,6 @@ sys-devel/binutils plugins
 net-libs/nodejs icu npm snapshot ssl system-icu system-ssl
 net-libs/libsoup introspection
 net-libs/gtk-vnc introspection
-net-libs/webkit-gtk introspection
-
 app-crypt/p11-kit asn1 trust
 app-crypt/gpgme cxx
 app-crypt/gcr introspection vala gtk
@@ -91,23 +88,6 @@ media-sound/pulseaudio bluetooth glib
 media-sound/mpd ffmpeg
 media-sound/spotifyd -pulseaudio
 media-sound/pasystray libnotify
-
-app-emulation/libvirt qemu udev virt-network libvirtd caps
-app-emulation/libvirt-glib introspection
-app-emulation/dxvk d3d11
-app-emulation/* fdt shared
-app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
-app-emulation/virt-manager gui
-app-emulation/fuse zlib png -alsa backend-X
-app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono run-exes ssl threads truetype vulkan llvm-libunwind
-app-emulation/wine-gecko
-app-emulation/winetricks gtk
-app-emulation/libspectrum zlib
-
-sys-firmware/edk2-ovmf binary
-sys-firmware/ipxe binary qemu
-sys-firmware/seabios seavgabios binary
-sys-firmware/sgabios binary
 
 app-text/poppler cairo cxx jpeg jpeg2k lcms png utils
 app-text/libwpd tools
@@ -152,7 +132,7 @@ media-gfx/qrencode png
 
 media-video/mpv jpeg cli egl iconv libmpv lua uchardet xv zlib
 media-video/ffmpegthumbnailer jpeg png
-media-video/ffmpeg chromium fontconfig ieee1394 openal webp opencl vdpau  libaom libdrm mp3 x264 openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/ffmpeg fontconfig openal webp opencl vdpau  libaom libdrm mp3 x264 openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 
 net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
@@ -174,7 +154,6 @@ dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
 app-shells/zsh pcre gdbm
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
 app-eselect/eselect-repository python_single_target_python3_10
-virtual/wine staging
 app-misc/mime-types nginx
 dev-scheme/guile regex threads deprecated
 media-gfx/feh curl xinerama exif inotify
@@ -196,8 +175,6 @@ dev-python/installer python_targets_python3_9
 virtual/libcrypt static-libs
 net-dns/dnsmasq dhcp script
 app-arch/libarchive bzip2
-dev-java/openjdk-bin source gentoo-vm
-app-emulation/dxvk d3d11
 app-i18n/ibus gtk3
 
 gnome-base/gnome-desktop introspection
@@ -206,3 +183,4 @@ gnome-base/gsettings-desktop-schemas introspection
 www-client/* generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
 media-libs/libvpx postproc
 app-accessibility/at-spi2-core introspection
+sys-process/lsof rpc

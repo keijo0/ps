@@ -1,3 +1,4 @@
+*/*::making
 */*::nest
 */*::pf4public
 */*::src_prepare-overlay
@@ -5,7 +6,7 @@
 */*::guru
 */*::wine
 */*::gentoobr
-*/*::pentoo
+
 >=virtual/tmpfiles-0-r3
 dev-lang/rust
 net-libs/webkit-gtk

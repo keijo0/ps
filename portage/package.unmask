@@ -15,3 +15,12 @@ www-client/ungoogled-chromium-bin
 media-libs/imgui
 www-client/chromium-bin
 media-sound/spotify_dl
+# required by tap-plugins::making (argument)
+# /etc/portage/package.mask:
+=media-plugins/tap-plugins-1.0.1
+# required by swh-plugins::making (argument)
+# /etc/portage/package.mask:
+=media-plugins/swh-plugins-0.4.17
+# required by lmms::making (argument)
+# /etc/portage/package.mask:
+=media-sound/lmms-1.2.2
