@@ -1,11 +1,7 @@
 */* -*
 */* zstd
 */* lto clang
-*/* opengl nvenc
-*/* alsa pulseaudio
-*/* X acl dbus openmp pcre readline threads ncurses ssl kmod openssl
-*/* abi_x86_32
-
+*/* dbus openmp pcre readline ncurses ssl kmod openssl
 */* video_cards: -* nvidia
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* arm x86_64 sparc 
@@ -34,7 +30,7 @@ x11-libs/vte introspection
 
 media-libs/vulkan-loader layers
 media-libs/libpulse glib
-media-libs/libsdl2 sound threads video
+media-libs/libsdl2 sound video
 media-libs/libcanberra gtk3 sound udev
 media-libs/libplacebo glslang
 media-libs/* png jpeg gif
@@ -132,7 +128,7 @@ media-gfx/qrencode png
 
 media-video/mpv jpeg cli egl iconv libmpv lua uchardet xv zlib
 media-video/ffmpegthumbnailer jpeg png
-media-video/ffmpeg fontconfig openal webp opencl vdpau  libaom libdrm mp3 x264 openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc threads vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/ffmpeg threads fontconfig openal webp opencl vdpau  libaom libdrm mp3 x264 x265 svg truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 
 net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
@@ -150,12 +146,12 @@ games-util/* steamruntime joystick
 app-arch/libarchive e2fsprogs lzma
 app-editors/neovim nvimpager tui
 app-portage/portage-utils qmanifest qtegrity
-dev-vcs/git blksha1 curl gpg iconv pcre -threads webdav
+dev-vcs/git blksha1 curl gpg iconv pcre webdav
 app-shells/zsh pcre gdbm
 media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
 app-eselect/eselect-repository python_single_target_python3_10
 app-misc/mime-types nginx
-dev-scheme/guile regex threads deprecated
+dev-scheme/guile regex deprecated
 media-gfx/feh curl xinerama exif inotify
 sys-process/htop lm-sensors
 dev-lang/python build 
@@ -180,7 +176,14 @@ app-i18n/ibus gtk3
 gnome-base/gnome-desktop introspection
 gnome-base/gsettings-desktop-schemas introspection
 
-www-client/* generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
+www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
 media-libs/libvpx postproc
 app-accessibility/at-spi2-core introspection
 sys-process/lsof rpc
+
+
+app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind
+app-emulation/wine-gecko
+app-emulation/winetricks gtk
+app-emulation/libspectrum zlib
+virtual/wine staging
