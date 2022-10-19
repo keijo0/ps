@@ -41,7 +41,7 @@ media-libs/harfbuzz introspection icu truetype glib graphite
 media-libs/dav1d 8bit 10bit
 media-libs/libepoxy egl
 media-libs/libheif x265
-media-libs/mesa llvm lm-sensors vulkan vulkan-overlay vaapi xvmc video_cards: d3d12
+media-libs/mesa xvmc vulkan vulkan-overlay d3d10
 media-libs/libcanberra udev
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
@@ -132,6 +132,7 @@ media-video/ffmpeg threads fontconfig openal webp opencl vdpau  libaom libdrm mp
 
 net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
+net-misc/dhcpcd-ui libnotify gtk
 net-misc/netifrc dhcp
 net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp
 net-misc/iputils arping
@@ -182,8 +183,22 @@ app-accessibility/at-spi2-core introspection
 sys-process/lsof rpc
 
 
-app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind
+app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind abi_x86_64
+app-emulation/winetricks gtk
+app-emulation/libspectrum zlib
+virtual/wine staging abi_x86_64
+app-emulation/dxvk d3d10 d3d11
+
+pp-emulation/libvirt qemu udev virt-network libvirtd caps
+app-emulation/libvirt-glib introspection
+app-emulation/* fdt shared
+app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
+app-emulation/virt-manager gui
+app-emulation/fuse zlib png -alsa backend-X
 app-emulation/wine-gecko
 app-emulation/winetricks gtk
 app-emulation/libspectrum zlib
-virtual/wine staging
+sys-firmware/edk2-ovmf binary
+sys-firmware/ipxe binary qemu
+sys-firmware/seabios seavgabios binary
+sys-firmware/sgabios binary

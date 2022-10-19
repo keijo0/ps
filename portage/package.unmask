@@ -17,3 +17,6 @@ www-client/chromium-bin
 media-sound/spotify_dl
 media-sound/lmms
 media-sound/spotify
+# required by sys-apps/intel-performance-counter-monitor::making (argument)
+# /etc/portage/package.mask:
+=sys-apps/intel-performance-counter-monitor-2.10
