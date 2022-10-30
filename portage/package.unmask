@@ -1,22 +1,5 @@
-sys-apps/opentmpfiles
 games-util/steam-meta
 games-util/steam-client-meta
-app-misc/lf
 games-util/steam-launcher
-sys-devel/automake
 games-util/esteam
-gnome-extra/nm-applet
-gnome-extra/zenity
-gnome-base/dconf
-gnome-base/librsvg
-gnome-base/gsettings-desktop-schemas
-games-util/mangohud
-www-client/ungoogled-chromium-bin
-media-libs/imgui
-www-client/chromium-bin
-media-sound/spotify_dl
-media-sound/lmms
-media-sound/spotify
-# required by sys-apps/intel-performance-counter-monitor::making (argument)
-# /etc/portage/package.mask:
-=sys-apps/intel-performance-counter-monitor-2.10
+=app-emulation/wine-mono-7.1.1

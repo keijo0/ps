@@ -2,3 +2,4 @@
 www-client/ungoogled-chromium-bin **
 media-libs/mesa **
 x11-apps/mesa-progs **
+dev-libs/openssl **

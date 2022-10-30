@@ -1,0 +1,5 @@
+NM="llvm-nm"
+RANLIB="llvm-ranlib"
+LDFLAGS="${LDFLAGS} -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,--as-needed"
+_HARDENING_FLAGS="-fstack-protector-strong -D_FORTIFY_SOURCE=2"
+LDFLAGS="${LDFLAGS} -Wl,-z,relro,-z,now"

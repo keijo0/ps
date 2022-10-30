@@ -1,7 +1,5 @@
 */* -*
-*/* zstd
-*/* lto clang
-*/* dbus openmp pcre readline ncurses ssl kmod openssl
+*/* X zstd lto clang pulseaudio dbus openmp pcre readline ncurses ssl kmod openssl nvenc opengl
 */* video_cards: -* nvidia
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* arm x86_64 sparc 
@@ -41,7 +39,7 @@ media-libs/harfbuzz introspection icu truetype glib graphite
 media-libs/dav1d 8bit 10bit
 media-libs/libepoxy egl
 media-libs/libheif x265
-media-libs/mesa xvmc vulkan vulkan-overlay d3d10
+media-libs/mesa llvm xvmc vulkan vulkan-overlay 
 media-libs/libcanberra udev
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
@@ -67,6 +65,8 @@ sys-libs/libosinfo introspection
 
 sys-devel/gcc fortran vanilla sanitize ssp nptl
 sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
+sys-devel/clang-common default-compiler-rt default-libcxx default-lld lvm-libunwind
+sys-devel/clang-runtime compiler-rt libcxx-sanitize
 sys-devel/llvm binutils-plugin
 sys-devel/binutils plugins
 
@@ -182,8 +182,9 @@ media-libs/libvpx postproc
 app-accessibility/at-spi2-core introspection
 sys-process/lsof rpc
 
-
 app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind abi_x86_64
+app-emulation/wine-lutris xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind threads abi_x86_64
+app-emulation/wine-vanilla xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind threads
 app-emulation/winetricks gtk
 app-emulation/libspectrum zlib
 virtual/wine staging abi_x86_64
@@ -202,3 +203,5 @@ sys-firmware/edk2-ovmf binary
 sys-firmware/ipxe binary qemu
 sys-firmware/seabios seavgabios binary
 sys-firmware/sgabios binary
+
+games-emulation/pcsx2 vulkan
