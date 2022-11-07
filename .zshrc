@@ -5,6 +5,7 @@ ZSH_COMMAND_TIME_MSG="%s"
 ZSH_COMMAND_TIME_COLOR="white"
 ZSH_COMMAND_TIME_EXCLUDE=()
 
+autoload -U promptinit; promptinit
 export ZSH="$HOME/.config/oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 unsetopt ALWAYS_LAST_PROMPT
@@ -67,10 +68,9 @@ alias overlay="cd /var/db/repos/making"
 alias virt-manager="doas rc-service dbus start & doas rc-service libvirtd start && virt-manager"
 alias f="xrandr --output DP-2 --mode 2560x1440 --refresh 144 --output DP-0 --mode 2560x1440 --refresh 165 --right-of DP-2 &"
 alias gentoo="cd /var/db/repos/gentoo"
-alias bbb="doas make CC=/usr/lib/llvm/14/bin/clang clean && doas make CC=/usr/lib/llvm/14/bin/clang -j6 LD=/usr/bin/ld.lld AR=/usr/lib/llvm/14/bin/llvm-ar NM=/usr/lib/llvm/14/bin/llvm-nm STRIP=/usr/lib/llvm/14/bin/llvm-strip OBJCOPY=/usr/lib/llvm/14/bin/llvm-objcopy OBJDUMP=/usr/lib/llvm/14/bin/llvm-objdump READELF=/usr/lib/llvm/14/bin/llvm-readelf HOSTCC=/usr/lib/llvm/14/bin/clang HOSTCXX=/usr/lib/llvm/14/bin/clang++ HOSTAR=/usr/lib/llvm/14/bin/llvm-ar HOSTLD=/usr/bin/ld.lld && doas make CC=/usr/lib/llvm/14/bin/clang modules_install install && doas emerge @module-rebuild && cd arch/x86/boot"
-alias bbbb="doas make clean && doas make CC=/usr/lib/llvm/14/bin/clang -j6 LD=/usr/bin/ld.lld AR=/usr/lib/llvm/14/bin/llvm-ar NM=/usr/lib/llvm/14/bin/llvm-nm STRIP=/usr/lib/llvm/14/bin/llvm-strip OBJCOPY=/usr/lib/llvm/14/bin/llvm-objcopy OBJDUMP=/usr/lib/llvm/14/bin/llvm-objdump READELF=/usr/lib/llvm/14/bin/llvm-readelf HOSTCC=/usr/lib/llvm/14/bin/clang HOSTCXX=/usr/lib/llvm/14/bin/clang++ HOSTAR=/usr/lib/llvm/14/bin/llvm-ar HOSTLD=/usr/bin/ld.lld && doas make CC=/usr/lib/llvm/14/bin/clang modules_install install && doas emerge @module-rebuild && cd arch/x86/boot"
-alias bd="doas make clean && doas make CC=/usr/lib/llvm/14/bin/clang -j6 LD=/usr/bin/ld.lld AR=/usr/lib/llvm/14/bin/llvm-ar NM=/usr/lib/llvm/14/bin/llvm-nm STRIP=/usr/lib/llvm/14/bin/llvm-strip OBJCOPY=/usr/lib/llvm/14/bin/llvm-objcopy OBJDUMP=/usr/lib/llvm/14/bin/llvm-objdump READELF=/usr/lib/llvm/14/bin/llvm-readelf HOSTCC=/usr/lib/llvm/14/bin/clang HOSTCXX=/usr/lib/llvm/14/bin/clang++ HOSTAR=/usr/lib/llvm/14/bin/llvm-ar HOSTLD=/usr/bin/ld.lld && doas make modules_install install && doas emerge @module-rebuild && cd arch/x86/boot"
+alias bbb="doas make CC=/usr/lib/llvm/14/bin/clang clean && doas make CC=/usr/lib/llvm/14/bin/clang -j6 LD=/usr/bin/ld.lld AR=/usr/lib/llvm/14/bin/llvm-ar NM=/usr/lib/llvm/14/bin/llvm-nm STRIP=/usr/lib/llvm/14/bin/llvm-strip OBJCOPY=/usr/lib/llvm/14/bin/llvm-objcopy OBJDUMP=/usr/lib/llvm/14/bin/llvm-objdump READELF=/usr/lib/llvm/14/bin/llvm-readelf HOSTCC=/usr/lib/llvm/14/bin/clang HOSTCXX=/usr/lib/llvm/14/bin/clang++ HOSTAR=/usr/lib/llvm/14/bin/llvm-ar HOSTLD=/usr/bin/ld.lld && doas make CC=/usr/lib/llvm/14/bin/clang modules_install install && doas emerge @module-rebuild && cd arch/x86/boot && notify-send 'emerge finished'"
 alias pk="pulseaudio -k"
 alias ps="pulseaudio & disown"
 alias ip="curl ifconfig.me"
 alias shred="shred -uv"
+alias sp="spotifyd & spt"
