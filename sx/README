@@ -1,2 +1,0 @@
-to build
-  make PREFIX=/usr install
