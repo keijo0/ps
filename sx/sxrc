@@ -1,5 +1,0 @@
-xrdb ~/.Xresources &
-xrandr --output DP-0 --mode 2560x1440 --refresh 144 --rotate left --output DP-2 --mode 2560x1440 --refresh 165 --right-of DP-0 &
-feh --bg-fill --no-fehbg ~/Downloads/mountain-landscape-photography-gesause-park-3840x2160_947788-mm-90.jpg --bg-fill --no-fehbg ~/Downloads/mountain-peak-covered-with-snow-2560x1440_579774-mm-90.jpg &
-dbus-launch --exit-with-session d
-
