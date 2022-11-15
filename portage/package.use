@@ -1,5 +1,5 @@
 */* -*
-*/* X zstd lto clang pulseaudio dbus openmp pcre readline ncurses ssl kmod openssl nvenc opengl
+*/* X zstd lto clang pulseaudio dbus openmp pcre readline ncurses ssl kmod openssl nvenc opengl jpeg png gif svg introspection
 */* video_cards: -* nvidia
 */* qemu_user_targets: -* x86_64
 */* qemu_softmmu_targets: -* arm x86_64 sparc 
@@ -14,31 +14,20 @@
 
 x11-drivers/nvidia-drivers tools driver
 x11-libs/libvdpau dri
-x11-libs/pango introspection
-x11-libs/gdk-pixbuf jpeg introspection
 x11-misc/picom config-file
-x11-libs/cairo glib svg
+x11-libs/cairo glib 
 x11-libs/libxcb xkb
 x11-base/xorg-server xorg udev
 x11-libs/libfm gtk
-x11-libs/gtk+ inspector introspection xinerama
-x11-libs/libnotify introspection
-x11-libs/gtksourceview introspection
-x11-libs/vte introspection
-
-gui-libs/gtk introspection
-
-media-libs/graphene introspection
+x11-libs/gtk+ inspector xinerama
 media-libs/vulkan-loader layers
 media-libs/libpulse glib
 media-libs/libsdl2 sound video
 media-libs/libcanberra gtk3 sound udev
 media-libs/libplacebo glslang -opengl llvm-libunwind
-media-libs/* png jpeg gif
 media-libs/openh264 plugin
-media-libs/sdl2-image gif jpeg png webp
 media-libs/sdl2-mixer opus mp3
-media-libs/harfbuzz introspection icu truetype glib graphite
+media-libs/harfbuzz icu truetype glib graphite
 media-libs/dav1d 8bit 10bit
 media-libs/libepoxy egl
 media-libs/libheif x265
@@ -51,20 +40,16 @@ media-libs/opencv contrib
 media-libs/libsdl2 haptic joystick
 media-libs/libpng apng
 media-libs/gegl cairo
-media-libs/gstreamer introspection orc
+media-libs/gstreamer orc
 
 sys-fs/e2fsprogs tools
 sys-fs/btrfs-progs udev
-sys-fs/eudev introspection
-
 sys-libs/glibc clone3 vanilla multiarch ssp stack-realign
 sys-libs/libcxxabi libunwind
 sys-libs/libcxx libunwind
-sys-libs/slang png
 sys-libs/zlib minizip
 sys-libs/gdbm berkdb
 sys-libs/libxcrypt static-libs
-sys-libs/libosinfo introspection
 
 sys-devel/gcc fortran vanilla sanitize ssp nptl
 sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
@@ -74,11 +59,9 @@ sys-devel/llvm binutils-plugin
 sys-devel/binutils plugins
 
 net-libs/nodejs icu npm snapshot ssl system-icu system-ssl
-net-libs/libsoup introspection
-net-libs/gtk-vnc introspection
 app-crypt/p11-kit asn1 trust
 app-crypt/gpgme cxx
-app-crypt/gcr introspection vala gtk
+app-crypt/gcr vala gtk
 app-crypt/libsecret crypt
 
 media-sound/alsa-utils libsamplerate
@@ -88,9 +71,8 @@ media-sound/mpd ffmpeg
 media-sound/spotifyd -pulseaudio
 media-sound/pasystray libnotify
 
-app-text/poppler cairo cxx jpeg jpeg2k lcms png utils
+app-text/poppler cairo cxx jpeg2k lcms utils
 app-text/libwpd tools
-app-text/poppler png
 app-text/xmlto text
 
 sys-kernel/gentoo-sources experimental
@@ -100,8 +82,7 @@ sys-apps/shadow su
 sys-apps/makedev build
 sys-apps/util-linux udev
 
-dev-qt/qtgui -vulkan -udev png jpeg gif
-dev-qt/qtwidgets png
+dev-qt/qtgui -vulkan -udev
 dev-qt/qtdeclarative -*
 dev-qt/qtwebsockets qml
 dev-qt/linguist-tools qml
@@ -112,26 +93,20 @@ dev-libs/glib -dbus
 dev-libs/quazip qt5
 dev-libs/libpcre2 pcre16 pcre32 unicode
 dev-libs/boost zlib nls
-dev-libs/atk introspection
 dev-libs/libxml2 ftp icu python readline
 dev-libs/openssl asm
 dev-libs/libtomcrypt libtommath
 dev-libs/nettle gmp
-dev-libs/libdazzle gtk introspection vala
+dev-libs/libdazzle gtk vala
 dev-libs/libdbusmenu gtk3
 dev-libs/xmlsec nss
 
 net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
 media-fonts/* otf
 app-arch/libarchive iconv
-media-gfx/fontforge png jpeg gif
-net-print/cups-filters jpeg png
-media-gfx/exiv2 png
-media-gfx/qrencode png
 
-media-video/mpv jpeg cli egl iconv libmpv lua uchardet xv zlib
-media-video/ffmpegthumbnailer jpeg png
-media-video/ffmpeg threads fontconfig openal webp opencl vdpau  libaom libdrm mp3 x264 x265 svg truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/mpv cli egl iconv libmpv lua uchardet xv zlib
+media-video/ffmpeg threads fontconfig openal opencl vdpau libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 
 net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
@@ -140,9 +115,8 @@ net-misc/netifrc dhcp
 net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp
 net-misc/iputils arping
 net-misc/aria2 bittorrent
-net-misc/spice-gtk introspection usbredir gtk3
+net-misc/spice-gtk usbredir gtk3
 
-dev-python/pillow jpeg
 net-wireless/bluez udev
 >=dev-lang/python-3.10.5 xml
 */net-tools arp hostname
@@ -152,7 +126,7 @@ app-editors/neovim nvimpager tui
 app-portage/portage-utils qmanifest qtegrity
 dev-vcs/git blksha1 curl gpg iconv pcre webdav
 app-shells/zsh pcre gdbm
-media-gfx/imagemagick heif jpeg jpeg2k png svg webp xml 
+media-gfx/imagemagick heif jpeg2k xml 
 app-eselect/eselect-repository python_single_target_python3_10
 app-misc/mime-types nginx
 dev-scheme/guile regex deprecated
@@ -177,24 +151,17 @@ net-dns/dnsmasq dhcp script
 app-arch/libarchive bzip2
 app-i18n/ibus gtk3
 
-gnome-base/gnome-desktop introspection
-gnome-base/gsettings-desktop-schemas introspection
-
 www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
 media-libs/libvpx postproc
-app-accessibility/at-spi2-core introspection
 sys-process/lsof rpc
 
-app-emulation/wine-staging xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind abi_x86_64
-app-emulation/wine-lutris xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind threads abi_x86_64
-app-emulation/wine-vanilla xinerama gstreamer udev png fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind threads
+app-emulation/wine-staging xinerama gstreamer udev fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind abi_x86_64
 app-emulation/winetricks gtk
 app-emulation/libspectrum zlib
 virtual/wine staging abi_x86_64
 app-emulation/dxvk d3d10 d3d11
 
 pp-emulation/libvirt qemu udev virt-network libvirtd caps
-app-emulation/libvirt-glib introspection
 app-emulation/* fdt shared
 app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
 app-emulation/virt-manager gui
