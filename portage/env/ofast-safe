@@ -1,5 +1,0 @@
-COMMON_FLAGS="-march=native -Ofast -pipe -fpic -fno-finite-math-only"
-CFLAGS="${COMMON_FLAGS}"
-CXXFLAGS="${COMMON_FLAGS}"
-FCFLAGS="${COMMON_FLAGS}"
-FFLAGS="${COMMON_FLAGS}"
