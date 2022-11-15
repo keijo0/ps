@@ -5,9 +5,5 @@ PKGDIR="/var/cache/binpkgs"
 EMERGE_DEFAULT_OPTS="-j6 -av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display"
 LC_MESSAGES=C
 CLEAN_DELAY=0
-#GENTOO_MIRRORS="ftp=//mirror.netcologne.de/gentoo/ https=//mirror.netcologne.de/gentoo/ http=//mirror.netcologne.de/gentoo/"
-BINPKG_COMPRESS="zstd"
-BINPKG_COMPRESS_FLAGS="-19"
-BINPKG_FORMAT="gpkg"
-FUNNY="-*"
-FEATURES="${FUNNY} nodoc notitles nostrip noinfo assume-digests binpkg-docompress binpkg-logs buildpkg-live config-protect-if-modified fixlafiles merge-sync preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-logs unmerge-orphans"
+Z="-*"
+FEATURES="${Z} nodoc notitles nostrip noinfo assume-digests binpkg-docompress binpkg-logs buildpkg-live config-protect-if-modified fixlafiles merge-sync preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-logs unmerge-orphans"
