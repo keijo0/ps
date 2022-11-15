@@ -104,13 +104,11 @@ dev-libs/xmlsec nss
 net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
 media-fonts/* otf
 app-arch/libarchive iconv
-
 media-video/mpv cli egl iconv libmpv lua uchardet xv zlib
 media-video/ffmpeg threads fontconfig openal opencl vdpau libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 
 net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
-net-misc/dhcpcd-ui libnotify gtk
 net-misc/netifrc dhcp
 net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp
 net-misc/iputils arping
@@ -154,29 +152,8 @@ app-i18n/ibus gtk3
 www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png
 media-libs/libvpx postproc
 sys-process/lsof rpc
-
-app-emulation/wine-staging xinerama gstreamer udev fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind abi_x86_64
-app-emulation/winetricks gtk
-app-emulation/libspectrum zlib
-virtual/wine staging abi_x86_64
-app-emulation/dxvk d3d10 d3d11
-
-pp-emulation/libvirt qemu udev virt-network libvirtd caps
-app-emulation/* fdt shared
-app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
-app-emulation/virt-manager gui
-app-emulation/fuse zlib png -alsa backend-X
-app-emulation/wine-gecko
-app-emulation/winetricks gtk
-app-emulation/libspectrum zlib
-sys-firmware/edk2-ovmf binary
-sys-firmware/ipxe binary qemu
-sys-firmware/seabios seavgabios binary
-sys-firmware/sgabios binary
-
 games-emulation/pcsx2 vulkan -pulseaudio
 mail-client/mutt gdbm imap sasl
-
 media-sound/audacity ffmpeg flac
 media-libs/flac cxx
 app-text/zathura-meta pdf
