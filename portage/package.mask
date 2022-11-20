@@ -6,5 +6,3 @@
 dev-lang/rust
 net-libs/webkit-gtk
 sys-fs/static-dev
->=app-editors/neovim-0.8
->=sys-devel/lld-14.0.6-r2

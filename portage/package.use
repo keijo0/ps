@@ -1,16 +1,19 @@
 */* -*
-*/* X zstd lto clang pulseaudio dbus openmp pcre readline ncurses ssl kmod openssl nvenc opengl jpeg png gif svg introspection
-*/* video_cards: -* nvidia
-*/* qemu_user_targets: -* x86_64
-*/* qemu_softmmu_targets: -* arm x86_64 sparc 
-*/* ruby_targets: -* ruby26 ruby27 ruby30 ruby31
-*/* rustflags: -* -c target-cpu=native
-*/* python_targets: -* python3_10
-*/* lua_targets: -* luajit
-*/* lua_single_target: -* luajit
-*/* python_single_target: -* python3_10
-*/* cpu_flags_x86: -* aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
-*/* input_devices: -* libinput
+*/* X zstd lto clang dbus openmp pcre readline ncurses ssl openssl nvenc opengl jpeg png gif
+*/* alsa pulseaudio
+*/* video_cards: nvidia
+*/* qemu_user_targets: x86_64
+*/* qemu_softmmu_targets: arm x86_64 sparc 
+*/* ruby_targets: ruby26 ruby27 ruby30 ruby31
+*/* rustflags: -c target-cpu=native
+*/* python_targets: python3_10
+*/* lua_targets: luajit
+*/* lua_single_target: luajit
+*/* python_single_target: python3_10
+*/* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
+*/* input_devices: libinput
+
+sys-apps/pciutils kmod
 
 x11-drivers/nvidia-drivers tools driver
 x11-libs/libvdpau dri
@@ -31,7 +34,7 @@ media-libs/harfbuzz icu truetype glib graphite
 media-libs/dav1d 8bit 10bit
 media-libs/libepoxy egl
 media-libs/libheif x265
-media-libs/mesa llvm xvmc vulkan vulkan-overlay 
+media-libs/mesa -llvm xvmc vulkan vulkan-overlay 
 media-libs/libcanberra udev
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
@@ -61,36 +64,27 @@ sys-devel/binutils plugins
 net-libs/nodejs icu npm snapshot ssl system-icu system-ssl
 app-crypt/p11-kit asn1 trust
 app-crypt/gpgme cxx
-app-crypt/gcr vala gtk
+app-crypt/gcr gtk -vala
 app-crypt/libsecret crypt
 
 media-sound/alsa-utils libsamplerate
 media-sound/pulseaudio-daemon bluetooth alsa-plugin asyncns glib orc ssl udev webrtc-aec
 media-sound/pulseaudio bluetooth glib
-media-sound/mpd ffmpeg
 media-sound/spotifyd -pulseaudio
+media-sound/spotify libnotify
 media-sound/pasystray libnotify
 
 app-text/poppler cairo cxx jpeg2k lcms utils
 app-text/libwpd tools
 app-text/xmlto text
 
-sys-kernel/gentoo-sources experimental
 sys-apps/kmod lzma
 sys-apps/coreutils xattr
 sys-apps/shadow su
 sys-apps/makedev build
 sys-apps/util-linux udev
 
-dev-qt/qtgui -vulkan -udev
-dev-qt/qtdeclarative -*
-dev-qt/qtwebsockets qml
-dev-qt/linguist-tools qml
-dev-qt/qtsql sqlite
-dev-qt/qtnetwork ssl
-
 dev-libs/glib -dbus
-dev-libs/quazip qt5
 dev-libs/libpcre2 pcre16 pcre32 unicode
 dev-libs/boost zlib nls
 dev-libs/libxml2 ftp icu python readline
@@ -105,7 +99,7 @@ net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
 media-fonts/* otf
 app-arch/libarchive iconv
 media-video/mpv cli egl iconv libmpv lua uchardet xv zlib
-media-video/ffmpeg threads fontconfig openal opencl vdpau libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+media-video/ffmpeg chromium threads fontconfig openal opencl vdpau libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
 
 net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
@@ -143,7 +137,6 @@ dev-python/gpep517 python_targets_python3_9
 dev-python/flit_core python_targets_python3_9
 dev-python/tomli python_targets_python3_9
 dev-python/installer python_targets_python3_9
-
 virtual/libcrypt static-libs
 net-dns/dnsmasq dhcp script
 app-arch/libarchive bzip2
@@ -154,6 +147,16 @@ media-libs/libvpx postproc
 sys-process/lsof rpc
 games-emulation/pcsx2 vulkan -pulseaudio
 mail-client/mutt gdbm imap sasl
-media-sound/audacity ffmpeg flac
 media-libs/flac cxx
 app-text/zathura-meta pdf
+
+net-im/discord-bin system-ffmpeg
+media-libs/libass fontconfig
+dev-libs/libevent threads
+media-sound/playerctl -*
+x11-libs/libnotify introspection
+dev-qt/qtwebengine bindist jumbo-build -pulseaudio system-ffmpeg system-icu widgets
+dev-qt/qtdeclarative widgets
+
+app-emulation/* fdt shared
+

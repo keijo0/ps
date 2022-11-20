@@ -4,3 +4,4 @@ media-libs/mesa **
 x11-apps/mesa-progs **
 dev-libs/openssl **
 games-emulation/pcsx2 **
+*/*::making **
