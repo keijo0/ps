@@ -1,0 +1,7 @@
+*/* ~amd64
+www-client/ungoogled-chromium-bin **
+media-libs/mesa **
+x11-apps/mesa-progs **
+dev-libs/openssl **
+games-emulation/pcsx2 **
+*/*::making **

@@ -1,0 +1,12 @@
+*/*::pf4public
+*/*::steam-overlay
+*/*::wine
+
+>=virtual/tmpfiles-0-r3::gentoo
+dev-lang/rust
+#net-libs/webkit-gtk
+sys-fs/static-dev
+*/cups
+net-print/cups-filters
+>=dev-qt/qtbase-6.0
+sys-apps/openrc::gentoo

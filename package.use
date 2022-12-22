@@ -1,0 +1,238 @@
+*/* -*
+*/* abi_x86_32
+*/* X zstd lto clang custom-cflags dbus openmp readline ncurses ssl openssl
+*/* jpeg png gif
+*/* alsa pulseaudio
+#mommy handbook made me do it
+*/* video_cards: amdgpu radeonsi radeon
+*/* opencl vulkan opengl vdpau vaapi
+*/* qemu_user_targets: x86_64
+*/* qemu_softmmu_targets: arm x86_64 sparc 
+*/* ruby_targets: ruby26 ruby27 ruby30 ruby31
+*/* python_targets: python3_10
+*/* lua_targets: luajit
+*/* lua_single_target: luajit
+*/* python_single_target: python3_10
+*/* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
+*/* input_devices: libinput
+
+
+#uhuh
+*/* libglvnd elibc_glibc kernel_linux userland_GNU 
+*/* native-symlinks
+
+x11-libs/cairo glib 
+x11-libs/libxcb xkb
+x11-base/xorg-server xorg udev
+x11-libs/libfm gtk
+x11-libs/gtk+ inspector xinerama -wayland
+*/gparted -wayland
+*/gtkmm -wayland
+
+media-libs/vulkan-loader layers
+media-libs/libpulse glib
+media-libs/libsdl2 sound video
+media-libs/libcanberra gtk3 sound udev
+media-libs/libplacebo glslang opengl llvm-libunwind
+media-libs/openh264 plugin
+media-libs/sdl2-mixer opus mp3
+media-libs/harfbuzz icu truetype glib graphite
+media-libs/dav1d 8bit 10bit
+media-libs/libepoxy egl
+media-libs/libheif x265
+media-libs/mesa llvm xvmc vulkan vulkan-overlay d3d9 video_cards: d3d12
+media-libs/libcanberra udev
+media-libs/clutter-gtk egl
+media-libs/cogl gles2
+media-libs/libsndfile minimal
+media-libs/opencv contrib
+media-libs/libsdl2 haptic joystick
+media-libs/libpng apng
+media-libs/gegl cairo
+media-libs/gstreamer orc
+
+sys-fs/eudev kmod
+sys-fs/e2fsprogs tools
+sys-fs/btrfs-progs udev
+sys-libs/glibc clone3 vanilla multiarch ssp stack-realign
+sys-libs/libcxxabi libunwind
+sys-libs/libcxx libunwind
+sys-libs/zlib minizip
+sys-libs/gdbm berkdb
+sys-libs/libxcrypt static-libs
+
+sys-devel/gcc fortran vanilla sanitize ssp nptl
+sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
+sys-devel/clang-common default-compiler-rt default-libcxx default-lld lvm-libunwind
+sys-devel/clang-runtime compiler-rt libcxx-sanitize
+sys-devel/llvm binutils-plugin
+sys-devel/binutils plugins
+
+net-libs/nodejs icu npm snapshot ssl system-icu system-ssl
+app-crypt/p11-kit asn1 trust
+app-crypt/gpgme cxx
+app-crypt/gcr gtk -vala
+app-crypt/libsecret crypt
+
+media-sound/alsa-utils libsamplerate
+media-sound/pulseaudio-daemon bluetooth alsa-plugin asyncns glib orc ssl udev webrtc-aec
+media-sound/pulseaudio bluetooth glib
+media-sound/spotifyd -pulseaudio
+media-sound/spotify libnotify -wayland
+media-sound/pasystray libnotify
+
+app-text/poppler cairo cxx jpeg2k lcms utils
+app-text/libwpd tools
+#app-text/xmlto text
+
+sys-apps/pciutils kmod
+
+sys-apps/kmod lzma
+sys-apps/coreutils xattr
+sys-apps/shadow su
+sys-apps/makedev build
+sys-apps/util-linux udev
+
+dev-libs/glib -dbus
+dev-libs/libpcre2 pcre16 pcre32 unicode
+dev-libs/boost zlib nls
+dev-libs/libxml2 ftp icu python readline
+dev-libs/openssl asm
+dev-libs/libtomcrypt libtommath
+dev-libs/nettle gmp
+dev-libs/libdazzle gtk vala
+dev-libs/libdbusmenu gtk3
+dev-libs/xmlsec nss
+
+net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
+media-fonts/* otf
+app-arch/libarchive iconv
+media-video/mpv cli egl iconv libmpv lua uchardet xv zlib libplacebo
+media-video/ffmpeg chromium threads fontconfig openal opencl libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher
+
+net-misc/rsync iconv stunnel xattr
+net-misc/dhcpcd udev embedded
+net-misc/netifrc dhcp
+net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp adns
+net-misc/iputils arping
+net-misc/aria2 bittorrent
+net-misc/spice-gtk usbredir gtk3
+
+net-wireless/bluez udev experimental obex
+>=dev-lang/python-3.10.5 xml
+*/net-tools arp hostname
+games-util/* steamruntime joystick
+app-arch/libarchive e2fsprogs lzma
+app-editors/neovim nvimpager tui
+app-portage/portage-utils qmanifest qtegrity
+dev-vcs/git blksha1 curl gpg iconv pcre webdav
+app-shells/zsh pcre gdbm
+media-gfx/imagemagick heif jpeg2k xml 
+app-misc/mime-types nginx
+dev-scheme/guile regex deprecated
+media-gfx/feh curl xinerama exif inotify
+sys-process/htop lm-sensors
+dev-lang/python build gdbm
+dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
+dev-python/PyQt5 gui widgets
+
+dev-lang/python sqlite
+app-eselect/eselect-repository python_single_target_python3_10
+>=dev-python/importlib_metadata-4.12.0 python_targets_python3_9
+>=dev-lang/python-3.9.13:3.9 xml
+dev-python/typing-extensions python_targets_python3_9
+dev-python/zipp python_targets_python3_9
+dev-python/gpep517 python_targets_python3_9
+dev-python/flit_core python_targets_python3_9
+dev-python/tomli python_targets_python3_9
+dev-python/installer python_targets_python3_9
+virtual/libcrypt static-libs
+net-dns/dnsmasq dhcp script
+app-arch/libarchive bzip2
+app-i18n/ibus gtk3
+
+www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png -wayland geckodriver system-webp
+media-libs/libvpx postproc
+sys-process/lsof rpc
+mail-client/mutt gdbm imap sasl
+media-libs/flac cxx
+app-text/zathura-meta pdf
+
+net-im/discord-bin system-ffmpeg
+media-libs/libass fontconfig
+dev-libs/libevent threads
+media-sound/playerctl -*
+x11-libs/libnotify introspection
+app-emulation/* fdt shared
+
+
+media-libs/imgui vulkan
+app-alternatives/cpio libarchive
+sys-apps/eudev kmod
+app-emulation/dxvk d3d9 d3d10 d3d11
+
+x11-drivers/xf86-video-amdgpu udev
+sys-kernel/gentoo-kernel-bin initramfs
+sys-kernel/linux-firmware unknown-license redistributable
+app-alternatives/tar -gnu libarchive
+app-arch/tar acl xattr
+
+
+
+app-emulation/libvirt qemu udev virt-network libvirtd caps xen 
+app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
+app-emulation/virt-manager gui
+app-emulation/fuse zlib png -alsa backend-X
+app-emulation/winetricks gtk
+app-emulation/libspectrum zlib
+sys-firmware/edk2-ovmf binary
+sys-firmware/ipxe binary qemu
+sys-firmware/seabios seavgabios binary
+sys-firmware/sgabios binary
+app-emulation/wine-staging xinerama gstreamer udev fontconfig gecko mono run-exes ssl truetype vulkan llvm-libunwind abi_x86_64 -abi_x86_32 mingw
+virtual/wine staging -abi_x86_32 abi_x86_64
+app-emulation/wine-desktop-common abi_x86_64 -abi_x86_32
+app-emulation/wine-gecko abi_x86_64 -abi_x86_32
+app-emulation/wine-mono abi_x86_64 -abi_x86_32
+app-eselect/eselect-wine abi_x86_64 -abi_x86_32
+
+app-alternatives/bzip2 pbzip2
+
+>=net-dns/dnsmasq-2.87 ipv6
+>=app-emulation/libvirt-glib-4.0.0 introspection
+>=sys-libs/libosinfo-1.10.0-r1 introspection
+>=net-libs/gtk-vnc-1.3.1 introspection
+>=net-misc/spice-gtk-0.41-r1 introspection
+>=x11-libs/gtk+-3.24.35 introspection
+>=x11-libs/gtksourceview-4.8.4 introspection
+>=x11-libs/vte-0.70.1 introspection
+>=x11-libs/pango-1.50.12 introspection
+>=media-libs/harfbuzz-5.3.1-r1 introspection
+>=app-accessibility/at-spi2-core-2.46.0 introspection
+>=x11-libs/gdk-pixbuf-2.42.10 introspection
+>=media-libs/gstreamer-1.20.4 introspection
+app-alternatives/awk gawk
+app-alternatives/gzip pigz
+app-alternatives/yacc reference
+app-alternatives/lex flex
+app-alternatives/bc gnu
+
+sys-devel/bc static
+>=net-libs/gnutls-3.7.8 idn
+www-client/chromium-bin widevine
+
+net-libs/webkit-gtk introspection jpeg2k pdf
+net-libs/libsoup introspection
+>=media-libs/freetype-2.12.1-r2 brotli
+
+games-emulation/rpcs3 llvm
+
+
+#testing wayland shit
+#*/* gles2 wayland xwayland egl
+
+#dev-qt/qtgui libinput egl udev
+
+net-analyzer/nmap libssh2 ncat nping nse ipv6
+
+net-libs/libssh2 zlib

@@ -1,0 +1,4 @@
+CC="gcc"
+CXX="g++"
+CFLAGS="-Og -ggdb3"
+CXXFLAGS="-Og -ggdb3"

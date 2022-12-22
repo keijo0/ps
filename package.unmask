@@ -1,0 +1,8 @@
+games-util/steam-meta
+games-util/steam-client-meta
+games-util/steam-launcher
+games-util/esteam
+=app-emulation/wine-mono-7.1.1
+sys-apps/opentmpfiles
+net-libs/libsoup
+dev-qt/qtbase
