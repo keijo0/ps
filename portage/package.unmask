@@ -4,18 +4,5 @@ games-util/steam-launcher
 games-util/esteam
 =app-emulation/wine-mono-7.1.1
 sys-apps/opentmpfiles
-# required by net-libs/webkit-gtk-2.38.2-r500::gentoo
-# required by webkit-gtk (argument)
-# /var/db/repos/gentoo/profiles/package.mask:
-# Mart Raudsepp <leio@gentoo.org> (2021-09-15)
-# New major parallel-installable release which needs special care to not
-# end up loaded into the same process together with the earlier libsoup ABI.
-# Migration to it is expected for GNOME 42, NOT to be unmasked with GNOME 41.
-=net-libs/libsoup-3.2.2
-# required by webkit-gtk (argument)
-# /var/db/repos/gentoo/profiles/package.mask:
-# Mart Raudsepp <leio@gentoo.org> (2021-09-15)
-# New major parallel-installable release which needs special care to not
-# end up loaded into the same process together with the earlier libsoup ABI.
-# Migration to it is expected for GNOME 42, NOT to be unmasked with GNOME 41.
-=net-libs/webkit-gtk-2.38.2-r500
+net-libs/libsoup
+dev-qt/qtbase

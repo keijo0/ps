@@ -2,9 +2,11 @@ CHOST="x86_64-pc-linux-gnu"
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
-EMERGE_DEFAULT_OPTS="-j6 -av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display"
-PORTAGE_BINHOST="https://gentoo.osuosl.org/experimental/amd64/binpkg/default/linux/17.1/x86-64/"
+EMERGE_DEFAULT_OPTS="-j6 -av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display --keep-going"
 LC_MESSAGES=C
 CLEAN_DELAY=0
 Z="-*"
 FEATURES="${Z} nodoc notitles nostrip noinfo assume-digests binpkg-docompress binpkg-logs buildpkg-live config-protect-if-modified fixlafiles merge-sync preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-logs unmerge-orphans"
+UNINSTALL_IGNORE="/lib64 /bin /sbin /lib"
+
+GENTOO_MIRRORS="http://mirrors.aliyun.com/gentoo/ https://gentoo-mirror.alexxy.name/ http://gentoo.bloodhost.ru/"

@@ -1,4 +1,4 @@
-COMMON_FLAGS="-march=native -Ofast -pipe -fomit-frame-pointer -fpic"
+COMMON_FLAGS="-march=skylake -mtune=skylake -Ofast -pipe -fomit-frame-pointer -fpic"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"

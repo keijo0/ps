@@ -1,4 +1,4 @@
-COMMON_FLAGS="-march=skylake -mtune=skylake -O3 -pipe -fomit-frame-pointer"
+COMMON_FLAGS="-march=skylake -mtune=skylake -Ofast -pipe -fno-finite-math-only"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"

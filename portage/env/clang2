@@ -1,0 +1,13 @@
+COMMON_FLAGS="-O2 -march=skylake -mtune=skylake -pipe -fpic -flto=thin"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+
+CC="clang"
+CXX="clang++"
+AR="llvm-ar"
+NM="llvm-nm"
+RANLIB="llvm-ranlib"
+LDFLAGS="${LDFLAGS} -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,--as-needed"
+CFLAGS="${CFLAGS}"
+CXXFLAGS="${CXXFLAGS}"
+LDFLAGS="${LDFLAGS} -Wl,-z,relro,-z,now"
