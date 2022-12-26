@@ -35,22 +35,6 @@
 ! white
 *.color7:       #c0b18b
 *.color15:      #c0b18b
-
-URxvt*cursorBlink: true
-URxvt*font:  xft:Space Mono:size=10:antialias=true
-urxvt*background: rgba:0000/0000/0100/c900
-URxvt*depth: 32
-URxvt*scrollBar: false
-URxvt.internalBorder: 8
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.perl-ext-common: default,resize-font
-URxvt.keysym.C-minus:     resize-font:smaller
-URxvt.keysym.C-plus:      resize-font:bigger
-URxvt.keysym.C-equal:     resize-font:reset
-URxvt.keysym.C-question:  resize-font:show
-
-
 Xcursor.theme: Adwaita
 Xcursor.size: 24
 
