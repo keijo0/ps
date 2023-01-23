@@ -1,4 +1,4 @@
-COMMON_FLAGS="-Ofast -march=skylake -mtune=skylake -pipe -fpic -flto=thin"
+COMMON_FLAGS="-Ofast -march=skylake -mtune=skylake -pipe"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 
