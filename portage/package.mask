@@ -1,7 +1,7 @@
 */*::pf4public
 */*::steam-overlay
 */*::wine
-*/*::pentoo
+#*/*::pentoo
 
 >=virtual/tmpfiles-0-r3::gentoo
 dev-lang/rust

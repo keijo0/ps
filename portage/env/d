@@ -2,7 +2,7 @@ CHOST="x86_64-pc-linux-gnu"
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
-EMERGE_DEFAULT_OPTS="-j4 -av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display --keep-going"
+EMERGE_DEFAULT_OPTS="-j5 -av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display --keep-going"
 LC_MESSAGES=C
 CLEAN_DELAY=0
 Z="-*"
