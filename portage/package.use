@@ -1,24 +1,20 @@
 */* -*
 */* abi_x86_32
-*/* X zstd lto clang dbus openmp readline ncurses ssl openssl seccomp hls threads vkd3d
-*/* jpeg png gif
+*/* X zstd lto clang dbus openmp readline ncurses ssl openssl seccomp hls threads vkd3d 
+*/* php_targets_php7-4 libglvnd elibc_glibc kernel_linux userland_GNU native-symlinks gles2 wayland xwayland egl jpeg png gif
 */* alsa pulseaudio openal
 */* video_cards: amdgpu radeonsi radeon
 */* opencl vulkan opengl vdpau vaapi
 */* ladspa codec2 fdk gmp gme gsm jpeg2k lv2 lzma svt-av1 svg libxml2 flac
 */* qemu_user_targets: x86_64
 */* qemu_softmmu_targets: arm x86_64 sparc 
-*/* ruby_targets: ruby26 ruby27 ruby30 ruby31
-*/* python_targets: python3_10
+*/* ruby_targets: ruby26 ruby30 ruby31 ruby32
 */* lua_targets: luajit
 */* lua_single_target: luajit
-*/* python_single_target: python3_10
-*/* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
+*/* python_single_target: python3_11
+*/* python_targets: python3_11
+*/* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* input_devices: libinput joystick
-*/* libglvnd elibc_glibc kernel_linux userland_GNU 
-*/* native-symlinks
-#testing wayland shit
-*/* gles2 wayland xwayland egl
 x11-libs/cairo glib 
 x11-libs/libxcb xkb
 x11-base/xorg-server xorg udev
@@ -28,6 +24,7 @@ sys-block/gparted -wayland
 dev-cpp/gtkmm -wayland
 
 media-libs/vulkan-loader layers
+media-libs/imlib2 text filters jpegxl mp3 packing shm tiff webp zlib eps
 media-libs/libpulse glib
 media-libs/libcanberra gtk3 sound udev
 media-libs/libplacebo glslang opengl llvm-libunwind
@@ -42,7 +39,6 @@ x11-apps/mesa-progs -gles2 -wayland
 media-libs/libcanberra udev
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
-#media-libs/libsndfile minimal
 media-libs/opencv contrib
 media-libs/libsdl2 haptic joystick sound video 
 media-libs/libpng apng
@@ -53,6 +49,7 @@ sys-fs/eudev kmod
 sys-fs/e2fsprogs tools
 sys-fs/btrfs-progs udev
 sys-libs/glibc clone3 vanilla multiarch ssp stack-realign hash-sysv-compat
+sys-libs/zlib static-libs
 sys-libs/libcxxabi libunwind
 sys-libs/libcxx libunwind
 sys-libs/zlib minizip
@@ -78,7 +75,7 @@ app-crypt/libsecret crypt
 
 media-sound/alsa-utils libsamplerate
 media-sound/pulseaudio-daemon bluetooth alsa-plugin asyncns glib orc ssl udev webrtc-aec
-media-sound/pulseaudio bluetooth glib
+media-sound/pulseaudio bluetooth glib daemon
 media-sound/spotifyd -pulseaudio
 media-sound/spotify libnotify -wayland
 media-sound/pasystray libnotify
@@ -99,7 +96,7 @@ dev-libs/glib -dbus
 dev-libs/libpcre2 pcre16 pcre32 unicode
 dev-libs/boost zlib nls icu
 dev-libs/libxml2 ftp icu python readline
-dev-libs/openssl asm ktls
+dev-libs/openssl asm ktls sctp static-libs verify-sig fips tls-compression vanilla rfc3779 weak-ssl-ciphers
 dev-libs/libtomcrypt libtommath
 dev-libs/nettle gmp
 dev-libs/libdazzle gtk vala
@@ -112,7 +109,6 @@ app-arch/libarchive iconv
 media-video/mpv cli egl iconv libmpv lua uchardet xv zlib libplacebo drm -sdl
 media-libs/libplacebo shaderc lcms
 
-#round 2
 media-video/mpv dvb dvd tools archive sdl lcms libcaca zimg debug
 media-video/ffmpeg chromium fontconfig openal opencl libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher 
 media-video/ffmpeg amf webp twolame ladspa codec2 cpudetection fdk gmp gme gsm jpeg2k lv2 lzma sdl svt-av1 svg bluray libxml2 amr amrenc bs2b cdio debug flite frei0r gcrypt hardcoded-tables pic rav1e snappy srt staic-libs xvid zimg libass libcaca libilbc librtmp libsoxr libtesseract libaribb24
@@ -124,7 +120,7 @@ media-video/rav1e capi
 net-misc/rsync iconv stunnel xattr
 net-misc/dhcpcd udev embedded
 net-misc/netifrc dhcp
-net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp adns
+net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 openssl pop3 progress-meter smtp ssl tftp adns nss hsts
 net-misc/iputils arping
 net-misc/aria2 bittorrent
 net-misc/spice-gtk usbredir gtk3
@@ -138,7 +134,9 @@ app-editors/neovim nvimpager tui
 app-portage/portage-utils qmanifest qtegrity
 dev-vcs/git blksha1 curl gpg iconv pcre webdav
 app-shells/zsh pcre gdbm
-media-gfx/imagemagick heif jpeg2k xml 
+media-gfx/imagemagick heif jpeg2k xml -openmp
+media-gfx/xpaint pgf tiff 
+x11-libs/libXaw3dXft unicode
 app-misc/mime-types nginx
 dev-scheme/guile regex deprecated
 media-gfx/feh curl xinerama exif inotify
@@ -149,24 +147,28 @@ dev-python/PyQt5 gui widgets declarative multimedia network sql printsupport web
 dev-qt/qtmultimedia widgets
 
 dev-lang/python sqlite
-app-eselect/eselect-repository python_single_target_python3_10
->=dev-python/importlib_metadata-4.12.0 python_targets_python3_9
+#app-eselect/eselect-repository python_single_target_python3_10
+#>=dev-python/importlib_metadata-4.12.0 python_targets_python3_9
 >=dev-lang/python-3.9.13:3.9 xml
-dev-python/typing-extensions python_targets_python3_9
-dev-python/zipp python_targets_python3_9
-dev-python/gpep517 python_targets_python3_9
-dev-python/flit_core python_targets_python3_9
-dev-python/tomli python_targets_python3_9
-dev-python/installer python_targets_python3_9
+### PYTHON SHIT
+app-office/libreoffice-bin python_single_target_python3_10
+#dev-python/typing-extensions python_targets_python3_9
+#dev-python/zipp python_targets_python3_9
+#dev-python/gpep517 python_targets_python3_9
+#dev-python/flit_core python_targets_python3_9
+#dev-python/tomli python_targets_python3_9
+#dev-python/installer python_targets_python3_9
 virtual/libcrypt static-libs
 net-dns/dnsmasq dhcp script
 app-arch/libarchive bzip2
 app-i18n/ibus gtk3
 
-www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png -wayland geckodriver system-webp
+www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png -wayland geckodriver system-webp libproxy
 media-libs/libvpx postproc highbitdepth
 sys-process/lsof rpc
-mail-client/mutt gdbm imap sasl
+mail-client/mutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb 
+mail-client/neomutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb
+net-misc/gsasl client server
 media-libs/flac cxx
 app-text/zathura-meta pdf
 
@@ -226,7 +228,7 @@ net-libs/libsoup introspection
 gui-libs/wlroots x11-backend seatd
 sys-auth/seatd server
 dev-qt/qtgui libinput egl udev
-net-analyzer/nmap libssh2 ncat nping nse ipv6
+net-analyzer/nmap libssh2 ncat nping nse ipv6 lua_single_target_lua5-3
 net-libs/libssh2 zlib
 net-p2p/qbittorrent gui
 dev-qt/qtsql sqlite
@@ -236,18 +238,18 @@ dev-perl/Type-Tiny minimal
 sys-fs/fuse suid
 gui-libs/gtk-layer-shell introspection
 
-#jellyfin shit
 media-video/ffmpeg vpx -openal
 >=dev-qt/qtwebchannel-5.15.8 qml
 dev-qt/qtwebengine system-ffmpeg widgets system-icu
 dev-qt/qtdeclarative widgets
 www-apps/nextcloud postgres
+dev-lang/php fpm
+app-eselect/eselect-php fpm
 media-libs/libva-compat drm
 media-video/libva-utils vainfo putsureface
 media-sound/deadbeef aac ffmpeg lastfm libsamplerate mp3
 dev-qt/qtcore icu
 app-arch/xz-utils extra-filters static-libs
-#apparently now virt-manager and some other shit needs seccomp now
 media-video/vlc ffmpeg ssl gcrypt libnotify gui x265 x264 gstreamer
 net-misc/tigervnc server viewer drm 
 media-sound/mpd wavpack
@@ -255,7 +257,6 @@ media-sound/vimpc boost taglib
 dev-libs/atk introspection
 mail-client/thunderbird-bin ffmpeg
 gui-wm/sway swaybar man
-gui-apps/swayidle elogind
 gui-apps/swaybg gdk-pixbuf
 gui-apps/waybar experimental mpd popups tray
 x11-misc/gammastep geoclue gtk appindicator
@@ -269,12 +270,11 @@ x11-libs/libdrm video_cards_intel
 dev-util/android-tools udev python
 www-client/links webp fbcon gpm
 
-media-tv/kodi dav1d eventclients lcms power-control udev udf css webserver zeroconf upower bluetooth
+media-tv/kodi dav1d eventclients lcms udev udf css webserver zeroconf upower bluetooth
 dev-libs/libcdio cxx
 dev-libs/tinyxml stl
 dev-libs/libpcre cxx
 
-#games-emulation/pcsx2 -wayland -vulkan
 
 sys-fs/ntfs3g mount-ntfs ntfsprogs suid xattr ntfsdecrypt fuse
 media-libs/amdvlk -wayland
@@ -292,21 +292,71 @@ app-emulation/wine-gecko abi_x86_64
 dev-libs/libzip gnutls tools
 dev-lua/lua-openssl lua_targets_lua5-3 -lua_targets_luajit
 dev-libs/libverto libev
-www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi
-
-
+www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi nginx_modules_mail_smtp
 
 media-libs/gd webp
-
-dev-lang/erlang wxwidgets tk sctp
-
+dev-lang/erlang wxwidgets tk sctp odbc
+dev-lang/lua deprecated
 
 media-tv/tvheadend ffmpeg cwc capmt inotify iptv xmltv zlib zeroconf dvb dvben50221
 media-tv/v4l-utils dvb
 media-libs/libv4l dvb
-
-
 dev-php/PHPMailer doc idn ssl
 dev-lang/php ctype filter intl unicode gdbm iconv mysql -libedit mysqli cli cgi phpdbg xml xmlreader cjk gd zlib phar
 
 app-containers/* btrfs 
+
+app-text/gspell vala introspection
+app-text/enchant aspell
+net-im/dino notification-sound gpg http omemo
+net-im/prosody idn ldap libevent mysql postgres sqlite zlib test -ssl -lua_single_target_lua5-4
+dev-lua/luadbi mysql postgres sqlite
+dev-db/mysql server
+net-im/pidgin gtk idn groupwise gnutls debug meanwhile gstreamer sasl eds doc spell tcl tk 
+net-im/coturn sqlite
+dev-python/pygobject cairo
+app-crypt/libsecret introspection
+media-libs/gsound introspection
+dev-python/pycurl curl_ssl_openssl
+net-im/gajim crypt omemo rst webp spell remote 
+>=app-crypt/gnupg-2.4.0 nls
+net-im/swift icu
+dev-lang/php bzip2 
+dev-libs/poco zip util xml
+app-text/gtkspell introspection vala
+app-admin/syslog-ng http
+dev-libs/libical glib
+mail-mta/msmtp gnutls sasl
+net-mail/isync zlib sasl
+app-admin/pass importers git
+app-misc/ca-certificates cacert
+net-im/profanity gpg libnotify omemo 
+x11-misc/redshift gtk
+net-firewall/ufw ipv6
+net-proxy/privoxy  acl client-tags compression editor external-filters fast-redirects force graceful-termination tools stats png-images ipv6 zlib
+dev-lang/php session zip truetype simplexml pdo postgres xmlwriter posix curl sqlite
+www-apps/nextcloud vhosts sqlite curl -imagemagick
+dev-php/pecl-imagick php_targets_php7-4
+dev-libs/fcgi html
+
+media-sound/strawberry gstreamer
+app-text/foliate handy spell
+gui-libs/libhandy introspection vala
+dev-libs/libgusb vala introspection
+gui-libs/libadwaita vala introspection
+media-libs/graphene introspection vala
+gui-libs/gtk introspection
+xfce-base/xfdesktop -wayland
+
+
+
+
+kde-plasma/* elogind
+kde-frameworks/* qml
+kde-plasma/kwin lock 
+sys-apps/dbus elogind 
+sys-fs/udisks elogind daemon
+dev-qt/qtquickcontrols widgets
+sys-libs/libblockdev cryptsetup
+#kde
+kde-frameworks/kconfig qml

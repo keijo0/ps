@@ -2,3 +2,4 @@
 www-client/ungoogled-chromium-bin **
 */*::making **
 gui-apps/waybar **
+dev-python/protobuf-python **

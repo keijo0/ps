@@ -6,3 +6,4 @@ games-util/esteam
 sys-apps/opentmpfiles
 net-libs/libsoup
 dev-qt/qtbase
+net-analyzer/cameradar
