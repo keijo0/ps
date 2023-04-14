@@ -37,6 +37,8 @@ x11-libs/libdrm video_cards_intel
 x11-libs/wxGTK gstreamer curl libnotify sdl tiff
 x11-libs/fltk xft games 
 
+x11-apps/mesa-progs -gles2 -wayland
+
 sys-block/gparted -wayland
 dev-cpp/gtkmm -wayland
 
@@ -53,7 +55,6 @@ media-libs/dav1d 8bit 10bit
 media-libs/libepoxy egl
 media-libs/libheif x265
 media-libs/mesa llvm xvmc vulkan vulkan-overlay d3d9
-x11-apps/mesa-progs -gles2 -wayland
 media-libs/libcanberra udev
 media-libs/clutter-gtk egl
 media-libs/cogl gles2
@@ -148,6 +149,8 @@ app-text/gtkspell introspection vala
 app-text/foliate handy spell
 
 sys-apps/pciutils kmod
+sys-apps/eudev kmod
+sys-apps/net-tools arp hostname
 sys-apps/kmod lzma
 sys-apps/coreutils xattr
 sys-apps/shadow su
@@ -165,9 +168,7 @@ dev-libs/libdazzle gtk vala
 dev-libs/libdbusmenu gtk3
 dev-libs/xmlsec nss
 
-net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
 media-fonts/* otf
-app-arch/libarchive iconv
 media-video/mpv cli egl iconv libmpv lua uchardet xv zlib libplacebo drm -sdl
 media-video/mpv dvb dvd tools archive sdl lcms libcaca zimg debug
 media-video/ffmpeg chromium fontconfig openal opencl libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc vulkan zlib FFTOOLS: aviocat cws2fws ffescape ffeval ffhash fourcc2pixfmt graph2dot ismindex pktdumper qt-faststart sidxindex trasher 
@@ -186,25 +187,30 @@ net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 pop3 progress-meter smtp ssl 
 net-misc/iputils arping
 net-misc/aria2 bittorrent
 net-misc/spice-gtk usbredir gtk3
+net-misc/spice-gtk introspection
+net-misc/gsasl client server
+net-misc/tigervnc server viewer drm 
 
 net-wireless/bluez udev experimental obex
-*/net-tools arp hostname
 games-util/* steamruntime joystick
-app-arch/libarchive e2fsprogs lzma
 app-editors/neovim nvimpager tui
 app-portage/portage-utils qmanifest qtegrity
 dev-vcs/git blksha1 curl gpg iconv pcre webdav
 app-shells/zsh pcre gdbm
+
 media-gfx/imagemagick heif jpeg2k xml -openmp
 media-gfx/xpaint pgf tiff 
+media-gfx/feh curl xinerama exif inotify
 
 
 app-misc/mime-types nginx
 app-misc/ca-certificates cacert
 
 dev-scheme/guile regex deprecated
-media-gfx/feh curl xinerama exif inotify
+
 sys-process/htop lm-sensors
+sys-process/lsof rpc
+
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 dev-python/PyQt5 gui widgets declarative multimedia network sql printsupport webchannel
 dev-python/pycurl curl_ssl_openssl
@@ -224,33 +230,46 @@ dev-lang/lua deprecated
 dev-lang/php ctype filter intl unicode gdbm iconv mysql -libedit mysqli cli cgi phpdbg xml xmlreader cjk gd zlib phar bzip2 session zip truetype simplexml pdo postgres xmlwriter posix curl sqlite
 
 #app-eselect/eselect-repository python_single_target_python3_10
-### PYTHON SHIT
+app-eselect/eselect-php fpm
+
 app-office/libreoffice-bin python_single_target_python3_10
-net-dns/dnsmasq dhcp script
-app-arch/libarchive bzip2
+
+net-dns/dnsmasq dhcp script ipv6
+
+app-arch/libarchive bzip2 e2fsprogs lzma iconv
+app-arch/tar acl xattr
+app-arch/xz-utils extra-filters static-libs
+
 app-i18n/ibus gtk3
 
 www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png -wayland geckodriver system-webp libproxy
-sys-process/lsof rpc
+www-client/chromium-bin widevine
+www-client/links webp fbcon gpm
+www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi nginx_modules_mail_smtp
+www-apps/nextcloud vhosts sqlite curl -imagemagick postgres
+
 mail-client/mutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb 
 mail-client/neomutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb
-net-misc/gsasl client server
 
-app-emulation/* fdt shared
 app-alternatives/cpio libarchive
-sys-apps/eudev kmod
-app-emulation/dxvk d3d9 d3d10 d3d11 dxgi
+app-alternatives/tar gnu -libarchive
 
 sys-kernel/gentoo-kernel-bin initramfs
 sys-kernel/linux-firmware unknown-license redistributable
-app-alternatives/tar gnu -libarchive
-app-arch/tar acl xattr
 
+app-emulation/dxvk d3d9 d3d10 d3d11 dxgi
+app-emulation/* fdt shared
 app-emulation/libvirt qemu udev virt-network libvirtd caps  fuse
 app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls jpeg ncurses nls oss pin-upstream-blobs png slirp vhost-net vnc xattr zstd
 app-emulation/virt-manager gui
 app-emulation/fuse zlib png -alsa backend-X
 app-emulation/libspectrum zlib
+app-emulation/libvirt-glib introspection
+app-emulation/wine-staging abi_x86_64 gecko gstreamer mono sdl truetype 
+app-emulation/wine-vanilla abi_x86_32 gecko gstreamer mono sdl truetype
+app-emulation/winetricks abi_x86_64 
+app-emulation/wine-gecko abi_x86_64
+
 sys-firmware/edk2-ovmf binary
 sys-firmware/ipxe binary qemu
 sys-firmware/seabios seavgabios binary
@@ -259,9 +278,6 @@ media-plugins/gst-plugins-vaapi drm
 
 app-alternatives/bzip2 pbzip2
 
-net-dns/dnsmasq ipv6
-app-emulation/libvirt-glib introspection
-net-misc/spice-gtk introspection
 app-accessibility/at-spi2-core introspection
 app-alternatives/awk gawk
 app-alternatives/gzip pigz
@@ -269,16 +285,14 @@ app-alternatives/yacc reference
 app-alternatives/lex flex
 app-alternatives/bc gnu
 sys-devel/bc static
-www-client/chromium-bin widevine
 gui-libs/wlroots x11-backend seatd
 sys-auth/seatd server
-net-analyzer/nmap libssh2 ncat nping nse ipv6 lua_single_target_lua5-3
 net-p2p/qbittorrent gui
 
 dev-qt/qtgui libinput egl udev
 dev-qt/qtsql sqlite
 dev-qt/qtbase gui network widgets libinput udev
->=dev-qt/qtwebchannel-5.15.8 qml
+dev-qt/qtwebchannel qml
 dev-qt/qtwebengine system-ffmpeg widgets system-icu
 dev-qt/qtdeclarative widgets
 dev-qt/qtcore icu
@@ -287,17 +301,18 @@ dev-qt/qtmultimedia widgets
 
 dev-perl/Type-Tiny-XS minimal
 dev-perl/Type-Tiny minimal
-app-eselect/eselect-php fpm
-app-arch/xz-utils extra-filters static-libs
-net-misc/tigervnc server viewer drm 
 dev-libs/atk introspection
 mail-client/thunderbird-bin ffmpeg
+
 gui-wm/sway swaybar man
 gui-apps/swaybg gdk-pixbuf
 gui-apps/waybar experimental mpd popups tray
+
 net-analyzer/hydra libssh gcrypt gtk idn pcre zlib
+net-analyzer/nmap libssh2 ncat nping nse ipv6 lua_single_target_lua5-3
+net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
+
 dev-util/android-tools udev python
-www-client/links webp fbcon gpm
 
 media-tv/kodi dav1d eventclients lcms udev udf css webserver zeroconf upower bluetooth
 dev-libs/libcdio cxx
@@ -311,17 +326,12 @@ dev-libs/fcgi html
 dev-libs/libgusb vala introspection
 
 
-app-emulation/wine-staging abi_x86_64 gecko gstreamer mono sdl truetype 
-app-emulation/wine-vanilla abi_x86_32 gecko gstreamer mono sdl truetype
-app-emulation/winetricks abi_x86_64 
 
 virtual/wine staging
 virtual/libcrypt static-libs
 
-app-emulation/wine-gecko abi_x86_64
 dev-lua/lua-openssl lua_targets_lua5-3 -lua_targets_luajit
 dev-lua/luadbi mysql postgres sqlite
-www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi nginx_modules_mail_smtp
 
 
 media-tv/tvheadend ffmpeg cwc capmt inotify iptv xmltv zlib zeroconf dvb dvben50221
@@ -339,7 +349,6 @@ net-im/gajim crypt omemo rst webp spell remote
 net-im/swift icu
 net-im/profanity gpg libnotify omemo 
 
-
 dev-db/mysql server
 
 app-admin/syslog-ng http
@@ -351,8 +360,6 @@ net-mail/isync zlib sasl
 
 net-firewall/ufw ipv6
 net-proxy/privoxy  acl client-tags compression editor external-filters fast-redirects force graceful-termination tools stats png-images ipv6 zlib
-
-www-apps/nextcloud vhosts sqlite curl -imagemagick postgres
 
 gui-libs/gtk-layer-shell introspection
 gui-libs/libhandy introspection vala
