@@ -1,9 +1,8 @@
 */* -*
-*/* alsa pulseaudio 
-*/* X zstd lto clang dbus openmp readline ncurses ssl openssl seccomp hls threads vkd3d 
+*/* alsa pulseaudio
+*/* X zstd lto clang dbus openmp readline ncurses ssl openssl threads
 */* libglvnd elibc_glibc kernel_linux userland_GNU native-symlinks gles2 wayland xwayland egl jpeg jpeg2k png gif
-*/* opencl vulkan opengl vdpau vaapi
-*/* gmp gme lzma svg libxml2 flac ffmpeg openal 
+*/* opencl vulkan opengl vdpau vaapi x264 x265 gmp gme lzma svg libxml2 flac ffmpeg openal 
 */* abi_x86_32
 
 */* video_cards: amdgpu radeonsi
@@ -20,8 +19,6 @@
 
 x11-base/xorg-server xorg udev
 x11-drivers/xf86-video-amdgpu udev
-x11-misc/redshift gtk
-x11-misc/gammastep geoclue gtk appindicator
 x11-libs/libXaw3dXft unicode
 x11-libs/libfm gtk
 x11-libs/gtk+ inspector xinerama
@@ -33,7 +30,7 @@ x11-libs/gtksourceview introspection
 x11-libs/vte introspection
 x11-libs/pango introspection
 x11-libs/gdk-pixbuf introspection
-x11-libs/libdrm video_cards_intel
+x11-libs/libdrm video_cards_intel video_cards_radeon 
 x11-libs/wxGTK gstreamer curl libnotify sdl tiff
 x11-libs/fltk xft games 
 x11-apps/mesa-progs -gles2 -wayland
@@ -41,7 +38,10 @@ x11-apps/mesa-progs -gles2 -wayland
 sys-block/gparted -wayland
 dev-cpp/gtkmm -wayland
 
+media-libs/rubberband ladspa lv2
+media-libs/lsp-plugins lv2
 media-libs/vulkan-loader layers
+media-libs/imgui sdl
 media-libs/graphene introspection vala
 media-libs/imlib2 text filters mp3 packing shm tiff webp zlib eps
 media-libs/libpulse glib
@@ -52,6 +52,8 @@ media-libs/sdl2-mixer opus mp3
 media-libs/harfbuzz icu truetype glib graphite
 media-libs/dav1d 8bit 10bit
 media-libs/libheif x265
+media-libs/x265 12bit
+media-libs/x264 static-libs
 media-libs/mesa llvm xvmc vulkan-overlay d3d9
 media-libs/libcanberra udev
 media-libs/opencv contrib
@@ -71,7 +73,7 @@ media-libs/freetype brotli
 media-libs/libva-compat drm
 media-libs/libavif dav1d svt-av1
 media-libs/intel-mediasdk tools dri
-media-libs/amdvlk -wayland
+media-libs/amdvlk wayland raytracing
 media-libs/gd webp
 media-libs/libv4l dvb
 media-libs/gsound introspection
@@ -119,17 +121,16 @@ app-crypt/libsecret crypt
 app-crypt/libsecret introspection
 app-crypt/gnupg nls
 
+media-sound/pulseeffects rnnoise calf bs2b webrtc  zamaudio rubberband
 media-sound/alsa-utils libsamplerate
+media-sound/playerctl introspection
 media-sound/pulseaudio-daemon bluetooth alsa-plugin asyncns glib orc udev webrtc-aec 
 media-sound/pulseaudio glib daemon bluetooth
 media-sound/spotifyd -pulseaudio
 media-sound/spotify libnotify -wayland
 media-sound/pasystray libnotify
-media-sound/playerctl -*
-media-sound/deadbeef aac lastfm libsamplerate mp3
 media-sound/mpd wavpack
 media-sound/vimpc boost taglib
-media-sound/xmms2 wavpack mad mp3 sndfile server
 media-sound/cmus unicode mp4 aac
 media-sound/mpd webav sndfile zlib zip  inotify
 media-sound/strawberry gstreamer
@@ -151,6 +152,8 @@ sys-apps/shadow su
 sys-apps/makedev build
 sys-apps/util-linux udev
 
+dev-libs/libusb udev
+dev-libs/json-glib introspection
 dev-libs/glib -dbus
 dev-libs/libpcre2 pcre16 pcre32 unicode
 dev-libs/boost zlib nls icu context
@@ -163,23 +166,22 @@ dev-libs/xmlsec nss
 
 media-fonts/* otf
 media-video/mpv cli iconv libmpv lua uchardet xv zlib libplacebo drm -sdl tools archive sdl lcms libcaca zimg debug
-media-video/ffmpeg chromium fontconfig openal libaom libdrm mp3 x264 x265 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat amf webp twolame sdl amr amrenc bs2b -flite gcrypt rav1e snappy srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 ladspa fdk
+media-video/mplayer encode
+media-video/ffmpeg chromium fontconfig openal libaom libdrm mp3 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat amf webp twolame sdl amr amrenc bs2b -flite gcrypt rav1e snappy srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 ladspa fdk lv2
 media-video/rav1e capi
 media-video/wireplumber lua_single_target_lua5-4
 media-video/pipewire bluetooth sound-server gstreamer extra 
 media-video/libva-utils vainfo putsureface
-media-video/vlc ssl gcrypt libnotify gui x265 x264 gstreamer
+media-video/vlc ssl gcrypt libnotify gui gstreamer
 
 net-misc/rsync iconv stunnel xattr
-net-misc/dhcpcd udev embedded
+net-misc/dhcpcd udev embedded ipv6
 net-misc/netifrc dhcp
 net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 pop3 progress-meter smtp tftp adns nss hsts
 net-misc/iputils arping
 net-misc/aria2 bittorrent
-net-misc/spice-gtk usbredir gtk3
-net-misc/spice-gtk introspection
+net-misc/spice-gtk usbredir gtk3 introspection
 net-misc/gsasl client server
-net-misc/tigervnc server viewer drm 
 
 net-wireless/bluez udev experimental obex
 games-util/* steamruntime joystick
@@ -189,15 +191,11 @@ dev-vcs/git blksha1 curl gpg iconv pcre webdav
 app-shells/zsh pcre gdbm
 
 media-gfx/imagemagick heif xml -openmp
-media-gfx/xpaint pgf tiff 
 media-gfx/feh curl xinerama exif inotify
-
 
 app-misc/mime-types nginx
 app-misc/ca-certificates cacert
-
 dev-scheme/guile regex deprecated
-
 sys-process/htop lm-sensors
 sys-process/lsof rpc
 
@@ -235,14 +233,12 @@ mail-client/neomutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp ke
 
 app-alternatives/cpio libarchive
 app-alternatives/tar gnu -libarchive
-
-sys-kernel/gentoo-kernel-bin initramfs
 sys-kernel/linux-firmware unknown-license redistributable
 
 games-emulation/yuzu qt5 sdl system-vulkan cubeb 
 
 app-emulation/dxvk d3d9 d3d10 d3d11 dxgi
-app-emulation/* fdt shared
+app-emulation/* fdt shared vkd3d
 app-emulation/libvirt qemu udev virt-network libvirtd caps  fuse
 app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls  nls oss pin-upstream-blobs slirp vhost-net vnc xattr 
 app-emulation/virt-manager gui
@@ -297,7 +293,6 @@ net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
 
 dev-util/android-tools udev python
 
-media-tv/kodi dav1d eventclients lcms udev udf css webserver zeroconf upower bluetooth
 dev-libs/libcdio cxx
 dev-libs/tinyxml stl
 dev-libs/libpcre cxx
@@ -309,12 +304,12 @@ dev-libs/fcgi html
 dev-libs/libgusb vala introspection
 
 virtual/wine staging abi_x86_64
+virtual/libusb udev
 virtual/mysql server
 virtual/libcrypt static-libs
 
 dev-lua/lua-openssl lua_targets_lua5-3 -lua_targets_luajit
 dev-lua/luadbi mysql postgres sqlite
-
 
 app-containers/* btrfs 
 
@@ -322,7 +317,6 @@ net-im/dino notification-sound gpg http omemo
 net-im/prosody idn ldap libevent mysql postgres sqlite zlib test -ssl -lua_single_target_lua5-4
 net-im/pidgin gtk idn groupwise gnutls debug meanwhile gstreamer sasl eds doc spell tcl tk 
 net-im/coturn sqlite
-net-im/gajim crypt omemo rst webp spell remote 
 
 dev-db/mysql server
 app-admin/syslog-ng http
@@ -330,7 +324,6 @@ app-admin/pass importers git
 
 mail-mta/msmtp gnutls sasl
 net-mail/isync zlib sasl
-
 
 net-firewall/ufw ipv6
 net-proxy/privoxy  acl client-tags compression editor external-filters fast-redirects force graceful-termination tools stats png-images ipv6 zlib
@@ -340,6 +333,9 @@ gui-libs/libhandy introspection vala
 gui-libs/libadwaita vala introspection
 gui-libs/gtk introspection
 
-
 sys-fs/cryptsetup udev 
 sys-fs/lvm2 lvm udev
+
+
+gui-wm/wayfire system-wlroots system-wfconfig gles
+
