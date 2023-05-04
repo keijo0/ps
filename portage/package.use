@@ -1,21 +1,25 @@
 */* -*
-*/* alsa pulseaudio
-*/* X zstd lto clang dbus openmp readline ncurses ssl openssl threads wayland xwayland
-*/* libglvnd elibc_glibc kernel_linux userland_GNU native-symlinks gles2 egl jpeg jpeg2k png gif
-*/* opencl vulkan opengl vdpau vaapi x264 x265 gmp gme lzma svg libxml2 flac ffmpeg openal 
 */* abi_x86_32
+*/* alsa pulseaudio
+*/* X zstd lto clang dbus openmp readline ncurses ssl openssl threads wayland xwayland gles2
+*/* native-symlinks egl jpeg jpeg2k png gif
+*/* opencl vulkan opengl vdpau vaapi x264 x265 gmp gme lzma svg libxml2 flac ffmpeg openal 
 
 */* video_cards: amdgpu radeonsi
 */* qemu_user_targets: x86_64
 */* qemu_softmmu_targets: arm x86_64 sparc 
-*/* ruby_targets: -ruby26 ruby30 ruby31 ruby32
+*/* ruby_targets: ruby30 ruby31 ruby32
 */* lua_targets: luajit
 */* lua_single_target: luajit
 */* python_single_target: python3_11
 */* python_targets: python3_11
 */* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
-#*/* php_targets: php7-4 #php8-2
 */* input_devices: libinput joystick
+
+##
+media-libs/intel-mediasdk -wayland
+sys-block/gparted -wayland
+dev-cpp/gtkmm -wayland
 
 x11-base/xorg-server xorg udev
 x11-drivers/xf86-video-amdgpu udev
@@ -32,10 +36,7 @@ x11-libs/gdk-pixbuf introspection
 x11-libs/libdrm video_cards_intel video_cards_radeon 
 x11-libs/wxGTK gstreamer curl libnotify sdl tiff
 x11-libs/fltk xft games 
-x11-apps/mesa-progs -gles2
 
-media-libs/rubberband ladspa lv2
-media-libs/lsp-plugins lv2
 media-libs/vulkan-loader layers
 media-libs/imgui sdl
 media-libs/graphene introspection vala
@@ -50,7 +51,7 @@ media-libs/dav1d 8bit 10bit
 media-libs/libheif x265
 media-libs/x265 12bit
 media-libs/x264 static-libs
-media-libs/mesa llvm xvmc vulkan-overlay d3d9 wayland
+media-libs/mesa llvm xvmc vulkan-overlay d3d9 wayland 
 media-libs/libcanberra udev
 media-libs/opencv contrib
 media-libs/libsdl2 haptic joystick sound video 
@@ -92,12 +93,14 @@ sys-devel/gcc fortran vanilla sanitize ssp nptl
 sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
 sys-devel/clang-common default-compiler-rt default-libcxx default-lld lvm-libunwind
 sys-devel/clang-runtime compiler-rt libcxx-sanitize
+sys-devel/clang-toolchain-symlinks multilib-symlinks
+sys-devel/llvm-toolchain-symlinks multilib-symlinks
 sys-devel/llvm binutils-plugin
 sys-devel/binutils plugins
 sys-libs/libunwind static-libs
 
-sys-libs/libcxx -clang
-sys-libs/libcxxabi -clang
+#sys-libs/libcxx -clang
+#sys-libs/libcxxabi -clang
 sys-libs/libosinfo introspection
 sys-libs/ncurses cxx
 sys-libs/libblockdev cryptsetup
@@ -156,7 +159,7 @@ dev-libs/glib -dbus
 dev-libs/libpcre2 pcre16 pcre32 unicode
 dev-libs/boost zlib nls icu context
 dev-libs/libxml2 ftp icu python
-dev-libs/openssl asm ktls sctp static-libs verify-sig fips tls-compression vanilla rfc3779 weak-ssl-ciphers
+dev-libs/openssl asm ktls sctp static-libs verify-sig tls-compression vanilla 
 dev-libs/libtomcrypt libtommath
 dev-libs/libdazzle gtk vala
 dev-libs/libdbusmenu gtk3
@@ -165,7 +168,7 @@ dev-libs/xmlsec nss
 media-fonts/* otf
 media-video/mpv cli iconv libmpv lua uchardet xv zlib libplacebo drm -sdl tools archive sdl lcms libcaca zimg debug
 media-video/mplayer encode
-media-video/ffmpeg chromium fontconfig openal libaom libdrm mp3 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat amf webp twolame sdl amr amrenc bs2b -flite gcrypt rav1e snappy srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 ladspa fdk lv2
+media-video/ffmpeg chromium fontconfig openal libaom libdrm mp3 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat amf webp twolame sdl amr amrenc bs2b -flite gcrypt rav1e snappy srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 fdk 
 media-video/rav1e capi
 media-video/wireplumber lua_single_target_lua5-4
 media-video/pipewire bluetooth sound-server gstreamer extra 
@@ -221,7 +224,7 @@ app-arch/xz-utils extra-filters static-libs
 app-i18n/ibus gtk3
 acct-user/git gitea
 www-apps/gitea sqlite acct 
-www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png geckodriver system-webp libproxy
+www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png geckodriver system-webp libproxy -wayland
 www-client/chromium-bin widevine
 www-client/links webp fbcon gpm
 www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi nginx_modules_mail_smtp nginx_modules_http_gzip nginx_modules_http_gzip_static
@@ -232,7 +235,7 @@ mail-client/neomutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp ke
 
 app-alternatives/cpio libarchive
 app-alternatives/tar gnu -libarchive
-sys-kernel/linux-firmware unknown-license redistributable
+sys-kernel/linux-firmware unknown-license redistributable compress-zstd
 
 games-emulation/yuzu qt5 sdl system-vulkan cubeb 
 
@@ -241,7 +244,8 @@ app-emulation/* seccomp
 app-emulation/* fdt shared vkd3d
 app-emulation/libvirt qemu udev virt-network libvirtd caps  fuse
 app-emulation/virt-viewer spice
-app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls  nls oss pin-upstream-blobs slirp vhost-net vnc xattr 
+app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls  nls pin-upstream-blobs slirp vhost-net vnc xattr spice
+app-emulation/spice gstreamer sasl
 app-emulation/virt-manager gui
 app-emulation/fuse zlib png -alsa backend-X
 app-emulation/libspectrum zlib
@@ -334,4 +338,7 @@ gui-libs/libhandy introspection vala
 gui-libs/libadwaita vala introspection
 gui-libs/gtk introspection 
 
-xfce-base/* introspection
+xfce-base/* introspection xcomposite
+games-util/mangohud -wayland
+xfce-base/xfwm4 startup-notification xpresent
+app-accessibility/at-spi2-core -X
