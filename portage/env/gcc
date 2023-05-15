@@ -1,4 +1,4 @@
-COMMON_FLAGS="-march=skylake -mtune=skylake -Ofast -pipe"
+COMMON_FLAGS="-march=znver2 -mtune=znver2 -Ofast -pipe"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"
