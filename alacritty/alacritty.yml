@@ -1,42 +1,56 @@
 cursor:
  style: Beam
+ share: Beam
+ blinking: off
+ vi_mode_style: None
+ unfocused_hollow: false
 
 font:
- size: 9
+ size: 8
  normal:
-  family: B612 Mono
+  family: Azeret Mono
+  style: normal
+ bold:
+   family: Azeret Mono
+   style: normal
+ italic:
+   family: Azeret Mono
+   style: normal
+
 
 window:
- opacity: 0.8
+ dynamic_padding: false
+ resize_increments: false
+ decorations_theme_variant: Light
+ opacity: 0.78
  padding:
    x: 10
    y: 10
 
-
 colors:
   # Default colors
   primary:
-    background: '0x040404'
+    background: '0x000000'
     foreground: '0xbeaa9b'
 
   # Normal colors
   normal:
-    black:   '0x1c2023'
-    red:     '0xc7ae95'
-    green:   '0x95c7ae'
-    yellow:  '0xaec795'
-    blue:    '0xae95c7'
-    magenta: '0xc795ae'
-    cyan:    '0x95aec7'
-    white:   '0xbeaa9b'
+    black:   '0x5d4a3c'
+    red:     '0xbeaa9b'
+    green:   '0xbeaa9b'
+    yellow:  '0xbeaa9b'
+    blue:    '0xbeaa9b'
+    magenta: '0xbeaa9b'
+    cyan:    '0xbeaa9b'
+    white:   '0x9a7c65'
 
   # Bright colors
   bright:
-    black:   '0x747c84'
-    red:     '0xc7ae95'
-    green:   '0x95c7ae'
-    yellow:  '0xaec795'
-    blue:    '0xae95c7'
-    magenta: '0xc795ae'
-    cyan:    '0x95aec7'
-    white:   '0xf3f4f5'
+    black:   '0x5d4a3c'
+    red:     '0xbeaa9b'
+    green:   '0xbeaa9b'
+    yellow:  '0xbeaa9b'
+    blue:    '0xbeaa9b'
+    magenta: '0xbeaa9b'
+    cyan:    '0xbeaa9b'
+    white:   '0x9a7c65'
