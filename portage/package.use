@@ -1,11 +1,12 @@
 */* -*
-*/* abi_x86_32
+*/* elibc_glibc kernel_linux userland_GNU
 */* alsa pulseaudio
 */* X zstd lto clang dbus openmp readline ncurses ssl openssl threads wayland xwayland gles2
-*/* native-symlinks egl jpeg jpeg2k png gif
-*/* opencl vulkan opengl vdpau vaapi x264 x265 gmp gme lzma svg libxml2 flac ffmpeg openal 
+*/* native-symlinks egl jpeg jpeg2k png gif crypt
+*/* opencl vulkan opengl vdpau vaapi x264 x265 gmp gme lzma svg libxml2 flac ffmpeg openal ogg
+*/* abi_x86_32
 
-*/* video_cards: amdgpu radeonsi
+*/* video_cards: amdgpu radeonsi radeon
 */* qemu_user_targets: x86_64
 */* qemu_softmmu_targets: arm x86_64 sparc 
 */* ruby_targets: ruby30 ruby31 ruby32
@@ -17,7 +18,6 @@
 */* input_devices: libinput joystick
 
 ##
-media-libs/intel-mediasdk -wayland
 sys-block/gparted -wayland
 dev-cpp/gtkmm -wayland
 
@@ -33,11 +33,14 @@ x11-libs/gtksourceview introspection
 x11-libs/vte introspection
 x11-libs/pango introspection
 x11-libs/gdk-pixbuf introspection
-x11-libs/libdrm video_cards_intel video_cards_radeon 
+x11-libs/libdrm -video_cards_intel video_cards_radeon 
 x11-libs/wxGTK gstreamer curl libnotify sdl tiff
 x11-libs/fltk xft games 
 
+media-libs/intel-mediasdk -wayland
+media-libs/libtheora encode
 media-libs/vulkan-loader layers
+media-libs/libtheor encode
 media-libs/imgui sdl
 media-libs/graphene introspection vala
 media-libs/imlib2 text filters mp3 packing shm tiff webp zlib eps
@@ -166,9 +169,9 @@ dev-libs/libdbusmenu gtk3
 dev-libs/xmlsec nss
 
 media-fonts/* otf
-media-video/mpv cli iconv libmpv lua uchardet xv zlib libplacebo drm -sdl tools archive sdl lcms libcaca zimg debug
+media-video/mpv cli iconv libmpv lua xv zlib libplacebo drm -sdl tools archive sdl lcms libcaca zimg debug
 media-video/mplayer encode
-media-video/ffmpeg chromium fontconfig openal libaom libdrm mp3 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat amf webp twolame sdl amr amrenc bs2b -flite gcrypt rav1e snappy srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 fdk 
+media-video/ffmpeg chromium fontconfig openal libaom libdrm mp3 truetype openh264 bzip2 dav1d encode gnutls gpl iconv network openssl postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat amf webp twolame sdl amr amrenc bs2b -flite gcrypt rav1e snappy srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 fdk theora opus vorbis
 media-video/rav1e capi
 media-video/wireplumber lua_single_target_lua5-4
 media-video/pipewire bluetooth sound-server gstreamer extra 
@@ -205,6 +208,8 @@ dev-python/PyQt5 gui widgets declarative multimedia network sql printsupport web
 dev-python/pycurl curl_ssl_openssl
 dev-python/pygobject cairo
 
+dev-lang/rust rustfmt
+virtual/rust rustfmt
 dev-lang/python build gdbm xml sqlite
 dev-lang/php fpm
 dev-lang/erlang wxwidgets tk sctp odbc
@@ -228,7 +233,8 @@ www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz 
 www-client/chromium-bin widevine
 www-client/links webp fbcon gpm
 www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi nginx_modules_mail_smtp nginx_modules_http_gzip nginx_modules_http_gzip_static
-www-apps/nextcloud vhosts sqlite curl -imagemagick postgres mysql
+www-apps/nextcloud vhosts sqlite curl imagemagick postgres mysql
+dev-php/pecl-imagick php_targets_php8-1
 
 mail-client/mutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb 
 mail-client/neomutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb
@@ -242,9 +248,9 @@ games-emulation/yuzu qt5 sdl system-vulkan cubeb
 app-emulation/dxvk d3d9 d3d10 d3d11 dxgi
 app-emulation/* seccomp
 app-emulation/* fdt shared vkd3d
-app-emulation/libvirt qemu udev virt-network libvirtd caps  fuse
+app-emulation/libvirt qemu udev virt-network libvirtd caps fuse
 app-emulation/virt-viewer spice
-app-emulation/qemu aio bzip2 caps curl fdt filecaps gnutls  nls pin-upstream-blobs slirp vhost-net vnc xattr spice
+app-emulation/qemu aio caps curl fdt filecaps gnutls  nls pin-upstream-blobs slirp vhost-net vnc xattr spice
 app-emulation/spice gstreamer sasl
 app-emulation/virt-manager gui
 app-emulation/fuse zlib png -alsa backend-X
@@ -263,7 +269,7 @@ media-plugins/gst-plugins-vaapi drm
 
 app-alternatives/bzip2 pbzip2
 
-app-accessibility/at-spi2-core introspection
+app-accessibility/at-spi2-core introspection -X
 app-alternatives/awk gawk
 app-alternatives/gzip pigz
 app-alternatives/yacc reference
@@ -276,7 +282,7 @@ net-p2p/qbittorrent gui
 
 dev-qt/qtgui libinput udev
 dev-qt/qtsql sqlite
-dev-qt/qtbase gui network widgets libinput udev
+dev-qt/qtbase gui network widgets -libinput udev evdev
 dev-qt/qtwebchannel qml
 dev-qt/qtwebengine system-ffmpeg widgets system-icu
 dev-qt/qtdeclarative widgets
@@ -338,7 +344,12 @@ gui-libs/libhandy introspection vala
 gui-libs/libadwaita vala introspection
 gui-libs/gtk introspection 
 
-xfce-base/* introspection xcomposite
-games-util/mangohud -wayland
-xfce-base/xfwm4 startup-notification xpresent
-app-accessibility/at-spi2-core -X
+
+app-text/podofo lua_single_target_lua5-4
+#app-text/calibre ios
+media-libs/opusfile float
+media-sound/gmusicbrowser gstreamer libnotify mplayer
+dev-libs/libclc spirv
+
+net-libs/libvncserver zlib gcrypt
+x11-libs/libdrm video_cards_intel
