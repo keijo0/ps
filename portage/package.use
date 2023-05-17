@@ -1,7 +1,7 @@
 */* -*
 */* elibc_glibc kernel_linux userland_GNU native-symlinks
 */* alsa pulseaudio
-*/* X zstd lto clang dbus -openmp readline ncurses ssl openssl threads 
+*/* X zstd lto clang dbus readline ncurses ssl openssl threads 
 */* jpeg jpeg2k png gif crypt
 */* opencl vulkan opengl vdpau vaapi x264 x265 lzma svg libxml2 flac ffmpeg openal ogg
 */* abi_x86_32
@@ -118,11 +118,11 @@ net-libs/mbedtls cmac
 app-crypt/p11-kit asn1 trust
 app-crypt/pinentry gtk
 app-crypt/gpgme cxx
+app-crypt/gnupg nls
 app-crypt/gnupg tools user-socket
 app-crypt/gcr gtk -vala
 app-crypt/libsecret crypt
 app-crypt/libsecret introspection
-app-crypt/gnupg nls
 
 media-sound/pulseeffects rnnoise calf bs2b webrtc  zamaudio rubberband
 media-sound/alsa-utils libsamplerate
@@ -136,7 +136,6 @@ media-sound/mpd wavpack
 media-sound/vimpc boost taglib
 media-sound/cmus unicode mp4 aac
 media-sound/mpd webav sndfile zlib zip  inotify
-media-sound/strawberry gstreamer
 
 app-text/poppler cairo cxx lcms utils
 app-text/libwpd tools
@@ -235,14 +234,12 @@ www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoin
 www-apps/nextcloud vhosts sqlite curl imagemagick postgres mysql
 dev-php/pecl-imagick php_targets_php8-1
 
-mail-client/mutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb 
-mail-client/neomutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb
+#mail-client/mutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb 
+#mail-client/neomutt gdbm imap sasl gnutls gsasl idn mbox pgp-classic pop smtp kerberos debug lmdb
 
 app-alternatives/cpio libarchive
 app-alternatives/tar gnu -libarchive
 sys-kernel/linux-firmware unknown-license redistributable compress-zstd
-
-games-emulation/yuzu qt5 sdl system-vulkan cubeb 
 
 app-emulation/dxvk d3d9 d3d10 d3d11 dxgi
 app-emulation/* seccomp
@@ -275,8 +272,6 @@ app-alternatives/yacc reference
 app-alternatives/lex flex
 app-alternatives/bc gnu
 sys-devel/bc static
-gui-libs/wlroots x11-backend seatd
-sys-auth/seatd server
 net-p2p/qbittorrent gui
 
 dev-qt/qtgui libinput udev
@@ -293,9 +288,11 @@ dev-perl/Type-Tiny-XS minimal
 dev-perl/Type-Tiny minimal
 dev-libs/atk introspection
 
-gui-wm/sway swaybar man
-gui-apps/swaybg gdk-pixbuf
-gui-apps/waybar experimental mpd popups tray
+#gui-wm/sway swaybar man
+#gui-apps/swaybg gdk-pixbuf
+#gui-apps/waybar experimental mpd popups tray
+#gui-libs/wlroots x11-backend seatd
+#sys-auth/seatd server
 
 net-analyzer/hydra libssh gcrypt gtk idn pcre zlib
 net-analyzer/nmap libssh2 ncat nping nse ipv6 lua_single_target_lua5-3
@@ -320,10 +317,8 @@ dev-lua/luadbi mysql postgres sqlite
 
 app-containers/* btrfs 
 
-net-im/dino notification-sound gpg http omemo
 net-im/prosody idn ldap libevent mysql postgres sqlite zlib test -ssl -lua_single_target_lua5-4
 net-im/pidgin gtk idn groupwise gnutls debug meanwhile gstreamer sasl eds doc spell tcl tk 
-net-im/coturn sqlite
 
 dev-db/mysql server
 app-admin/syslog-ng http
@@ -342,7 +337,6 @@ gui-libs/gtk introspection
 
 
 app-text/podofo lua_single_target_lua5-4
-#app-text/calibre ios
 media-libs/opusfile float
 media-sound/gmusicbrowser gstreamer libnotify mplayer
 dev-libs/libclc spirv

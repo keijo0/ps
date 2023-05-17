@@ -7,3 +7,11 @@ sys-apps/opentmpfiles
 net-libs/libsoup
 dev-qt/qtbase
 net-analyzer/cameradar
+net-analyzer/dirb
+net-voip/discover-overlay
+media-libs/imgui
+media-libs/amdvlk
+sys-process/nvtop
+app-misc/lf
+dev-util/DirectXShaderCompiler
+edia-libs/intel-mediasdk

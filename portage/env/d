@@ -7,4 +7,4 @@ EMERGE_DEFAULT_OPTS="-j11 -av --complete-graph=y --nospinner --with-bdeps=y --qu
 CLEAN_DELAY=0
 LC_MESSAGES=C
 Z="-*"
-FEATURES="${Z} nodoc notitles nostrip noinfo assume-digests binpkg-docompress binpkg-logs buildpkg-live config-protect-if-modified fixlafiles merge-sync preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-logs unmerge-orphans"
+FEATURES="${Z} nodoc notitles nostrip noinfo assume-digests buildpkg-live config-protect-if-modified fixlafiles merge-sync preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-logs unmerge-orphans"

@@ -12,7 +12,3 @@ LDFLAGS="${LDFLAGS} -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,--a
 CFLAGS="${CFLAGS}"
 CXXFLAGS="${CXXFLAGS}"
 LDFLAGS="${LDFLAGS} -Wl,-z,relro,-z,now"
-
-
-
-

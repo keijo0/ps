@@ -1,5 +1,6 @@
 */* ~amd64
-www-client/ungoogled-chromium-bin **
 */*::making **
-gui-apps/waybar **
-dev-python/protobuf-python **
+x11-terms/alacritty **
+www-client/firefox **
+sys-fs/eudev **
+www-apps/jellyfin **
