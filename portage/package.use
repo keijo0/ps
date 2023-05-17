@@ -1,9 +1,9 @@
 */* -*
-*/* elibc_glibc kernel_linux userland_GNU
+*/* elibc_glibc kernel_linux userland_GNU native-symlinks
 */* alsa pulseaudio
-*/* X zstd lto clang dbus openmp readline ncurses ssl openssl threads wayland xwayland gles2
-*/* native-symlinks egl jpeg jpeg2k png gif crypt
-*/* opencl vulkan opengl vdpau vaapi x264 x265 gmp gme lzma svg libxml2 flac ffmpeg openal ogg
+*/* X zstd lto clang dbus -openmp readline ncurses ssl openssl threads 
+*/* jpeg jpeg2k png gif crypt
+*/* opencl vulkan opengl vdpau vaapi x264 x265 lzma svg libxml2 flac ffmpeg openal ogg
 */* abi_x86_32
 
 */* video_cards: amdgpu radeonsi radeon
@@ -17,7 +17,6 @@
 */* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* input_devices: libinput joystick
 
-##
 sys-block/gparted -wayland
 dev-cpp/gtkmm -wayland
 
@@ -92,7 +91,7 @@ sys-libs/zlib minizip
 sys-libs/gdbm berkdb
 sys-libs/libxcrypt static-libs
 
-sys-devel/gcc fortran vanilla sanitize ssp nptl
+sys-devel/gcc fortran vanilla sanitize ssp nptl openmp
 sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
 sys-devel/clang-common default-compiler-rt default-libcxx default-lld lvm-libunwind
 sys-devel/clang-runtime compiler-rt libcxx-sanitize
@@ -300,9 +299,6 @@ gui-apps/waybar experimental mpd popups tray
 
 net-analyzer/hydra libssh gcrypt gtk idn pcre zlib
 net-analyzer/nmap libssh2 ncat nping nse ipv6 lua_single_target_lua5-3
-net-analyzer/rrdtool lua graph lua_targets: -* lua5-1
-
-dev-util/android-tools udev python
 
 dev-libs/libcdio cxx
 dev-libs/tinyxml stl
