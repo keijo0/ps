@@ -1,0 +1,53 @@
+[colors.bright]
+black = "0x5d4a3c"
+blue = "0xbeaa9b"
+cyan = "0xbeaa9b"
+green = "0xbeaa9b"
+magenta = "0xbeaa9b"
+red = "0xbeaa9b"
+white = "0x9a7c65"
+yellow = "0xbeaa9b"
+
+[colors.normal]
+black = "0x5d4a3c"
+blue = "0xbeaa9b"
+cyan = "0xbeaa9b"
+green = "0xbeaa9b"
+magenta = "0xbeaa9b"
+red = "0xbeaa9b"
+white = "0x9a7c65"
+yellow = "0xbeaa9b"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xbeaa9b"
+
+[cursor]
+style = "Beam"
+unfocused_hollow = false
+vi_mode_style = "None"
+
+[font]
+size = 9
+
+[font.bold]
+family = "Azeret Mono"
+style = "normal"
+
+[font.italic]
+family = "Azeret Mono"
+style = "normal"
+
+[font.normal]
+family = "Azeret Mono"
+style = "normal"
+
+[window]
+decorations_theme_variant = "Light"
+dynamic_padding = false
+opacity = 0.78
+resize_increments = false
+
+[window.padding]
+x = 10
+y = 10
