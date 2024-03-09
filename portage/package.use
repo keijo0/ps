@@ -23,7 +23,7 @@ x11-drivers/xf86-video-amdgpu udev
 x11-base/xorg-server xorg udev
 x11-libs/libXaw3dXft unicode
 x11-libs/libfm gtk
-x11-libs/gtk+ inspector introspection
+x11-libs/gtk+ inspector introspection wayland
 x11-libs/cairo glib 
 x11-libs/libxcb xkb
 x11-libs/libnotify introspection
@@ -34,7 +34,7 @@ x11-libs/gdk-pixbuf introspection
 x11-libs/wxGTK gstreamer curl libnotify sdl tiff
 x11-libs/fltk xft games 
 
-media-libs/gst-plugins-base egl
+media-libs/gst-plugins-base egl introspection vorbis
 media-libs/opusfile float
 media-libs/libtheora encode
 media-libs/vulkan-loader layers
@@ -264,7 +264,6 @@ sys-firmware/seabios seavgabios binary
 sys-firmware/sgabios binary
 media-plugins/gst-plugins-vaapi drm egl 
 media-plugins/gst-plugins-meta wavpack vpx taglib vorbis aac mp3
-media-libs/gst-plugins-base vorbis
 
 
 app-alternatives/bzip2 pbzip2
@@ -352,21 +351,15 @@ gui-libs/gtk -ffmpeg
 games-util/steam-launcher udev
 app-alternatives/ninja samurai
 
-
 media-sound/spotify_dl python_targets_python3_10
->=dev-libs/libgee-0.20.6-r1 introspection
->=net-misc/curl-8.5.0 -curl_ssl_openssl curl_ssl_gnutls gnutls
+dev-libs/libgee introspection
 dev-python/pycurl curl_ssl_openssl
->=dev-python/matplotlib-3.8.2-r1 gtk3
->=dev-python/pillow-10.2.0 webp
->=virtual/imagemagick-tools-0-r1 tiff
->=media-gfx/imagemagick-7.1.1.24 tiff
-
-
+dev-python/matplotlib gtk3
+dev-python/pillow webp
+virtual/imagemagick-tools tiff
+media-gfx/imagemagick tiff
 sys-apps/systemd-utils acl kmod
-#virtual/udev systemd
->=net-misc/curl-8.5.0-r2 curl_ssl_openssl -curl_ssl_gnutls
-
+net-misc/curl curl_ssl_openssl -curl_ssl_gnutls
 media-sound/vorbis-tools ogg123
 net-libs/gupnp vala introspection
 net-libs/gupnp-av vala introspection
@@ -375,20 +368,7 @@ media-libs/gupnp-dlna vala introspection
 media-libs/libmediaart vala introspection gtk
 net-misc/rygel sqlite gtk introspection transcode
 net-libs/libsoup vala introspection
->=media-libs/gst-plugins-base-1.22.3 introspection
-# required by net-im/telegram-desktop-bin-4.14.2::gentoo
-# required by @selected
-# required by @world (argument)
->=x11-libs/gtk+-3.24.40 wayland
 sys-kernel/gentoo-kernel-bin initramfs
-#>=sys-kernel/installkernel-18 systemd
-#>=sys-apps/systemd-utils-254.8 kernel-install
->=sys-kernel/installkernel-24 dracut
-games-emulation/pcsx2 -clang
-# required by media-libs/mesa-24.0.0::gentoo
-# required by net-im/signal-desktop-bin-6.48.0::gentoo
-# required by @selected
-# required by @world (argument)
->=x11-libs/libdrm-2.4.120 video_cards_intel
-
+sys-kernel/installkernel dracut
+x11-libs/libdrm video_cards_intel
 sys-apps/lm-sensors contrib static-libs
