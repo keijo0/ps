@@ -1,25 +1,10 @@
+*/*::making
 */*::pf4public
 */*::guru
 */*::steam-overlay
 */*::pentoo
 */*::wayland-desktop
 
+virtual/tmpfiles
 
->=virtual/tmpfiles-0-r3::gentoo
-dev-lang/rust
-sys-fs/static-dev
->=dev-qt/qtbase-6.0
-sys-apps/openrc::gentoo
-app-emulator/wine-vanilla
-sys-auth/pambase
-sys-libs/pam
-sys-power/upower
-app-i18n/uchardet
-media-libs/intel-mediasdk
-
-=sys-devel/llvm-15.0.7
-=sys-devel/llvm-toolchain-symlinks-15-r1
-=sys-libs/compiler-rt-15.0.7
-=sys-devel/clang-runtime-15.0.7
-=sys-devel/clang-15.0.7-r1
-=sys-devel/clang-toolchain-symlinks-15-r2
+sys-apps/gentoo-systemd-integration

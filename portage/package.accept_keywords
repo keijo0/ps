@@ -1,6 +1,5 @@
 */* ~amd64
 */*::making **
-x11-terms/alacritty **
-www-client/firefox **
-sys-fs/eudev **
-www-apps/jellyfin **
+media-sound/spotify_dl **
+# required by kodi (argument)
+=media-tv/kodi-9999 **
