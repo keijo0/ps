@@ -28,7 +28,7 @@ unfocused_hollow = false
 vi_mode_style = "None"
 
 [font]
-size = 9
+size = 8
 
 [font.bold]
 family = "Azeret Mono"
