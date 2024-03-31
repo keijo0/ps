@@ -210,7 +210,7 @@ dev-python/pygobject cairo
 dev-lang/rust rustfmt
 virtual/rust rustfmt
 dev-lang/python build gdbm xml sqlite
-dev-lang/php fpm
+dev-lang/php fpm ipv6
 dev-lang/lua deprecated
 dev-lang/php ctype filter intl unicode gdbm iconv mysql -libedit mysqli cli cgi phpdbg xml xmlreader cjk gd zlib phar bzip2 session zip truetype simplexml pdo postgres xmlwriter posix curl sqlite fileinfo opcache webp sodium sharedmem sysvipc bcmath calendar exif
 
@@ -252,7 +252,7 @@ app-emulation/fuse zlib png -alsa backend-X
 app-emulation/libspectrum zlib
 app-emulation/libvirt-glib introspection
 app-emulation/wine-staging abi_x86_64 gecko gstreamer mono sdl truetype 
-app-emulation/wine-vanilla abi_x86_32 gecko gstreamer mono sdl truetype
+app-emulation/wine-vanilla abi_x86_64 gecko gstreamer mono sdl truetype
 app-emulation/winetricks abi_x86_64 
 app-emulation/wine-gecko abi_x86_64
 app-emulation/vkd3d spirv-tools
@@ -372,3 +372,5 @@ sys-kernel/gentoo-kernel-bin initramfs
 sys-kernel/installkernel dracut
 x11-libs/libdrm video_cards_intel
 sys-apps/lm-sensors contrib static-libs
+dev-libs/tree-sitter-bash python
+net-fs/samba client acl

@@ -1,5 +1,5 @@
 */* ~amd64
 */*::making **
 media-sound/spotify_dl **
-# required by kodi (argument)
-=media-tv/kodi-9999 **
+media-libs/libvorbis **
+media-sound/exaile **
