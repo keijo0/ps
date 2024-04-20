@@ -1,10 +1,7 @@
-*/*::making
 */*::pf4public
 */*::guru
 */*::steam-overlay
 */*::pentoo
 */*::wayland-desktop
-
 virtual/tmpfiles
-
 sys-apps/gentoo-systemd-integration

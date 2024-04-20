@@ -1,18 +1,18 @@
 */* -*
-*/* elibc_glibc kernel_linux userland_GNU native-symlinks udev llvm_slot_17 split-usr pie
+*/* elibc_glibc kernel_linux userland_GNU native-symlinks udev llvm_slot_17 
 */* alsa pulseaudio
-*/* X zstd clang dbus readline ncurses ssl openssl threads vulkan
-*/* jpeg jpeg2k png gif xattr ffmpeg x264 x265 opencl opengl vdpau lzma gles2 gles1 gtk4
+*/* X zstd clang dbus readline ncurses ssl openssl threads
+*/* jpeg jpeg2k png gif xattr ffmpeg x264 x265 opencl opengl vdpau lzma gles2 gles1 gtk4 qt5 vulkan
 */* svg libxml2 flac openal ogg
 */* abi_x86_32
 
-*/* video_cards: amdgpu radeonsi radeon
+*/* video_cards: amdgpu radeon
 */* qemu_user_targets: x86_64
 */* qemu_softmmu_targets: arm x86_64 sparc 
 */* ruby_targets: ruby30 ruby31 ruby32
 */* lua_targets: luajit
 */* lua_single_target: luajit 
-*/* python_single_target: python3_11
+*/* python_single_target: python3_11 
 */* python_targets: python3_11
 */* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* input_devices: libinput joystick
@@ -41,6 +41,7 @@ x11-libs/gdk-pixbuf introspection
 x11-libs/wxGTK gstreamer curl libnotify sdl tiff
 x11-libs/fltk xft games 
 
+media-libs/libwebp -opengl
 media-libs/gst-plugins-base egl introspection vorbis
 media-libs/libepoxy egl
 media-libs/gupnp-dlna vala introspection
@@ -62,7 +63,7 @@ media-libs/dav1d 8bit 10bit
 media-libs/libheif x265
 media-libs/x265 12bit
 media-libs/x264 static-libs
-media-libs/mesa llvm xvmc vulkan-overlay d3d9 unwind lm-sensors wayland llvm_slot_17 video_cards_intel -opencl
+media-libs/mesa llvm xvmc d3d9 unwind lm-sensors wayland llvm_slot_17 video_cards_intel -opencl
 media-libs/libcanberra udev
 media-libs/opencv contrib
 media-libs/libsdl2 haptic joystick sound video 
@@ -109,7 +110,11 @@ sys-fs/e2fsprogs tools
 sys-fs/btrfs-progs udev
 sys-fs/fuse suid
 sys-fs/ntfs3g mount-ntfs ntfsprogs suid xattr ntfsdecrypt fuse
-sys-devel/gcc fortran vanilla sanitize ssp nptl openmp cxx default-stack-clash-protection default-znow objc++ objc
+
+
+sys-devel/gcc fortran sanitize ssp nptl openmp cxx default-stack-clash-protection default-znow objc++ objc cet multilib
+
+
 sys-devel/bc static
 sys-devel/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
 sys-devel/clang-common default-compiler-rt default-libcxx default-lld lvm-libunwind
@@ -117,7 +122,7 @@ sys-devel/clang-runtime compiler-rt libcxx-sanitize
 sys-devel/clang-toolchain-symlinks multilib-symlinks
 sys-devel/llvm-toolchain-symlinks multilib-symlinks
 sys-devel/llvm binutils-plugin exegesis xml xar
-sys-devel/binutils plugins
+sys-devel/binutils plugins cet
 
 sys-libs/libunwind static-libs libunwind
 sys-libs/libcxx -clang static-libs libunwind
@@ -126,7 +131,7 @@ sys-libs/libosinfo introspection
 sys-libs/libblockdev cryptsetup
 sys-libs/ncurses cxx
 sys-libs/libxcrypt system compat static-libs
-sys-libs/glibc clone3 multiarch ssp stack-realign hash-sysv-compat 
+sys-libs/glibc clone3 multiarch ssp stack-realign hash-sysv-compat cet multilib 
 sys-libs/zlib static-libs minizip
 sys-libs/gdbm berkdb
 sys-apps/pciutils kmod
@@ -142,7 +147,7 @@ sys-apps/systemd-utils acl kmod
 sys-process/htop lm-sensors
 sys-process/cronie inotify
 sys-process/lsof rpc
-sys-kernel/linux-firmware unknown-license redistributable compress-zstd
+sys-kernel/linux-firmware redistributable compress-zstd
 sys-firmware/edk2-ovmf binary
 sys-firmware/ipxe binary qemu
 sys-firmware/seabios seavgabios binary
@@ -180,7 +185,7 @@ net-p2p/qbittorrent gui
 dev-qt/qtgui libinput udev egl
 dev-qt/qttools linguist
 dev-qt/qtsql sqlite
-dev-qt/qtbase gui network widgets -libinput udev evdev egl concurrent concurrent
+dev-qt/qtbase gui network widgets -libinput udev evdev egl concurrent concurrent wayland
 dev-qt/qtwebchannel qml
 dev-qt/qtwebengine system-ffmpeg widgets system-icu
 dev-qt/qtdeclarative widgets network
@@ -228,7 +233,6 @@ dev-scheme/guile regex deprecated
 
 dev-ruby/rubygems ruby_targets_ruby31 ruby_targets_ruby30
 dev-python/PyQt5 gui widgets declarative multimedia network sql printsupport webchannel
-dev-python/pillow webp
 dev-python/pycurl curl_ssl_openssl
 dev-python/matplotlib gtk3
 dev-python/pygobject cairo
@@ -295,7 +299,7 @@ app-emulation/wine-gecko abi_x86_64
 app-emulation/vkd3d spirv-tools
 app-emulation/vkd3d-proton extras
 
-app-alternatives/bzip2 pbzip2
+app-alternatives/bzip2 pbzip2 -split-usr
 app-alternatives/cpio libarchive
 app-alternatives/ninja samurai
 app-alternatives/tar gnu -libarchive
@@ -305,6 +309,7 @@ app-alternatives/gzip pigz
 app-alternatives/yacc reference
 app-alternatives/lex flex
 app-alternatives/bc gnu
+app-alternatives/sh bash
 app-i18n/ibus gtk3
 app-admin/syslog-ng http
 app-admin/pass importers git
@@ -321,3 +326,8 @@ net-im/pidgin gtk idn groupwise gnutls debug meanwhile gstreamer sasl eds doc sp
 net-analyzer/hydra libssh gcrypt gtk idn pcre zlib
 net-analyzer/nmap libssh2 ncat nping ipv6 lua_single_target_lua5-1
 app-admin/testdisk gui efw zlib
+
+sys-kernel/gentoo-kernel-bin initramfs
+# required by sys-kernel/gentoo-kernel-bin-6.6.21::gentoo[initramfs,-generic-uki]
+# required by virtual/dist-kernel-6.6.21::gentoo
+>=sys-kernel/installkernel-28 dracut
