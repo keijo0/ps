@@ -1,1 +1,1 @@
-PRETHY SELF EXPLANATORY DOTFILES AND STUFF FOR $HOME/. directories etc whatever 
+$HOME/.
