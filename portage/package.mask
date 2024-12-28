@@ -5,3 +5,11 @@
 */*::wayland-desktop
 virtual/tmpfiles
 sys-apps/gentoo-systemd-integration
+net-print/cups
+
+media-video/pipewire
+sys-apps/xdg-desktop-portal
+sys-libs/pam
+sys-auth/pambase
+net-print/cups
+sys-auth/polkit

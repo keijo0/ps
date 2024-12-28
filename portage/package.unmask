@@ -23,3 +23,7 @@ dev-python/bsddb3
 =virtual/tmpfiles-0-r5
 =dev-python/nspektr-0.5.0
 =app-eselect/eselect-vala-1.0.0
+=net-print/cups-2.4.7-r2
+=games-emulation/duckstation-9999
+=dev-lang/php-8.1.30
+dev-libs/libaio
