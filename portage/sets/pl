@@ -1,0 +1,14 @@
+media-libs/gst-plugins-bad
+media-libs/gst-plugins-base
+media-libs/gst-plugins-good
+media-libs/gst-plugins-ugly
+media-plugins/gst-plugins-faad
+media-plugins/gst-plugins-flac
+media-plugins/gst-plugins-libav
+media-plugins/gst-plugins-meta
+media-plugins/gst-plugins-mpg123
+media-plugins/gst-plugins-pulse
+media-plugins/gst-plugins-taglib
+media-plugins/gst-plugins-vpx
+media-plugins/gst-plugins-wavpack
+media-plugins/gst-plugins-x264

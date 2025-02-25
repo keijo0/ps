@@ -2,14 +2,13 @@ CHOST="x86_64-pc-linux-gnu"
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
-EMERGE_DEFAULT_OPTS="-j10 -av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display --keep-going"
+EMERGE_DEFAULT_OPTS="-j12 -av --complete-graph=y --nospinner --with-bdeps=y --quiet-build --misspell-suggestions=n --search-index=n --unordered-display --keep-going"
 CLEAN_DELAY=0
 LC_MESSAGES=C
 Z="-*"
 FEATURES="${Z} nodoc notitles nostrip noinfo assume-digests buildpkg-live config-protect-if-modified fixlafiles merge-sync preserve-libs protect-owned qa-unresolved-soname-deps sfperms strict unknown-features-warn unmerge-logs unmerge-orphans"
 
-
 UNINSTALL_IGNORE="${UNINSTALL_IGNORE} /bin /lib /lib32 /lib64 /libx32 /sbin /usr/sbin"
 UNINSTALL_IGNORE="${UNINSTALL_IGNORE} /usr/lib/modules/*"
 
-LLVM_SLOT=17
+LLVM_SLOT=18
