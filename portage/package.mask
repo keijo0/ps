@@ -1,15 +1,11 @@
 */*::pf4public
 */*::guru
 */*::steam-overlay
-*/*::pentoo
-*/*::wayland-desktop
-virtual/tmpfiles
-sys-apps/gentoo-systemd-integration
-net-print/cups
 
-media-video/pipewire
-sys-apps/xdg-desktop-portal
-sys-libs/pam
-sys-auth/pambase
-net-print/cups
-sys-auth/polkit
+>=sys-apps/openrc-0.62.2
+#>=dev-libs/protobuf-31.1
+#>=www-apps/jellyfin-bin-10.11.0_rc1
+
+dev-db/unixODBC
+sys-libs/libunwind
+gui-apps/wl-clipboard

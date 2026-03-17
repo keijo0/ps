@@ -1,0 +1,7 @@
+dev-libs/libgudev
+games-util/game-device-udev-rules
+sys-fs/udev-init-scripts
+sys-libs/libudev-compat
+virtual/libudev
+virtual/udev
+sys-apps/openrc 

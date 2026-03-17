@@ -1,0 +1,11 @@
+media-libs/mesa
+x11-apps/mesa-progs
+dev-util/vulkan-headers
+dev-util/vulkan-tools
+dev-util/vulkan-utility-libraries
+media-libs/amdgpu-pro-vulkan
+media-libs/vulkan-layers
+media-libs/vulkan-loader
+media-libs/amdgpu-pro-vulkan
+sci-libs/colamd
+x11-drivers/xf86-video-amdgpu

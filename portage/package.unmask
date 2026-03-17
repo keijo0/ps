@@ -1,4 +1,5 @@
 games-util/steam-meta
+media-video/delfin
 games-util/steam-client-meta
 games-util/steam-launcher
 games-util/esteam
@@ -20,10 +21,115 @@ games-util/mangohud
 media-fonts/lato
 media-sound/exaile
 dev-python/bsddb3
-=virtual/tmpfiles-0-r5
-=dev-python/nspektr-0.5.0
-=app-eselect/eselect-vala-1.0.0
-=net-print/cups-2.4.7-r2
+virtual/tmpfiles
+dev-python/nspektr
+app-eselect/eselect-vala
+net-print/cups
 =games-emulation/duckstation-9999
 =dev-lang/php-8.1.30
 dev-libs/libaio
+sys-libs/libseccomp
+sys-libs/libcap-ng
+games-emulation/rpcs3
+# required by www-client/ungoogled-chromium-bin (argument)
+# /etc/portage/package.mask:
+=www-client/ungoogled-chromium-bin-136.0.7103.59
+# required by net-im/teams-for-linux (argument)
+# /etc/portage/package.mask:
+=net-im/teams-for-linux-2.0.8
+# required by ungoogled-chromium-bin (argument)
+# /etc/portage/package.mask:
+=www-client/ungoogled-chromium-bin-137.0.7151.103
+# required by net-vpn/mullvadvpn-app (argument)
+# /etc/portage/package.mask:
+=net-vpn/mullvadvpn-app-2025.8_beta1
+# required by @selected
+# required by @world (argument)
+# /etc/portage/package.mask:
+=net-vpn/mullvadvpn-app-2025.9
+# required by @selected
+# required by @world (argument)
+# /var/db/repos/gentoo/profiles/package.mask:
+# Andreas Sturmlechner <asturm@gentoo.org> (2025-08-29)
+# Obsolete transitional meta package. Bug #961795. Removal on 2025-09-28.
+=media-sound/pulseaudio-16.1
+# required by gnome-base/gnome-shell-48.4::gentoo
+# required by @selected
+# required by @world (argument)
+# /etc/portage/package.mask:
+=gnome-base/gnome-control-center-48.4
+# required by media-sound/pamixer (argument)
+# /etc/portage/package.mask:
+=media-sound/pamixer-1.6
+# required by app-misc/keyd (argument)
+# /etc/portage/package.mask:
+=app-misc/keyd-2.5.0
+# required by app-misc/keyd-2.5.0::guru
+# required by app-misc/keyd (argument)
+# /etc/portage/package.mask:
+=acct-group/keyd-2.5.0
+# required by games-util/input-remapper (argument)
+# /etc/portage/package.mask:
+=games-util/input-remapper-2.2.0
+# required by www-client/ungoogled-chromium-bin (argument)
+# /etc/portage/package.mask:
+=www-client/ungoogled-chromium-bin-142.0.7444.134
+# required by sys-apps/lact (argument)
+# /etc/portage/package.mask:
+=sys-apps/lact-0.8.2
+# required by gui-apps/waypaper-2.7::guru
+# required by waypaper (argument)
+# /etc/portage/package.mask:
+=dev-python/screeninfo-0.8.1
+# required by waypaper (argument)
+# /etc/portage/package.mask:
+=gui-apps/waypaper-2.7
+# required by gui-apps/quickshell (argument)
+# /etc/portage/package.mask:
+=gui-apps/quickshell-0.2.1
+# required by hyprpaper (argument)
+# /etc/portage/package.mask:
+=gui-apps/hyprpaper-0.7.5
+# required by net-im/discord-canary-bin (argument)
+# /etc/portage/package.mask:
+=net-im/discord-canary-bin-0.0.786
+# required by x11-base/xorg-server-21.1.21::gentoo[unwind]
+# required by @selected
+# required by @world (argument)
+# /etc/portage/package.mask:
+=sys-libs/libunwind-1.8.2-r1
+# required by app-containers/waydroid-1.6.1::guru
+# required by waydroid (argument)
+# /etc/portage/package.mask:
+=dev-libs/gbinder-1.1.43
+# required by app-containers/waydroid-1.6.1::guru
+# required by waydroid (argument)
+# /etc/portage/package.mask:
+=dev-libs/libglibutil-1.0.80
+# required by waydroid (argument)
+# /etc/portage/package.mask:
+=app-containers/waydroid-1.6.1
+# required by app-containers/waydroid-1.6.1::guru[python_single_target_python3_13]
+# required by waydroid (argument)
+# /etc/portage/package.mask:
+=dev-python/gbinder-1.3.0
+# required by looking-glass (argument)
+# /etc/portage/package.mask:
+=app-emulation/looking-glass-1_beta7
+# required by dev-db/unixODBC (argument)
+# /etc/portage/package.mask:
+=dev-db/unixODBC-2.3.14
+# required by www-client/helium-bin (argument)
+# /etc/portage/package.mask:
+=www-client/helium-bin-0.8.3.1-r1
+# required by media-video/motioneye (argument)
+# /etc/portage/package.mask:
+=media-video/motioneye-0.43.1
+# required by gui-apps/wlr-randr (argument)
+# /etc/portage/package.mask:
+=gui-apps/wlr-randr-0.5.0
+# required by app-admin/pass-1.7.4-r4::gentoo[wayland]
+# required by @selected
+# required by @world (argument)
+# /etc/portage/package.mask:
+=gui-apps/wl-clipboard-2.2.1-r1

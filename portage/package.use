@@ -1,38 +1,39 @@
 */* -*
-*/* elibc_glibc kernel_linux userland_GNU native-symlinks udev llvm_slot_18
-*/* alsa pulseaudio
+*/* elibc_glibc kernel_linux userland_GNU native-symlinks udev llvm_slot_21 -llvm_slot_20
+*/* alsa pulseaudio gmp wayland gles2
 */* X zstd clang dbus readline ncurses ssl openssl threads
-*/* jpeg jpeg2k png gif xattr x264 x265 opencl opengl vdpau lzma gtk4 qt5 vulkan svg flac openal ogg 
+*/* jpeg jpeg2k png gif xattr x264 x265 opencl opengl vdpau vaapi lzma gtk4 qt5 vulkan svg flac openal ogg unwind
 */* abi_x86_32
-*/* video_cards: amdgpu radeon radeonsi
+*/* video_cards: amdgpu radeonsi
 */* qemu_user_targets: x86_64
 */* qemu_softmmu_targets: x86_64 arm sparc
 */* ruby_targets: ruby30 ruby31 ruby32 ruby33
 */* lua_targets: luajit
 */* lua_single_target: luajit 
-*/* python_single_target: python3_12 
-*/* python_targets: python3_12
+*/* python_single_target: python3_13 
+*/* python_targets: python3_13
 */* cpu_flags_x86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 */* input_devices: libinput joystick
+*/* llvm_targets: X86 AMDGPU
 
-#portage
-sys-apps/portage ipc build 
 app-portage/portage-utils qmanifest qtegrity
-
-sys-devel/gcc fortran sanitize ssp nptl openmp cxx default-stack-clash-protection default-znow objc++ objc cet multilib
-sys-devel/bc static
-llvm-core/clang static-analyzer llvm-libunwind default-compiler-rt default-lld default-libcxx
-llvm-core/clang-common default-compiler-rt default-libcxx default-lld lvm-libunwind
-llvm-core/clang-runtime compiler-rt libcxx-sanitize
+llvm-core/clang static-analyzer default-compiler-rt default-lld default-libcxx
+llvm-core/clang-common default-compiler-rt default-libcxx default-lld 
+llvm-runtimes/clang-runtime compiler-rt libcxx-sanitize  default-compiler-rt default-lld default-libcxx
 llvm-core/clang-toolchain-symlinks multilib-symlinks
 llvm-core/llvm-toolchain-symlinks multilib-symlinks
 llvm-core/llvm binutils-plugin exegesis xml xar
-sys-devel/binutils plugins cet
-dev-util/spirv-llvm-translator llvm_slot_19
-=dev-util/spirv-llvm-translator-18.1.7 llvm_slot_18
-sys-libs/libunwind static-libs libunwind
 llvm-runtimes/libcxx clang static-libs libunwind
 llvm-runtimes/libcxxabi clang static-libs
+>=llvm-runtimes/libunwind-21.1.8 static-libs
+
+dev-util/spirv-llvm-translator llvm_slot_22
+
+sys-devel/binutils plugins cet
+sys-apps/portage ipc build 
+sys-libs/libosinfo introspection
+sys-devel/gcc fortran sanitize ssp nptl openmp cxx default-stack-clash-protection default-znow objc++ objc cet multilib
+sys-devel/bc static
 sys-libs/ncurses cxx
 sys-libs/libxcrypt system compat static-libs
 sys-libs/glibc clone3 multiarch ssp stack-realign hash-sysv-compat cet multilib 
@@ -40,7 +41,7 @@ sys-libs/zlib static-libs minizip
 sys-libs/gdbm berkdb
 sys-apps/shadow su
 sys-apps/pciutils kmod
-sys-apps/openrc sysvinit
+sys-apps/openrc sysvinit unicode newnet
 sys-apps/lm-sensors contrib static-libs
 sys-apps/net-tools arp hostname
 sys-apps/makedev build
@@ -49,117 +50,99 @@ sys-process/procps modern-top
 sys-process/htop lm-sensors
 sys-process/cronie inotify
 sys-process/lsof rpc
-sys-kernel/linux-firmware redistributable compress-zstd
-sys-firmware/* binary qemu seavgabios
-virtual/wine staging abi_x86_64
+sys-kernel/linux-firmware redistributable compress-zstd unknown-license 
 virtual/libudev sticky-tags
 virtual/rust rustfmt
-virtual/imagemagick-tools tiff
 virtual/mysql server
 virtual/libcrypt static-libs
 x11-base/xorg-server xorg
 x11-libs/gdk-pixbuf introspection
 x11-libs/pango introspection
 x11-libs/libvdpau dri
-x11-libs/libdrm tools
-x11-libs/libXaw3dXft unicode
-x11-libs/libdrm video_cards_intel
+x11-libs/libdrm tools video_cards_intel video_cards_radeon
 x11-libs/libfm gtk
-x11-libs/gtk+ inspector introspection xinerama
+x11-libs/gtk+ inspector introspection wayland
 x11-libs/cairo glib 
 x11-libs/libxcb xkb
-x11-libs/wxGTK gstreamer curl libnotify sdl tiff
-x11-libs/fltk xft games 
+x11-libs/vte introspection
+x11-libs/gtksourceview introspection
 x11-misc/dunst dunstify
-media-libs/harfbuzz introspection
-media-libs/gstreamer introspection
+media-libs/harfbuzz introspection icu truetype glib graphite
+media-libs/babl lcms introspection
+media-libs/gegl lcms introspection cairo ffmpeg 
+media-libs/gstreamer introspection orc
 media-libs/graphene introspection
-media-libs/gst-plugins-base introspection
+media-libs/gst-plugins-base introspection egl vorbis
 media-libs/libwebp -opengl
-media-libs/gst-plugins-base egl vorbis
 media-libs/libepoxy egl
 media-libs/opusfile float
 media-libs/libtheora encode
-media-libs/vulkan-loader layers
+media-libs/vulkan-loader layers wayland
 media-libs/imlib2 text filters mp3 packing shm tiff webp zlib eps
 media-libs/libpulse glib
 media-libs/libcanberra gtk3 sound
-media-libs/libplacebo glslang llvm-libunwind shaderc lcms
-media-libs/openh264 plugin
-media-libs/harfbuzz icu truetype glib graphite
+media-libs/libplacebo glslang shaderc lcms
+media-libs/openh264 plugin utils
 media-libs/dav1d 8bit 10bit
 media-libs/x265 12bit
 media-libs/x264 static-libs
-media-libs/mesa llvm xvmc d3d9 unwind lm-sensors llvm_slot_18 -video_cards_intel -opencl
+media-libs/mesa llvm xvmc d3d9 unwind lm-sensors -video_cards_intel -opencl proprietary-codecs vaapi wayland
 media-libs/libsdl2 haptic joystick sound video gles1
 media-libs/libpng apng
-media-libs/gegl cairo ffmpeg
-media-libs/gstreamer orc
 media-libs/leptonica tiff zlib
 media-libs/libvpx postproc highbitdepth
 media-libs/flac cxx
 media-libs/libass fontconfig
-media-libs/freetype brotli 
+media-libs/freetype brotli harfbuzz
 media-libs/libva-compat drm egl
-media-libs/libavif dav1d svt-av1 aom
 media-libs/gd webp truetype
-media-sound/vorbis-tools ogg123
 media-sound/alsa-utils libsamplerate
-media-sound/pulseaudio-daemon bluetooth alsa-plugin asyncns glib orc webrtc-aec 
-media-plugins/alsa-plugins ffmpeg
+media-sound/vorbis-tools ogg123
 media-sound/pulseaudio glib -daemon bluetooth
 media-fonts/* otf
+media-video/droidcam gtk
 media-video/mpv cli iconv libmpv lua xv zlib libplacebo drm -sdl tools archive sdl lcms libcaca zimg debug
-media-video/mplayer encode vorbis -pulseaudio
-media-video/ffmpeg chromium fontconfig libaom libdrm mp3 truetype openh264 bzip2 dav1d encode gnutls gpl iconv postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat webp sdl -flite rav1e srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 fdk theora opus vorbis -shaderc -vulkan libxml2
-net-firewall/ufw ipv6 
+media-video/ffmpeg chromium gmp fontconfig libaom libdrm mp3 truetype openh264 bzip2 dav1d encode gnutls gpl iconv postproc zlib fftools_ffhash fftools_sidxindex fftools_aviocat webp sdl -flite rav1e srt xvid zimg libass libtesseract vpx -openal svt-av1 codec2 fdk theora opus vorbis -shaderc -vulkan libxml2 gme drm nvenc
+media-video/ffmpeg-compat vaapi gpl gmp codec2 gme drm
 media-video/rav1e capi
-media-video/libva-utils vainfo putsureface
+media-video/libva-utils vainfo putsurface
 media-gfx/imagemagick heif xml -openmp tiff
-media-gfx/feh curl exif inotify xinerama
+media-gfx/feh curl exif inotify xinerama magic
+
 sys-fs/e2fsprogs tools
 sys-fs/fuse suid
+
 net-libs/nodejs icu npm snapshot system-icu system-ssl
 net-libs/ngtcp2 gnutls
-net-libs/* vala introspection
 net-libs/gnutls idn pkcs11 tools
 net-libs/libssh2 zlib
 net-misc/rsync iconv stunnel xattr
-net-misc/dhcpcd embedded ipv6
+net-misc/dhcpcd embedded 
 net-misc/netifrc dhcp
-net-misc/curl curl_ssl_openssl ftp http2 imap ipv6 pop3 progress-meter smtp tftp adns nss hsts -curl_ssl_gnutls
+net-misc/curl curl_ssl_openssl ftp http2 imap  pop3 progress-meter smtp tftp adns nss hsts -curl_ssl_gnutls
 net-misc/iputils arping
 net-wireless/bluez experimental obex
-net-mail/isync zlib
-net-proxy/privoxy  acl client-tags compression editor external-filters fast-redirects force graceful-termination tools stats png-images ipv6 zlib
 net-dns/dnsmasq dhcp script ipv6
 net-p2p/qbittorrent gui
+
 dev-qt/qtgui libinput egl
-dev-qt/qttools linguist -clang
+dev-qt/qttools linguist -clang assistant widgets
 dev-qt/qtsql sqlite
-dev-qt/qtbase gui network widgets -libinput evdev egl concurrent concurrent xml sqlite sql
+dev-qt/qtbase network widgets -libinput evdev egl concurrent concurrent xml sqlite sql gui icu
 dev-qt/qtwebchannel qml
-dev-qt/qtwebengine system-ffmpeg widgets system-icu
 dev-qt/qtdeclarative widgets network
 dev-qt/qtcore icu
-dev-qt/qtquickcontrols widgets
-dev-qt/qtmultimedia widgets
-dev-perl/Type-Tiny-XS minimal
-dev-perl/Type-Tiny minimal
-dev-lua/luadbi mysql postgres sqlite
+dev-qt/qtmultimedia widgets ffmpeg 
 dev-db/mysql server
-dev-libs/protobuf protobuf
-dev-libs/libgee introspection
-dev-libs/tree-sitter-bash python
+dev-libs/protobuf protobuf protoc 
 dev-libs/libclc spirv
 dev-libs/json-glib introspection
-dev-libs/glib introspection
+dev-libs/glib introspection utils elf mime
 dev-libs/libpcre2 pcre16 pcre32 unicode
-dev-libs/boost zlib nls icu context
+dev-libs/boost zlib icu context nls
 dev-libs/libxml2 ftp icu python
 dev-libs/openssl asm ktls sctp static-libs verify-sig tls-compression vanilla 
 dev-libs/libtomcrypt libtommath
-dev-libs/libdazzle gtk vala
 dev-libs/libdbusmenu gtk3
 dev-libs/xmlsec nss
 dev-libs/nettle gmp
@@ -172,61 +155,138 @@ dev-libs/libverto libev
 dev-libs/poco zip util xml
 dev-libs/libical glib
 dev-libs/fcgi html
-dev-libs/libgusb vala introspection
-dev-libs/glib utils elf mime
+net-libs/* vala introspection
 games-util/* steamruntime joystick
 dev-vcs/git blksha1 curl gpg iconv pcre webdav
 dev-python/pycurl curl_ssl_openssl
 dev-python/pygobject cairo
+dev-python/fonttools native-extensions
 dev-lang/python-exec python_targets_python3_13
->=dev-lang/python-exec-2.4.10 python_targets_python3_12
->=dev-lang/rust-bin-1.69.0-r1 rustfmt
 dev-lang/python build gdbm xml sqlite gil
-dev-lang/php fpm ipv6 ctype filter intl unicode gdbm iconv mysql -libedit mysqli cli cgi phpdbg xml xmlreader cjk gd zlib phar bzip2 session zip truetype simplexml pdo postgres xmlwriter posix curl sqlite fileinfo opcache webp sodium sharedmem sysvipc bcmath calendar exif postgres_targets_postgres17
-acct-user/git gitea
+dev-lang/php fpm ctype filter intl unicode gdbm iconv mysql -libedit mysqli cli cgi phpdbg xml xmlreader cjk gd zlib phar bzip2 session zip truetype simplexml pdo postgres xmlwriter posix curl sqlite fileinfo opcache webp sodium sharedmem sysvipc bcmath calendar exif postgres_targets_postgres17
 www-client/* gmp-autoupdate openh264 generic hwaccel system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png geckodriver system-webp libproxy webp fbcon gpm aria2 control-socket libnotify gstreamer
-www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi nginx_modules_mail_smtp nginx_modules_http_gzip nginx_modules_http_gzip_static
+www-servers/nginx http http2 nginx_modules_http_access nginx_modules_http_autoindex rtmp nginx_modules_http_auth_basic nginx_modules_http_auth_request nginx_modules_http_map nginx_modules_http_proxy nginx_modules_http_rewrite nginx_modules_http_fastcgi nginx_modules_mail_smtp nginx_modules_http_gzip nginx_modules_http_gzip_static nginx_modules_stream_ssl  nginx_modules_http_ssl nginx_modules_http_v2 nginx_modules_http_v3 nginx_modules_stream_upstream_hash
 www-apps/nextcloud vhosts sqlite curl imagemagick postgres mysql
-dev-php/pecl-imagick php_targets_php8-1
+dev-php/pecl-imagick php_targets_php8-2
+
 app-alternatives/* pbzip2 -split-usr samurai gnu gawk pigz bison flex gnu bash
 app-crypt/p11-kit asn1 trust
 app-crypt/pinentry gtk
 app-crypt/gpgme cxx
-app-crypt/gnupg tools user-socket nls
+app-crypt/gnupg tools user-socket alternatives
 app-crypt/gcr gtk -vala
 app-crypt/libsecret crypt gnutls introspection
 app-text/poppler cairo cxx lcms utils
-app-text/libwpd tools
 app-text/xmlto text
 app-text/zathura-meta pdf
-app-editors/neovim nvimpager tui
+app-editors/vim
+app-eselect/eselect-wine xdg
 app-shells/zsh pcre gdbm
 app-misc/mime-types nginx
 app-misc/ca-certificates cacert
 app-eselect/eselect-php fpm
-app-eselect/eselect-wine xdg
 app-arch/p7zip rar
 app-arch/libarchive bzip2 e2fsprogs iconv
 app-arch/tar acl xattr
 app-arch/xz-utils extra-filters static-libs
-net-misc/spice-gtk usbredir gtk3 introspection
-app-emulation/* fdt shared vkd3d gui seccomp
-app-emulation/dxvk d3d9 d3d10 d3d11 dxgi
-app-emulation/libvirt qemu virt-network libvirtd caps fuse sasl nbd 
-app-emulation/virt-viewer spice
-app-emulation/qemu aio caps curl filecaps gnutls  nls pin-upstream-blobs slirp vhost-net vnc xattr spice
+
+app-emulation/dxvk d3d8 d3d9 d3d10 d3d11 dxgi
+app-emulation/wine-staging abi_x86_64
+app-emulation/qemu aio caps curl filecaps gnutls pin-upstream-blobs slirp vhost-net vnc xattr spice
 app-emulation/spice gstreamer
-app-emulation/fuse zlib -alsa backend-X
-app-emulation/libspectrum zlib
+app-emulation/libvirt qemu virt-network libvirtd caps fuse sasl 
+app-emulation/virt-viewer spice
 app-emulation/libvirt-glib introspection
-app-emulation/wine-staging abi_x86_64 gecko mono sdl truetype mingw llvm-libunwind ffmpeg gstreamer xinerama v4l
-app-emulation/winetricks abi_x86_64 
-app-emulation/wine-gecko abi_x86_64
 app-emulation/vkd3d spirv-tools
 app-emulation/vkd3d-proton extras
+app-emulation/* fdt shared vkd3d gui seccomp gecko mono sdl truetype mingw ffmpeg gstreamer v4l d3d9 d3d10 d3d11 dxgi
+app-emulation/* abi_x86_64
 app-accessibility/at-spi2-core introspection -X
 app-admin/pass importers git
 app-containers/* btrfs 
-gui-libs/gtk -ffmpeg introspection
 
 app-crypt/certbot certbot-nginx
+gui-libs/gtk -ffmpeg introspection wayland
+media-gfx/gimp webp jpegxl mng
+
+dev-libs/wolfssl writedup
+
+>=dev-qt/qtbase-6.9.1 -icu -gui
+>=dev-qt/qtbase-6.9.1 gui
+>=dev-qt/qt5compat-6.9.1 gui
+
+media-fonts/noto-emoji icons
+mail-client/thunderbird-bin wayland
+x11-base/xwayland libei
+
+media-video/wireplumber lua_single_target_lua5-4
+media-video/pipewire ffmpeg gstreamer extra sound-server v4l pipewire-alsa pulseaudio lltw echo-cancel
+>=llvm-core/clang-linker-config-21 default-lld
+>=llvm-runtimes/clang-rtlib-config-21 default-compiler-rt
+>=llvm-runtimes/clang-unwindlib-config-21 default-compiler-rt
+>=llvm-runtimes/clang-stdlib-config-21 default-libcxx
+>=dev-lang/python-3.13.9:3.13 ensurepip
+>=app-alternatives/gpg-1-r2 reference
+
+media-video/obs-studio v4l pipewire browser websocket lua
+>=x11-libs/libdrm-2.4.128 video_cards_radeon
+>=virtual/zlib-1.3.1-r1 static-libs
+
+net-libs/webkit-gtk gstreamer pdf X avif gstreamer introspection jpegxl jumbo-build keyring lcms pdf seccomp spell wayland
+
+app-text/enchant aspell
+>=gui-libs/gtk-4.20.2 wayland
+>=media-libs/vulkan-loader-1.4.328.0 wayland
+media-libs/libavif dav1d
+net-firewall/iptables conntrack netlink
+gnome-base/librsvg introspection
+sys-apps/lact gui libadwaita
+media-video/amdgpu-pro-amf radv pro
+sys-firmware/* binary qemu seavgabios
+games-util/steam-launcher desktop-portal dialogs trayicon
+
+sys-fs/cryptsetup openssl argon2
+>=sys-libs/libunwind-1.8.2-r1 static-libs
+
+media-sound/audacity ffmpeg opus wavpack vorbis
+x11-misc/picom drm
+
+net-misc/yt-dlp python_targets_python3_14
+>=dev-python/pycryptodome-3.23.0 python_targets_python3_14
+>=dev-python/yt-dlp-ejs-0.5.0 python_targets_python3_14
+>=dev-python/gpep517-19 python_targets_python3_14
+>=dev-python/hatchling-1.29.0 python_targets_python3_14
+>=dev-python/editables-0.5 python_targets_python3_14
+>=dev-python/packaging-26.0 python_targets_python3_14
+>=dev-python/pathspec-1.0.4 python_targets_python3_14
+>=dev-python/pluggy-1.6.0 python_targets_python3_14
+>=dev-python/trove-classifiers-2026.1.14.14 python_targets_python3_14
+>=dev-python/flit-core-3.12.0 python_targets_python3_14
+>=dev-python/setuptools-scm-9.2.2 python_targets_python3_14
+>=dev-python/setuptools-81.0.0 python_targets_python3_14
+>=dev-python/jaraco-functools-4.4.0 python_targets_python3_14
+>=dev-python/jaraco-text-4.2.0 python_targets_python3_14
+>=dev-python/more-itertools-10.8.0 python_targets_python3_14
+>=dev-python/platformdirs-4.9.2 python_targets_python3_14
+>=dev-python/wheel-0.46.3 python_targets_python3_14
+>=dev-python/jaraco-context-6.1.0 python_targets_python3_14
+>=dev-python/installer-0.7.0 python_targets_python3_14
+>=dev-python/hatch-vcs-0.5.0 python_targets_python3_14
+>=dev-python/cffi-2.0.0 python_targets_python3_14
+>=dev-python/pycparser-3.0 python_targets_python3_14
+>=dev-python/ply-3.11-r2 python_targets_python3_14
+
+app-admin/testdisk jpeg ntfs zlib
+
+x11-libs/libfm exif
+
+net-im/discord -wayland seccomp
+
+app-text/doxygen -llvm_slot_19 llvm_slot_21  -llvm_slot_20
+dev-db/postgresql -llvm_slot_19 llvm_slot_21 -llvm_slot_20
+dev-lang/python -llvm_slot_19 llvm_slot_21 -llvm_slot_20
+dev-qt/qttools -llvm_slot_19 llvm_slot_21 -llvm_slot_20
+media-libs/mesa -llvm_slot_19 llvm_slot_21 -llvm_slot_20
+
+gui-libs/wlroots drm libinput session X x11-backend xcb-errors liftoff
+sys-auth/seatd server
