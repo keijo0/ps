@@ -1,0 +1,1678 @@
+accent_color = [180, 120, 240, 255]
+
+[aim]
+aimbot_hotkeys = ["Mouse4", "MouseLeft"]
+triggerbot_hotkey = "Mouse4"
+
+[aim.global.aimbot]
+enable_override = true
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = false
+fov = 0.6
+smooth = 4.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = true
+backtrack_ticks = 32
+
+[aim.global.rcs]
+enable_override = false
+enabled = false
+smooth = 3.0
+
+[aim.global.triggerbot]
+enable_override = false
+enabled = true
+shot_duration = 170
+mode = "Hold"
+flash_check = false
+scope_check = false
+velocity_check = false
+velocity_threshold = 1317.0
+head_only = false
+
+[aim.global.triggerbot.delay]
+start = 0
+end = 0
+
+[aim.weapons.decoy.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.decoy.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.decoy.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.decoy.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.ak47.aimbot]
+enable_override = true
+enabled = true
+mode = "Hold"
+target_friendlies = true
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = false
+flash_check = false
+fov = 0.6
+smooth = 5.0
+bones = ["Head", "Spine2", "Spine3", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.ak47.rcs]
+enable_override = true
+enabled = true
+smooth = 4.0
+
+[aim.weapons.ak47.triggerbot]
+enable_override = true
+enabled = true
+shot_duration = 200
+mode = "Hold"
+flash_check = false
+scope_check = false
+velocity_check = true
+velocity_threshold = 100.0
+head_only = true
+
+[aim.weapons.ak47.triggerbot.delay]
+start = 0
+end = 0
+
+[aim.weapons.sawedoff.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.sawedoff.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.sawedoff.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.sawedoff.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.cz75_a.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.cz75_a.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.cz75_a.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.cz75_a.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.smoke.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.smoke.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.smoke.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.smoke.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.taser.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.taser.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.taser.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.taser.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.mag7.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.mag7.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.mag7.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.mag7.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.xm1014.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.xm1014.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.xm1014.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.xm1014.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.p90.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.p90.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.p90.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.p90.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.m4_a4.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.m4_a4.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.m4_a4.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.m4_a4.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.p2000.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.p2000.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.p2000.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.p2000.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.flashbang.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.flashbang.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.flashbang.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.flashbang.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.bizon.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.bizon.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.bizon.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.bizon.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.knife.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.knife.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.knife.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.knife.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.negev.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.negev.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.negev.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.negev.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.mac10.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.mac10.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.mac10.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.mac10.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.unknown.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.unknown.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.unknown.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.unknown.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.ssg08.aimbot]
+enable_override = true
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = false
+fov = 1.0
+smooth = 5.0
+bones = ["Head", "Spine4", "Spine3", "Spine2", "Spine1", "Hip", "LeftHip", "RightHip", "LeftFoot", "RightFoot"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.ssg08.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.ssg08.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.ssg08.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.g3_s_g1.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.g3_s_g1.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.g3_s_g1.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.g3_s_g1.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.awp.aimbot]
+enable_override = true
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = false
+fov = 1.0
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip", "RightHip", "LeftHip", "RightFoot", "LeftFoot"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.awp.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.awp.triggerbot]
+enable_override = true
+enabled = true
+shot_duration = 110
+mode = "Hold"
+flash_check = false
+scope_check = false
+velocity_check = false
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.awp.triggerbot.delay]
+start = 0
+end = 0
+
+[aim.weapons.molotov.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.molotov.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.molotov.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.molotov.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.mp7.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.mp7.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.mp7.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.mp7.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.famas.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.famas.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.famas.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.famas.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.galilar.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.galilar.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.galilar.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.galilar.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.dual_berettas.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.dual_berettas.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.dual_berettas.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.dual_berettas.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.five_seven.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.five_seven.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.five_seven.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.five_seven.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.revolver.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.revolver.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.revolver.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.revolver.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.tec9.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.tec9.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.tec9.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.tec9.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.glock.aimbot]
+enable_override = false
+enabled = false
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = false
+fov = 0.6
+smooth = 5.0
+bones = ["Head", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.glock.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.glock.triggerbot]
+enable_override = true
+enabled = true
+shot_duration = 200
+mode = "Hold"
+flash_check = false
+scope_check = false
+velocity_check = true
+velocity_threshold = 1200.0
+head_only = false
+
+[aim.weapons.glock.triggerbot.delay]
+start = 0
+end = 0
+
+[aim.weapons.scar20.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.scar20.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.scar20.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.scar20.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.he_grenade.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.he_grenade.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.he_grenade.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.he_grenade.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.sg556.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.sg556.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.sg556.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.sg556.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.mp9.aimbot]
+enable_override = true
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = false
+fov = 1.0
+smooth = 5.0
+bones = ["Head"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.mp9.rcs]
+enable_override = false
+enabled = false
+smooth = 0.0
+
+[aim.weapons.mp9.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.mp9.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.c4.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.c4.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.c4.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.c4.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.nova.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.nova.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.nova.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.nova.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.usp.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.usp.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.usp.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.usp.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.ump45.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.ump45.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.ump45.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.ump45.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.aug.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.aug.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.aug.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.aug.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.p250.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip", "LeftFoot", "RightFoot"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.p250.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.p250.triggerbot]
+enable_override = true
+enabled = true
+shot_duration = 110
+mode = "Hold"
+flash_check = false
+scope_check = false
+velocity_check = true
+velocity_threshold = 1200.0
+head_only = false
+
+[aim.weapons.p250.triggerbot.delay]
+start = 0
+end = 0
+
+[aim.weapons.incendiary.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.incendiary.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.incendiary.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.incendiary.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.m249.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.m249.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.m249.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.m249.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.m4_a1.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.m4_a1.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.m4_a1.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.m4_a1.triggerbot.delay]
+start = 100
+end = 200
+
+[aim.weapons.deagle.aimbot]
+enable_override = true
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = false
+fov = 0.6
+smooth = 6.0
+bones = ["Head"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.deagle.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.deagle.triggerbot]
+enable_override = true
+enabled = true
+shot_duration = 300
+mode = "Hold"
+flash_check = false
+scope_check = false
+velocity_check = true
+velocity_threshold = 602.0
+head_only = false
+
+[aim.weapons.deagle.triggerbot.delay]
+start = 0
+end = 0
+
+[aim.weapons.mp5_sd.aimbot]
+enable_override = false
+enabled = true
+mode = "Hold"
+target_friendlies = false
+distance_adjusted_fov = true
+start_bullet = 0
+visibility_check = true
+flash_check = true
+fov = 2.5
+smooth = 5.0
+bones = ["Head", "Neck", "Spine4", "Spine3", "Spine2", "Spine1", "Hip"]
+targeting_mode = "Fov"
+backtrack = false
+backtrack_ticks = 12
+
+[aim.weapons.mp5_sd.rcs]
+enable_override = false
+enabled = false
+smooth = 0.3
+
+[aim.weapons.mp5_sd.triggerbot]
+enable_override = false
+enabled = false
+shot_duration = 200
+mode = "Hold"
+flash_check = true
+scope_check = true
+velocity_check = true
+velocity_threshold = 100.0
+head_only = false
+
+[aim.weapons.mp5_sd.triggerbot.delay]
+start = 100
+end = 200
+
+[player]
+enabled = true
+esp_hotkey = "X"
+show_friendlies = true
+draw_box = "None"
+box_mode = "Full"
+box_visible_color = [255, 255, 255, 255]
+box_invisible_color = [0, 0, 0, 255]
+draw_skeleton = "Health"
+skeleton_color = [255, 255, 255, 255]
+head_circle = false
+health_bar = false
+health_text = true
+armor_bar = false
+player_name = true
+weapon_icon = true
+tags = false
+visible_only = false
+show_backtrack = false
+
+[player.sound]
+enabled = false
+footstep_diameter = 2000.0
+gunshot_diameter = 8000.0
+weapon_diameter = 3000.0
+fadeout_start = 1.0
+fadeout_duration = 1.0
+show_visible = true
+
+[hud]
+bomb_timer = true
+spectator_list = true
+fov_circle = false
+sniper_crosshair = true
+crosshair_color = [0, 0, 0, 100]
+dropped_weapons = true
+keybind_list = true
+grenade_trails = true
+fov_arrow_size = 10.0
+fov_arrows = true
+fov_arrow_color = [0, 0, 0, 100]
+spectator_list_color = [255, 255, 255, 255]
+text_outline = false
+text_color = [255, 255, 255, 150]
+line_width = 1.67
+font_size = 15.0
+icon_size = 12.0
+debug = false
+
+[misc]
+bunnyhop = true
+bunnyhop_hotkey = "Mouse5"
