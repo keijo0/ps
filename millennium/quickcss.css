@@ -1,0 +1,13 @@
+/* Quick CSS file created by Millennium */
+html  *, html {
+        font-family:'Quicksand Medium', 'fontawesome'!important;
+}
+
+input, select, textarea, button {
+ -moz-appearance: none !important;
+}   
+
+code, pre, input, samp, kbd, var, dfn { 
+ -moz-appearance: none !important;
+  background-color: #000 !important;
+}
